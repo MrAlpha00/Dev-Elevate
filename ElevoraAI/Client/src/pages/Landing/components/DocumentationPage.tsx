@@ -416,7 +416,7 @@ npm run dev   # Runs on http://localhost:5173`}
           </a>{" "}
           | Live:{" "}
           <a
-            href="https://ElevoraAI-ai.vercel.app"
+            href="https://elevoraai.vercel.app"
             className="font-semibold text-indigo-800 underline transition-colors dark:text-indigo-200 hover:text-indigo-700 dark:hover:text-indigo-300"
             target="_blank"
             rel="noopener noreferrer"
