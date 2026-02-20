@@ -42,8 +42,8 @@ const LEVEL_POINTS: Record<LevelKey, number> = {
 };
 
 async function fetchContributors(): Promise<Contributor[]> {
-  const owner = 'abhisek2004';
-  const repo = 'elevora-ai';
+  const owner = 'MrAlpha00';
+  const repo = 'Dev-Elevate';
 
   const headers: HeadersInit = {
     Accept: 'application/vnd.github.v3+json',
@@ -92,8 +92,8 @@ async function fetchContributors(): Promise<Contributor[]> {
 }
 
 async function fetchEligiblePRPoints(): Promise<Record<string, { points: number; prCount: number; levelBreakdown: { level1: number; level2: number; level3: number } }>> {
-  const owner = 'abhisek2004';
-  const repo = 'elevora-ai';
+  const owner = 'MrAlpha00';
+  const repo = 'Dev-Elevate';
 
   const headers: HeadersInit = {
     Accept: 'application/vnd.github.v3+json',
@@ -547,7 +547,7 @@ export default function ContributorsPageClient() {
               className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
             >
               {(() => {
-                const projectOwner = 'abhisek2004';
+                const projectOwner = 'MrAlpha00';
 
                 // Separate contributors into different categories
                 const ownerContributor = contributors.find(c => c.login === projectOwner);
@@ -632,7 +632,7 @@ export default function ContributorsPageClient() {
               </p>
               <div className="flex justify-center">
                 <a
-                  href={`https://github.com/abhisek2004/elevora-ai`}
+                  href={`https://github.com/MrAlpha00/Dev-Elevate`}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-5 py-3 text-white rounded-lg shadow bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600"

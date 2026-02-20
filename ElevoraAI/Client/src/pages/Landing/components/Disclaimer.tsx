@@ -76,13 +76,13 @@ const Disclaimer: React.FC = () => {
                     <ExternalLink className="w-4 h-4" />
                   </a>
                   <a
-                    href="https://github.com/abhisek2004"
+                    href="https://github.com/MrAlpha00"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center space-x-2 text-blue-400 hover:text-blue-300"
                   >
                     <span>🐙 GitHub:</span>
-                    <span>github.com/abhisek2004</span>
+                    <span>github.com/MrAlpha00</span>
                     <ExternalLink className="w-4 h-4" />
                   </a>
                   <a
@@ -100,7 +100,7 @@ const Disclaimer: React.FC = () => {
             </div>
             <div className="flex items-center justify-center">
               <img
-                src="https://github.com/abhisek2004.png"
+                src="https://github.com/MrAlpha00.png"
                 alt="Abhisek Panda"
                 className="w-32 h-32 border-4 border-blue-500 rounded-full shadow-lg"
               />

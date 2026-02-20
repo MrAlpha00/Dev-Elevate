@@ -40,7 +40,7 @@ const rawTopics: Topic[] = [
                 links: {
                     hackerrank: 'https://www.hackerrank.com/challenges/cpp-hello-world/problem?',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/01%20Introduction%20to%20C%2B%2B/NamasteDuniya.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/01%20Introduction%20to%20C%2B%2B/NamasteDuniya.cpp',
                 companies: ['WITCH', 'Google', 'Apple'], // sample companies 
             },
             {
@@ -52,7 +52,7 @@ const rawTopics: Topic[] = [
                 links: {
                     hackerrank: 'https://www.hackerrank.com/challenges/c-tutorial-basic-data-types/problem?',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/01%20Introduction%20to%20C%2B%2B/variablesAndDatatypes.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/01%20Introduction%20to%20C%2B%2B/variablesAndDatatypes.cpp',
             },
             {
                 id: 3,
@@ -63,7 +63,7 @@ const rawTopics: Topic[] = [
                 links: {
                     hackerrank: 'https://www.hackerrank.com/challenges/cpp-input-and-output/problem?',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/01%20Introduction%20to%20C%2B%2B/userinput.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/01%20Introduction%20to%20C%2B%2B/userinput.cpp',
             },
             {
                 id: 4,
@@ -103,7 +103,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg:'https://www.geeksforgeeks.org/program-to-print-solid-and-hollow-square-patterns/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20of%20Programming-level-1/Let's%20Solve%20Patterns/solidSquare.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20of%20Programming-level-1/Let's%20Solve%20Patterns/solidSquare.cpp",
             },
             {
                 id: 19,
@@ -114,7 +114,7 @@ const rawTopics: Topic[] = [
                 links: {
                     code: 'https://www.glassdoor.co.uk/Interview/write-a-program-in-c-c-java-to-print-the-pattern-1-2-2-3-3-3-4-4-4-4-4-4-4-4-3-3-3-2-2-1-QTN_1391507.htm',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Mega%20session-patterns/fullFancy12Pattern.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Mega%20session-patterns/fullFancy12Pattern.cpp",
             },
             {
                 id: 21,
@@ -125,7 +125,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/hollow-half-pyramid-pattern-using-numbers/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/numericHollowHalfPyramid.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/numericHollowHalfPyramid.cpp",
             },
             {
                 id: 23,
@@ -136,7 +136,7 @@ const rawTopics: Topic[] = [
                 links: {
                     code: 'https://prepinsta.com/java-program/palindromic-pyramid-pattern-using-java/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/numericPalindromeEquilateralPyramid.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/numericPalindromeEquilateralPyramid.cpp",
             },
             {
                 id: 25,
@@ -145,7 +145,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/fancyPattern1.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/fancyPattern1.cpp",
             },
             {
                 id: 26,
@@ -154,7 +154,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/fancyPattern2.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/fancyPattern2.cpp",
             },
             {
                 id: 27,
@@ -163,7 +163,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/fancyPattern3.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/fancyPattern3.cpp",
             },
             {
                 id: 28,
@@ -174,7 +174,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/c/c-program-to-print-floyds-triangle-pyramid-patterns/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/floydsTriangle.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/floydsTriangle.cpp",
             },
             {
                 id: 29,
@@ -185,7 +185,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/pascals-triangle/description/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/pascalsTriangle.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/pascalsTriangle.cpp",
             },
             {
                 id: 30,
@@ -196,7 +196,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/dsa/program-to-print-butterfly-pattern-star-pattern/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/butterflyPattern.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/02%20Basics%20Of%20Programming-Level-2/Week%202-%20assignments/butterflyPattern.cpp",
             },
       // ...more questions
         ],
@@ -215,7 +215,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/search-an-element-in-an-array-1587115621/1',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Let's%20learn%20arrays/linearSearch.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Let's%20learn%20arrays/linearSearch.cpp",
             },
             {
                 id: 7,
@@ -226,7 +226,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/two-sum/description/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Week3-%20Assignments/03_keyPair.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Week3-%20Assignments/03_keyPair.cpp",
             },
             {
                 id: 16,
@@ -237,7 +237,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/transpose-of-matrix-1587115621/1',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Array%20Class-3/Questions/transposeMatrix.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Array%20Class-3/Questions/transposeMatrix.cpp",
             },
             {
                 id: 22,
@@ -246,7 +246,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Week3-%20Assignments/07_moveNegativeNumberToLeft.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Week3-%20Assignments/07_moveNegativeNumberToLeft.cpp",
             },
             {
                 id: 33,
@@ -257,7 +257,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/maximum-subarray/description/',
                 },
-                solutionLink: "https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Mega%20class-%20arrays/kadaneAlgo_maximumSubArray.cpp",
+                solutionLink: "https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/03%20Arrays%2C%20Time%20complexity%20and%20Space%20complexity/Mega%20class-%20arrays/kadaneAlgo_maximumSubArray.cpp",
             },
         ]
     },
@@ -275,7 +275,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/binary-search/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20And%20Sorting%20Class-1/binary%20search/binarySearch.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20And%20Sorting%20Class-1/binary%20search/binarySearch.cpp',
                 companies: ['WITCH'],
             },
             {
@@ -287,7 +287,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/sqrtx/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20and%20Sorting%20class-2/searchSpace/leetcode69.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20and%20Sorting%20class-2/searchSpace/leetcode69.cpp',
             },
             {
                 id: 8,
@@ -298,7 +298,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/division-without-using-multiplication-division-and-mod-operator/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20and%20Sorting%20Class-3/getQuotient.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20and%20Sorting%20Class-3/getQuotient.cpp',
             },
             {
                 id: 11,
@@ -309,7 +309,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/find-the-odd-occurence4820/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20and%20Sorting%20Class-3/oddOccuringElement.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Searching%20and%20Sorting%20Class-3/oddOccuringElement.cpp',
             },
             {
                 id: 12,
@@ -318,7 +318,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Mega%20Class-%20Binary%20Searching/precisionSqrt.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/05%20Searching%20%26%20Sorting/Mega%20Class-%20Binary%20Searching/precisionSqrt.cpp',
             },
         ]
     },
@@ -336,7 +336,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode1047.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode1047.cpp',
             },
             {
                 id: 2,
@@ -347,7 +347,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/remove-all-occurrences-of-a-substring/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode1910.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode1910.cpp',
             },
             {
                 id: 3,
@@ -358,7 +358,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/valid-palindrome-ii/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode680.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode680.cpp',
             },
             {
                 id: 4,
@@ -369,7 +369,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/palindromic-substrings/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode647.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-2/leetcode%20questions/leetcode647.cpp',
             },
             {
                 id: 5,
@@ -380,7 +380,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/decode-the-message/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-3/leetcode2325.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/07%20Char%20Arrays%20And%20Strings/Char%20Arrays%20%26%20Strings%20Class-3/leetcode2325.cpp',
             },
         ]
     },
@@ -398,7 +398,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/c-pointers-set-1introduction/0',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Pointers-%20Class%201/pointer.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Pointers-%20Class%201/pointer.cpp',
             },
             {
                 id: 2,
@@ -409,7 +409,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/count-primes/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/204CountPrimes.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/204CountPrimes.cpp',
             },
             {
                 id: 3,
@@ -420,7 +420,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/powx-n/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/fastExponentiation.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/fastExponentiation.cpp',
             },
             {
                 id: 4,
@@ -431,7 +431,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/gcd-of-two-numbers3459/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/gcd.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/gcd.cpp',
             },
             {
                 id: 5,
@@ -442,7 +442,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/modular-exponentiation-for-large-numbers5537/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/modularExponentitationForLargeNumbers.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Basic%20Mathematics%20for%20DSA/modularExponentitationForLargeNumbers.cpp',
             },
             {
                 id: 6,
@@ -453,7 +453,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/sieve-of-eratosthenes5242/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Optimising%20Sieve%20and%20Segmented%20Sieve/seiveofEratosthenes.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Optimising%20Sieve%20and%20Segmented%20Sieve/seiveofEratosthenes.cpp',
             },
             {
                 id: 7,
@@ -464,7 +464,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/find-prime-numbers-in-a-range4718/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Optimising%20Sieve%20and%20Segmented%20Sieve/segmentedSieve.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Optimising%20Sieve%20and%20Segmented%20Sieve/segmentedSieve.cpp',
             },
             {
                 id: 8,
@@ -475,7 +475,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/product-of-primes5328/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Optimising%20Sieve%20and%20Segmented%20Sieve/productOfPrimes.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/08%20Basic%20Maths%20%26%20Pointers/Optimising%20Sieve%20and%20Segmented%20Sieve/productOfPrimes.cpp',
             },
         ]
     },
@@ -493,7 +493,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/factorial5739/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-1/main.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-1/main.cpp',
             },
             {
                 id: 2,
@@ -504,7 +504,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/fibonacci-number/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-1/main.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-1/main.cpp',
             },
             {
                 id: 3,
@@ -513,7 +513,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-2/main.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-2/main.cpp',
             },
             {
                 id: 4,
@@ -524,7 +524,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/binary-search-1587115620/11',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-2/binarySearch.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-2/binarySearch.cpp',
             },
             {
                 id: 6,
@@ -535,7 +535,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/house-robber/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-3/leetcode198.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/09%20Recursion/Recursion%20Class-3/leetcode198.cpp',
             },        
         ]
     },
@@ -553,7 +553,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/merge-sort/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Dnc%20Class-1/main.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Dnc%20Class-1/main.cpp',
             },
             {
                 id: 2,
@@ -564,7 +564,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/quick-sort/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Quick%20Sort%5BEnd%20Element%20as%20Pivot%5D/main.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Quick%20Sort%5BEnd%20Element%20as%20Pivot%5D/main.cpp',
             },
             {
                 id: 3,
@@ -575,7 +575,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/rat-in-a-maze-problem/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20Dnc%20Class-2/ratInMaze.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20Dnc%20Class-2/ratInMaze.cpp',
             },
             {
                 id: 4,
@@ -586,7 +586,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/permutations/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20Class-3/leetcode46Permutations.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20Class-3/leetcode46Permutations.cpp',
             },
             {
                 id: 5,
@@ -597,7 +597,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/n-queens/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20Class-3/leetcode51N_Queens.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20Class-3/leetcode51N_Queens.cpp',
             },
             {
                 id: 6,
@@ -608,7 +608,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/sudoku-solver/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20class-4/leetcode37SudokuSolver.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20class-4/leetcode37SudokuSolver.cpp',
             },
             {
                 id: 7,
@@ -619,7 +619,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20class-4/leetcode17LetterCombinationsOfPhoneNumber.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/Backtracking%20%26%20DnC%20class-4/leetcode17LetterCombinationsOfPhoneNumber.cpp',
             },
             {
                 id: 8,
@@ -630,7 +630,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/generate-parentheses/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/DnC%20and%20Backtracking%20Mega%20Class/22GenerateParentheses.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/DnC%20and%20Backtracking%20Mega%20Class/22GenerateParentheses.cpp',
             },
             {
                 id: 9,
@@ -641,7 +641,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/combinations/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/DnC%20and%20Backtracking%20Mega%20Class/77Combinations.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/10%20Backtracking%20%26%20DnC/DnC%20and%20Backtracking%20Mega%20Class/77Combinations.cpp',
             },
         ]
     },
@@ -657,7 +657,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/How%20to%20Create%20Objects%20in%20C%2B%2B',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/How%20to%20Create%20Objects%20in%20C%2B%2B',
             },
             {
                 id: 2,
@@ -666,7 +666,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Implementing%20Encapsulation',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Implementing%20Encapsulation',
             },
             {
                 id: 3,
@@ -675,7 +675,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Implementing%20Inheritance',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Implementing%20Inheritance',
             },
             {
                 id: 4,
@@ -684,7 +684,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Polymorphism',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Polymorphism',
             },
             {
                 id: 5,
@@ -693,7 +693,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Abstraction',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Abstraction',
             },
             {
                 id: 6,
@@ -702,7 +702,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Miscellaneous%20Concepts',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/11%20OOPs%20Concepts/Miscellaneous%20Concepts',
             },
         ]
     },
@@ -720,7 +720,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/linked-list-insertion-at-beginning/0',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtHead.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtHead.cpp',
             },
             {
                 id: 2,
@@ -731,7 +731,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/print-linked-list-elements/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtHead.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtHead.cpp',
             },
             {
                 id: 3,
@@ -742,7 +742,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/linked-list-insertion-1587115620/0',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtTail.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtTail.cpp',
             },
             {
                 id: 4,
@@ -753,7 +753,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/node-at-a-given-index-in-linked-list/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtPosition.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-1/insertAtPosition.cpp',
             },
             {
                 id: 9,
@@ -764,7 +764,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/reverse-linked-list/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-3/206ReverseLL.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/12%20Linked%20List/Linked%20List%20Class-3/206ReverseLL.cpp',
             },
 
         ]
@@ -783,7 +783,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/special-stack/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-1/creation.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-1/creation.cpp',
             },
             {
                 id: 2,
@@ -794,7 +794,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/implement-two-stacks-in-an-array/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-1/twoStack-usingArray.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-1/twoStack-usingArray.cpp',
             },
             {
                 id: 4,
@@ -805,7 +805,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/insert-an-element-at-the-bottom-of-a-stack/0',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-1/insertAtBottom.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-1/insertAtBottom.cpp',
             },
             {
                 id: 8,
@@ -814,7 +814,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-2/sortedInsert.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-2/sortedInsert.cpp',
             },
             {
                 id: 10,
@@ -825,7 +825,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/expression-contains-redundant-bracket-or-not/0',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-2/gfg/checkRedundant.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/13%20Stacks/Stack%20Class-2/gfg/checkRedundant.cpp',
             },
         ]
     },
@@ -843,7 +843,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/implement-queue-using-array/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-queue.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-queue.cpp',
             },
             {
                 id: 2,
@@ -854,7 +854,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/deque-implementations/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-deque.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-deque.cpp',
             },
             {
                 id: 3,
@@ -865,7 +865,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/design-circular-queue/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-circularQueue.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-circularQueue.cpp',
             },
             {
                 id: 4,
@@ -876,7 +876,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/design-circular-deque/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-circularDeque.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%201/implement-circularDeque.cpp',
             },
             {
                 id: 5,
@@ -887,7 +887,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/queue-reversal/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%202/reverse-a-queue.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/14%20Queues/Queue%20Class%20-%202/reverse-a-queue.cpp',
             },
         ]
     },
@@ -905,7 +905,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/preorder-traversal/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
             },
             {
                 id: 2,
@@ -916,7 +916,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/inorder-traversal/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
             },
             {
                 id: 3,
@@ -927,7 +927,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/postorder-traversal/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
             },
             {
                 id: 4,
@@ -938,7 +938,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/level-order-traversal/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%201/02-Traversal.cpp',
             },
             {
                 id: 8,
@@ -949,7 +949,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%202/02-Lowest-Common-Ancestor-of-Binary-Tree.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/15%20Generic%20and%20Binary%20Trees/Trees%20Class%20-%202/02-Lowest-Common-Ancestor-of-Binary-Tree.cpp',
             },
         ]
     },
@@ -965,7 +965,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/creation.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/creation.cpp',
             },
             {
                 id: 2,
@@ -976,7 +976,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/minimum-element-in-bst/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/01-max-min.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/01-max-min.cpp',
             },
             {
                 id: 3,
@@ -987,7 +987,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/search-a-node-in-bst/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/02-search.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/02-search.cpp',
             },
             {
                 id: 4,
@@ -998,7 +998,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/delete-node-in-a-bst/description/"',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/03-delete-a-node.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/Binary%20Search%20Trees%20Class%20-%201/03-delete-a-node.cpp',
             },
             {
                 id: 5,
@@ -1009,7 +1009,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/BST%20-%20mega%20class/04-two-sum-IV-input-is-a-BST.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/16%20Binary%20Search%20Trees/BST%20-%20mega%20class/04-two-sum-IV-input-is-a-BST.cpp',
             },
         ]
     },
@@ -1025,7 +1025,7 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%201/01-create-Heap.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%201/01-create-Heap.cpp',
             },
             {
                 id: 2,
@@ -1036,7 +1036,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/heap-sort/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%201/02-buildHeap-and-heapsort.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%201/02-buildHeap-and-heapsort.cpp',
             },
             {
                 id: 3,
@@ -1047,7 +1047,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/kth-largest-element-in-an-array/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%202%20or%203/01-find-kth-largest-element-in-array.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%202%20or%203/01-find-kth-largest-element-in-array.cpp',
             },
             {
                 id: 4,
@@ -1058,7 +1058,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/check-completeness-of-a-binary-tree/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%202%20or%203/02-check-completeness-of-a-binary-tree.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%202%20or%203/02-check-completeness-of-a-binary-tree.cpp',
             },
             {
                 id: 5,
@@ -1069,7 +1069,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/is-binary-tree-heap/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%202%20or%203/03-is-binary-tree-heap.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/17%20Heaps/Heaps%20Class%20-%202%20or%203/03-is-binary-tree-heap.cpp',
             },
         ]
     },
@@ -1087,7 +1087,7 @@ const rawTopics: Topic[] = [
                 links: {
                     hackerrank: 'https://www.hackerrank.com/challenges/cpp-maps/problem',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/tree/main/04%20Complete%20Cpp%20STL/Containers/Map',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/tree/main/04%20Complete%20Cpp%20STL/Containers/Map',
             },
             {
                 id: 2,
@@ -1098,7 +1098,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/two-sum/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%202/01-two-sum.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%202/01-two-sum.cpp',
             },
             {
                 id: 5,
@@ -1109,7 +1109,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/implement-trie-prefix-tree/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%204/01-implement-trie.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%204/01-implement-trie.cpp',
             },
             {
                 id: 6,
@@ -1120,7 +1120,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/longest-common-prefix/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%204/02-longest-common-prefix.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%204/02-longest-common-prefix.cpp',
             },
             {
                 id: 7,
@@ -1131,7 +1131,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/trie-insert-and-search0651/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%204/searching.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/18%20Maps%20And%20Tries/Maps%20and%20Tries%20Class%20-%204/searching.cpp',
             },
         ]
     },
@@ -1149,7 +1149,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/fibonacci-number/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%201/01-fibonacci.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%201/01-fibonacci.cpp',
             },
             {
                 id: 2,
@@ -1160,7 +1160,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/house-robber/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%202/01-house-robber.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%202/01-house-robber.cpp',
             },
             {
                 id: 3,
@@ -1171,7 +1171,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/longest-increasing-subsequence/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%202/02-longest-increasing-subsequence.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%202/02-longest-increasing-subsequence.cpp',
             },
             {
                 id: 4,
@@ -1182,7 +1182,7 @@ const rawTopics: Topic[] = [
                 links: {
                     leetcode: 'https://leetcode.com/problems/coin-change/description/',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%202/03-coin-change.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%202/03-coin-change.cpp',
             },
             {
                 id: 5,
@@ -1193,7 +1193,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%203/01-0-1-knapsack-problem.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/19%20Dynamic%20Programming%20Level%20-%201/DP%20class%20-%203/01-0-1-knapsack-problem.cpp',
             },
         ]
     },
@@ -1211,7 +1211,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/print-adjacency-list-1587115620/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%201/main.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%201/main.cpp',
             },
             {
                 id: 2,
@@ -1222,7 +1222,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/bfs-traversal-of-graph/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%201/traversal.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%201/traversal.cpp',
             },
             {
                 id: 3,
@@ -1233,7 +1233,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%201/traversal.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%201/traversal.cpp',
             },
             {
                 id: 5,
@@ -1244,7 +1244,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/detect-cycle-in-a-directed-graph/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%202/directed-graph-cycle-dfs.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%202/directed-graph-cycle-dfs.cpp',
             },
             {
                 id: 6,
@@ -1255,7 +1255,7 @@ const rawTopics: Topic[] = [
                 links: {
                     gfg: 'https://www.geeksforgeeks.org/problems/topological-sort/1',
                 },
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%203/01-topological-sort.cpp',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/blob/main/20%20Graphs/Graphs%20Class%20-%203/01-topological-sort.cpp',
             },
         ]
     },
@@ -1271,14 +1271,14 @@ const rawTopics: Topic[] = [
                 isSolved: false,
                 isMarkedForRevision: false,
                 links: {},
-                solutionLink: 'https://https://github.com/abhisek2004/elevora-ai.git25/DSA-Supreme-3.0/',
+                solutionLink: 'https://https://github.com/MrAlpha00/Dev-Elevate/DSA-Supreme-3.0/',
             },
         ]
     },
 ];
 
 // Remove solutionLink and replace legacy usernames in any URLs before export
-const replaceName = (url?: string) => (url ? url.replace(/saumyayadav25/g, 'abhisek2004') : url);
+const replaceName = (url?: string) => (url ? url.replace(/saumyayadav25/g, 'MrAlpha00') : url);
 
 export const sampleTopics: Topic[] = rawTopics.map((t) => ({
   ...t,

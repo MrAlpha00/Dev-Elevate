@@ -132,7 +132,7 @@ const JavaScriptNotesSidebar = ({ onNavigate }) => {
 
       <div className="p-4 mt-auto border-t border-gray-200 dark:border-gray-700">
         <a
-          href="https://github.com/abhisek2004/elevora-ai.git"
+          href="https://github.com/MrAlpha00/Dev-Elevate.git"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center text-gray-600 transition-colors dark:text-gray-300 hover:text-primary-600 dark:hover:text-primary-400"

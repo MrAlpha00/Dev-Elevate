@@ -210,7 +210,7 @@ const TermsOfService: React.FC = () => {
             </p>
             <p>
               <strong>GitHub:</strong>{" "}
-              https://github.com/abhisek2004/Elevora-AI.git
+              https://github.com/MrAlpha00/Dev-Elevate.git
             </p>
           </div>
         </div>

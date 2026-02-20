@@ -279,7 +279,7 @@ export default function DocumentationPage() {
         <div className="space-y-4">
           <pre className={codeBlockClass}>
             {`# Clone & Install Backend
-git clone https://github.com/abhisek2004/elevora-ai.git
+git clone https://github.com/MrAlpha00/Dev-Elevate.git
 cd server
 npm install
 npm run dev  # Runs on http://localhost:4000`}

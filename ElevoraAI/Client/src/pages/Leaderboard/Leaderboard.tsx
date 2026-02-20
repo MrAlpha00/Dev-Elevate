@@ -18,7 +18,7 @@ import { Menu, Transition } from "@headlessui/react";
 import confetti from "canvas-confetti";
 
 // GitHub repo
-const GITHUB_REPO = "abhisek2004/elevora-ai";
+const GITHUB_REPO = "MrAlpha00/Dev-Elevate";
 const TOKEN = process.env.REACT_APP_GITHUB_TOKEN || "";
 const STORAGE_KEY = "github_contributors";
 const CACHE_DURATION = 60 * 60 * 1000; // 1 hr
@@ -34,7 +34,7 @@ const POINTS: Record<string, number> = {
 const getRoleByGitHubActivity = (contributor: any) => {
   const { contributions, followers = 0, login } = contributor;
 
-  if (login === "abhisek2004") return "Admin, Project Lead";
+  if (login === "MrAlpha00") return "Admin, Project Lead";
   if (contributions > 100 && followers > 50) return "Core Maintainer";
   if (contributions > 50 && followers > 20) return "Senior Dev";
   if (contributions > 20) return "Active Contributor";

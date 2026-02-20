@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
     const fetchContributors = async () => {
       try {
         const res = await fetch(
-          "https://api.github.com/repos/abhisek2004/elevora-ai/contributors?per_page=5"
+          "https://api.github.com/repos/MrAlpha00/Dev-Elevate/contributors?per_page=5"
         );
         if (!res.ok) throw new Error("Failed to fetch contributors");
         const data = await res.json();
