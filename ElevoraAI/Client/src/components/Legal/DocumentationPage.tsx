@@ -317,8 +317,8 @@ npm run dev   # Runs on http://localhost:5173`}
                         Google Docs Guide
                     </a>{" "}
                     | Live: <a
-                        href="https://elevora-ai.vercel.app/" // Assuming live URL; update if needed
-                        className="font-semibold text-indigo-800 underline transition-colors dark:text-indigo-200 hover:text-indigo-700 dark:hover:text-indigo-300"
+                        href="https://elevoraai.vercel.app" // Assuming live URL; update if needed
+                        className="text-indigo-600 transition-colors hover:text-indigo-700 font-semibold underline dark:text-indigo-400 dark:hover:text-indigo-300"
                         target="_blank"
                         rel="noopener noreferrer"
                     >
