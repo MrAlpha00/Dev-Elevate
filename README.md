@@ -19,7 +19,7 @@
   <img src="https://github.com/user-attachments/assets/55ca587c-6019-449a-9409-0aea0cfcba13" alt="logo" width="200" height="200">
 </p>
 
-**DevElevate is a full-stack, AI-powered smart education and career advancement platform built to empower students, developers, and job seekers. It centralizes learning resources, personalized roadmaps, job updates, resume tools, and much more — all in one powerful dashboard.**
+**ElevoraAI is a full-stack, AI-powered smart education and career advancement platform built to empower students, developers, and job seekers. It centralizes learning resources, personalized roadmaps, job updates, resume tools, and much more — all in one powerful dashboard.**
 
 <!--- Welcome back, Developer! 👋 Ready to continue your learning journey? -->
 
@@ -86,16 +86,16 @@
   </thead>
   <tbody>
     <tr>
-      <td><img alt="Stars" src="https://img.shields.io/github/stars/abhisek2004/Dev-Elevate?style=flat&logo=github"/></td>
-      <td><img alt="Forks" src="https://img.shields.io/github/forks/abhisek2004/Dev-Elevate?style=flat&logo=github"/></td>
-      <td><img alt="Issues" src="https://img.shields.io/github/issues/abhisek2004/Dev-Elevate?style=flat&logo=github"/></td>
-      <td><img alt="Open PRs" src="https://img.shields.io/github/issues-pr/abhisek2004/Dev-Elevate?style=flat&logo=github"/></td>
-      <td><img alt="Closed PRs" src="https://img.shields.io/github/issues-pr-closed/abhisek2004/Dev-Elevate?style=flat&color=critical&logo=github"/></td>
-      <td><img alt="Languages Count" src="https://img.shields.io/github/languages/count/abhisek2004/Dev-Elevate?style=flat&color=green&logo=github"/></td>
-      <td><img alt="Contributors Count" src="https://img.shields.io/github/contributors/abhisek2004/Dev-Elevate?style=flat&color=blue&logo=github"/></td>
-      <td><img alt="Repo Size" src="https://img.shields.io/github/repo-size/abhisek2004/Dev-Elevate?style=flat&color=orange&logo=github"/></td>
-      <td><img alt="Last Commit" src="https://img.shields.io/github/last-commit/abhisek2004/Dev-Elevate?style=flat&color=yellow&logo=github"/></td>
-      <td><img alt="Commit Activity" src="https://img.shields.io/github/commit-activity/y/abhisek2004/Dev-Elevate?style=flat&color=brightgreen&logo=github"/></td>
+      <td><img alt="Stars" src="https://img.shields.io/github/stars/abhisek2004/elevora-ai?style=flat&logo=github"/></td>
+      <td><img alt="Forks" src="https://img.shields.io/github/forks/abhisek2004/elevora-ai?style=flat&logo=github"/></td>
+      <td><img alt="Issues" src="https://img.shields.io/github/issues/abhisek2004/elevora-ai?style=flat&logo=github"/></td>
+      <td><img alt="Open PRs" src="https://img.shields.io/github/issues-pr/abhisek2004/elevora-ai?style=flat&logo=github"/></td>
+      <td><img alt="Closed PRs" src="https://img.shields.io/github/issues-pr-closed/abhisek2004/elevora-ai?style=flat&color=critical&logo=github"/></td>
+      <td><img alt="Languages Count" src="https://img.shields.io/github/languages/count/abhisek2004/elevora-ai?style=flat&color=green&logo=github"/></td>
+      <td><img alt="Contributors Count" src="https://img.shields.io/github/contributors/abhisek2004/elevora-ai?style=flat&color=blue&logo=github"/></td>
+      <td><img alt="Repo Size" src="https://img.shields.io/github/repo-size/abhisek2004/elevora-ai?style=flat&color=orange&logo=github"/></td>
+      <td><img alt="Last Commit" src="https://img.shields.io/github/last-commit/abhisek2004/elevora-ai?style=flat&color=yellow&logo=github"/></td>
+      <td><img alt="Commit Activity" src="https://img.shields.io/github/commit-activity/y/abhisek2004/elevora-ai?style=flat&color=brightgreen&logo=github"/></td>
     </tr>
   </tbody>
 </table>
@@ -113,11 +113,11 @@
 
 ### Cognise. Connect. Cultivate. Code Social.🚀💃🎉💻
 
-🚀💃🎉💻 We’re beyond excited to welcome passionate contributors from across India and around the world 🌍 to collaborate, innovate, and grow with **DevElevate** — an open-source platform built to make learning, development, and career growth smarter, faster, and community-driven. 🌟👨‍💻👩‍💻  
+🚀💃🎉💻 We’re beyond excited to welcome passionate contributors from across India and around the world 🌍 to collaborate, innovate, and grow with **ElevoraAI** — an open-source platform built to make learning, development, and career growth smarter, faster, and community-driven. 🌟👨‍💻👩‍💻  
 
-👩‍💻 **DevElevate** is India’s next-generation open-source movement that empowers developers, designers, and innovators of all experience levels to contribute to real-world solutions 🌐 while gaining hands-on experience, personalized mentorship, and global exposure. 🌱  
+👩‍💻 **ElevoraAI** is India’s next-generation open-source movement that empowers developers, designers, and innovators of all experience levels to contribute to real-world solutions 🌐 while gaining hands-on experience, personalized mentorship, and global exposure. 🌱  
 
-💡 Here, open source meets intelligence — blending **AI, community, and creativity** to redefine how people learn, build, and grow together. Whether it’s solving real challenges, contributing to meaningful projects, or exploring futuristic tech, **DevElevate** is your launchpad to innovation. 🚀  
+💡 Here, open source meets intelligence — blending **AI, community, and creativity** to redefine how people learn, build, and grow together. Whether it’s solving real challenges, contributing to meaningful projects, or exploring futuristic tech, **ElevoraAI** is your launchpad to innovation. 🚀  
 
 🌈 With **dedicated mentors**, **vibrant community support**, and **collaborative coding opportunities**, this platform creates a powerful ecosystem for developers to:  
 
@@ -125,26 +125,26 @@
 🤝 Contribute to impactful, scalable, and production-level projects  
 🧠 Learn the principles of teamwork, leadership, and clean coding  
 🎯 Participate in hackathons, open-source programs & live project sprints  
-🏆 Gain global recognition, certificates, and exclusive DevElevate swag  
+🏆 Gain global recognition, certificates, and exclusive ElevoraAI swag  
 📚 Get personalized learning recommendations and resume-building support  
 💬 Network with peers, mentors, and organizations across the world  
 ⚡ Sharpen technical, creative, and problem-solving skills through collaboration  
 
-🌍 **DevElevate isn’t just a project — it’s a movement.**  
+🌍 **ElevoraAI isn’t just a project — it’s a movement.**  
 A movement that unites passionate minds to code for impact, share knowledge, and shape the future of technology together. 💫  
 
 🎉 Whether you’re a beginner contributing your first line of code or a seasoned developer mentoring others, there’s a place for everyone here.  
 
-❤️ **We’re thrilled to have you join the DevElevate family — where innovation meets opportunity, and ideas turn into impact.**  
+❤️ **We’re thrilled to have you join the ElevoraAI family — where innovation meets opportunity, and ideas turn into impact.**  
 Let’s code, collaborate, and create the future — one smart commit at a time. 🔥👨‍💻👩‍💻🌟
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-## 🔁 Project Flowchart (DevElevate Platform)
+## 🔁 Project Flowchart (ElevoraAI Platform)
 
 <img width="3840" height="432" alt="Flowchart" src="https://github.com/user-attachments/assets/8b39e8b4-fb7c-46c4-844b-e17b9d22c725" />
 
-## 🔁 Project ER Diagram (DevElevate Platform)
+## 🔁 Project ER Diagram (ElevoraAI Platform)
 
 <img width="3840" height="664" alt="ER Diagram" src="https://github.com/user-attachments/assets/acc7745e-06a1-4d01-a452-55ec8ceea2bc" />
 
@@ -153,7 +153,7 @@ Let’s code, collaborate, and create the future — one smart commit at a time.
 We’ve documented everything in detail including architecture, API structure, database models, UI flows, and more.  
 Click the link below to explore the complete guide:
 
-[📄 View Full DevElevate Documentation (Google Docs)](https://docs.google.com/document/d/1oHgo5GmPDQu6eV9ND3VrYcpi0Dwvb-wWZi-lMgjFAH8/edit?usp=sharing)
+[📄 View Full ElevoraAI Documentation (Google Docs)](https://docs.google.com/document/d/1oHgo5GmPDQu6eV9ND3VrYcpi0Dwvb-wWZi-lMgjFAH8/edit?usp=sharing)
 
 ---
 
@@ -166,7 +166,7 @@ Click the link below to explore the complete guide:
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 <!-- New Login Flow GIF -->
-<img src="DevElevate/login-flow.gif" alt="Login Flow Demo" width="100%">
+<img src="ElevoraAI/login-flow.gif" alt="Login Flow Demo" width="100%">
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
@@ -179,8 +179,8 @@ Click the link below to explore the complete guide:
 ---
 
 ### 🔑 Admin Credentials
-### Email: officialdevelevate@gmail.com
-### Password: Develevate@2025
+### Email: officialElevoraAI@gmail.com
+### Password: ElevoraAI@2025
 
 ---
 
@@ -212,7 +212,7 @@ Click the link below to explore the complete guide:
 
 🔁 This will help avoid confusion, reduce merge conflicts, and ensure your PR gets accepted faster!
 
-🎯 Let’s build DevElevate together — stronger, smarter, and open for all! 💖🚀
+🎯 Let’s build ElevoraAI together — stronger, smarter, and open for all! 💖🚀
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
@@ -539,7 +539,7 @@ Includes:
 ### 🤳 One-Click Portfolio Generator
 
 - Auto-generates a developer site
-- Uses your DevElevate data
+- Uses your ElevoraAI data
 - `.vercel.app` deploy or ZIP export
 
 ---
@@ -726,8 +726,8 @@ Includes:
 > Thank you once again to all our contributors! Your efforts are truly appreciated. 💖👏
 
 <p align="center">
-  <a href="https://github.com/abhisek2004/Dev-Elevate/graphs/contributors">
-    <img src="https://api.vaunt.dev/v1/github/entities/abhisek2004/repositories/Dev-Elevate/contributors?format=svg&limit=54" width="700" height="250" />
+  <a href="https://github.com/abhisek2004/elevora-ai/graphs/contributors">
+    <img src="https://api.vaunt.dev/v1/github/entities/abhisek2004/repositories/elevora-ai/contributors?format=svg&limit=54" width="700" height="250" />
   </a>
 </p>
 
@@ -742,8 +742,8 @@ Includes:
 ### ⭐ Stargazers
 
 <div align="center">
-  <a href="https://github.com/abhisek2004/Dev-Elevate/stargazers">
-    <img src="https://reporoster.com/stars/abhisek2004/Dev-Elevate?type=svg&limit=100&names=false" alt="Stargazers" />
+  <a href="https://github.com/abhisek2004/elevora-ai/stargazers">
+    <img src="https://reporoster.com/stars/abhisek2004/elevora-ai?type=svg&limit=100&names=false" alt="Stargazers" />
   </a>
 </div>
 
@@ -752,8 +752,8 @@ Includes:
 ### 🍴 Forkers
 
 <div align="center">
-  <a href="https://github.com/abhisek2004/Dev-Elevate/network/members">
-    <img src="https://reporoster.com/forks/abhisek2004/Dev-Elevate?type=svg&limit=100&names=false" alt="Forkers" />
+  <a href="https://github.com/abhisek2004/elevora-ai/network/members">
+    <img src="https://reporoster.com/forks/abhisek2004/elevora-ai?type=svg&limit=100&names=false" alt="Forkers" />
   </a>
 </div>
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
@@ -770,7 +770,7 @@ Includes:
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-<h1 align="center">🌐 Currently Project Admin & Mentor for <a href="https://github.com/abhisek2004/Dev-Elevate" target="_blank">DevElevate</a> under Winter of Code Social ❄ — Let’s Get Started!</h1>
+<h1 align="center">🌐 Currently Project Admin & Mentor for <a href="https://github.com/abhisek2004/elevora-ai" target="_blank">ElevoraAI</a> under Winter of Code Social ❄ — Let’s Get Started!</h1>
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e65b8a7c-08a6-4162-9e24-f4c08977d6fa" width="100px" height="100px" /></a>
@@ -790,7 +790,7 @@ Includes:
         <img src="https://github.com/user-attachments/assets/22605f6d-f782-4ad9-a274-3373ab3f07f4" alt="Selected Project Admin badge" height="200"/>
   &nbsp;&nbsp;&nbsp;
       <br/>
-      <h3>👥 Project Admin & 👨‍🏫 Mentors – DevElevate (GSSoC'25)</h3>
+      <h3>👥 Project Admin & 👨‍🏫 Mentors – ElevoraAI (GSSoC'25)</h3>
       <table>
         <tr>
           <th>Role</th>
@@ -886,7 +886,7 @@ You all are the heart of this community! 💖
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="150%">
 
 <div align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=00C853&center=true&vCenter=true&width=700&lines=Thanks+for+visiting+DevElevate!+🙌;Start+the+repo+✅;Share+it+with+others+🌍;Contribute+and+grow+🛠️;Happy+Coding+✨!" alt="Thanks Banner Typing SVG" />
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&weight=600&size=24&duration=3000&pause=1000&color=00C853&center=true&vCenter=true&width=700&lines=Thanks+for+visiting+ElevoraAI!+🙌;Start+the+repo+✅;Share+it+with+others+🌍;Contribute+and+grow+🛠️;Happy+Coding+✨!" alt="Thanks Banner Typing SVG" />
 </div>
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="150%">
@@ -895,11 +895,11 @@ You all are the heart of this community! 💖
 
 <div align="center">
 
-<h3>👨‍💻 Built with ❤️ by the Dev Elevate Team</h3>
+<h3>👨‍💻 Built with ❤️ by the Elevora AI Team</h3>
 
-<a href="https://github.com/abhisek2004/Dev-Elevate/issues">Open an Issue</a> | 
+<a href="https://github.com/abhisek2004/elevora-ai/issues">Open an Issue</a> | 
 <a href="https://youtu.be/zCUTFe8gQEA?si=bS5lkWOxnIuJMXst">Watch Demo</a> | 
-<a href="https://develevate-ai.vercel.app">Live</a>
+<a href="https://ElevoraAI-ai.vercel.app">Live</a>
 
 </div>
 
@@ -925,8 +925,10 @@ You all are the heart of this community! 💖
 If you find this project helpful, please give it a star! ⭐
 
 
-<img src="https://api.star-history.com/svg?repos=itsAnimation/Dev-Elevate&type=Date" width="100%">
+<img src="https://api.star-history.com/svg?repos=itsAnimation/elevora-ai&type=Date" width="100%">
 
 
 </div> 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%"> -->
+
+

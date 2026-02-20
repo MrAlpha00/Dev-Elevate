@@ -1,8 +1,8 @@
-# 🤝 **Contributor Covenant Code of Conduct – DevElevate**
+# 🤝 **Contributor Covenant Code of Conduct – ElevoraAI**
 
 ## 💡 Our Commitment
 
-We, the creators, maintainers, and contributors of **DevElevate**, are committed to fostering an inclusive, welcoming, and harassment-free environment for all individuals. Our community welcomes people of every background, regardless of:
+We, the creators, maintainers, and contributors of **ElevoraAI**, are committed to fostering an inclusive, welcoming, and harassment-free environment for all individuals. Our community welcomes people of every background, regardless of:
 
 - Age
 - Body size
@@ -46,7 +46,7 @@ To help cultivate a thriving, supportive open-source environment, examples of **
 
 ## 🛡️ Enforcement Responsibilities
 
-Project maintainers and team leads of **DevElevate** are responsible for:
+Project maintainers and team leads of **ElevoraAI** are responsible for:
 
 - Explaining and enforcing this Code of Conduct
 - Taking appropriate action in response to any reports of misconduct
@@ -67,7 +67,7 @@ This Code of Conduct applies to all:
 - Contribution areas (code, issues, docs, UI/UX)
 - Official channels (social media, GitHub, communication tools)
 
-This also includes interactions when a person represents the community in public (e.g., speaking at events or contributing on behalf of DevElevate).
+This also includes interactions when a person represents the community in public (e.g., speaking at events or contributing on behalf of ElevoraAI).
 
 ---
 
@@ -76,7 +76,7 @@ This also includes interactions when a person represents the community in public
 If you experience or witness unacceptable behavior, please report it immediately to:
 
 📧 **Abhisek Panda**
-📬 Email: **[officialdevelevate@gmail.com](mailto:officialdevelevate@gmail.com)**
+📬 Email: **[officialElevoraAI@gmail.com](mailto:officialElevoraAI@gmail.com)**
 All complaints will be handled with **confidentiality**, **sincerity**, and **swift resolution**.
 
 ---
@@ -115,4 +115,5 @@ Maintainers will use the following **Community Impact Guidelines** to determine 
 
 ## 🧾 Final Note
 
-We, the **DevElevate** team, deeply value every contributor and user. This Code of Conduct exists to protect you, ensure a positive experience, and allow everyone to thrive. Let's build something amazing — together, with respect. ❤️
+We, the **ElevoraAI** team, deeply value every contributor and user. This Code of Conduct exists to protect you, ensure a positive experience, and allow everyone to thrive. Let's build something amazing — together, with respect. ❤️
+
