@@ -1,0 +1,195 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Code2, Zap, Trophy, Users, ArrowRight, Play, Star, GitBranch } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { useGlobalState } from '../../../contexts/GlobalContext';
+
+const HomePage: React.FC = () => {
+  const { state } = useGlobalState();
+  const features = [
+    {
+      icon: Code2,
+      title: 'Multi-Language Support',
+      description: 'Practice with C, C++, Java, Python, JavaScript, SQL, HTML, CSS, and React',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      icon: Zap,
+      title: 'AI-Powered Hints',
+      description: 'Get intelligent hints and code reviews powered by advanced AI',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: Trophy,
+      title: 'Competitive Programming',
+      description: 'Join contests and climb the leaderboard with other developers',
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      icon: Users,
+      title: 'Community Driven',
+      description: 'Learn from community solutions and share your own approaches',
+      color: 'from-green-500 to-emerald-500'
+    }
+  ];
+
+  return (
+    <div className={`relative min-h-screen py-16 overflow-hidden ${state.darkMode ? 'bg-gradient-to-b from-gray-900 to-black' : 'bg-gradient-to-b from-gray-50 to-gray-100'}`}>
+      {/* Hero Section */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute rounded-full -top-40 -right-40 w-96 h-96 blur-3xl bg-electric-400/20"></div>
+          <div className="absolute rounded-full -bottom-40 -left-40 w-96 h-96 blur-3xl bg-neon-500/20"></div>
+          <div className="absolute w-64 h-64 transform -translate-x-1/2 -translate-y-1/2 rounded-full top-1/2 left-1/2 blur-3xl bg-cyber-400/10"></div>
+        </div>
+
+        <div className="relative px-4 py-16 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className={`mb-6 text-5xl font-bold md:text-7xl ${state.darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Master
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 to-neon-500"> Coding</span>
+                <br />
+                Shape the Future
+              </h1>
+              <p className={`max-w-2xl mx-auto mb-8 text-xl ${state.darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                Join millions of developers on DevElevate - the most advanced platform for coding practice,
+                competitive programming, and skill development.
+              </p>
+              <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                <Link
+                  to="/coding/problems"
+                  className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r rounded-xl group from-electric-400 to-neon-500 hover:from-electric-500 hover:to-neon-600 hover:scale-105 hover:shadow-electric-400/50"
+                >
+                  Start Coding Now
+                  <ArrowRight className="inline-block w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="mt-16"
+          >
+          </motion.div> */}
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-16 bg-gray-800/30">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="mb-12 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className={`mb-4 text-4xl font-bold ${state.darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Why Choose DevElevate?
+              </h2>
+              <p className={`max-w-2xl mx-auto text-xl ${state.darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                Experience the future of coding education with our cutting-edge platform
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05, y: -10 }}
+                className="group"
+              >
+                <div className={`h-full p-6 transition-all duration-300 rounded-2xl backdrop-blur-sm ${state.darkMode ? 'border border-gray-700 bg-gray-800/50 hover:border-gray-600' : 'border border-gray-200 bg-white hover:border-gray-300'}`}>
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-r ${feature.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <feature.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className={`mb-3 text-xl font-semibold ${state.darkMode ? 'text-white' : 'text-gray-900'}`}>{feature.title}</h3>
+                  <p className={`${state.darkMode ? 'text-gray-400' : 'text-gray-600'}`}>{feature.description}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Code Preview Section */}
+      <section className="py-16">
+        <div className="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+          <div className="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className={`mb-6 text-4xl font-bold ${state.darkMode ? 'text-white' : 'text-gray-900'}`}>
+                Code with
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 to-neon-500"> Confidence</span>
+              </h2>
+              <p className={`mb-8 text-xl ${state.darkMode ? 'text-gray-400' : 'text-gray-600'}`}>
+                Our advanced code editor supports multiple languages with intelligent
+                autocomplete, syntax highlighting, and real-time error detection.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { icon: Star, text: 'Intelligent code completion' },
+                  { icon: GitBranch, text: 'Version control integration' },
+                  { icon: Zap, text: 'Lightning-fast execution' }
+                ].map((item, index) => (
+                  <div key={index} className="flex items-center space-x-3">
+                    <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-electric-400/20">
+                      <item.icon className="w-4 h-4 text-electric-400" />
+                    </div>
+                    <span className={`${state.darkMode ? 'text-gray-300' : 'text-gray-600'}`}>{item.text}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="overflow-hidden bg-gray-800 border border-gray-700 rounded-2xl">
+                <div className="flex items-center px-4 py-3 space-x-2 bg-gray-900 border-b border-gray-700">
+                  <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                  <div className="ml-4 text-sm text-gray-400">solution.py</div>
+                </div>
+                <div className="p-4 font-mono text-sm">
+                  <div className="text-purple-400">def <span className="text-blue-400">twoSum</span>(<span className="text-orange-400">nums</span>, <span className="text-orange-400">target</span>):</div>
+                  <div className="ml-4 text-gray-500"># AI suggests: Use hash map for O(n) solution</div>
+                  <div className="ml-4 text-yellow-400">seen = <span className="text-green-400">{ }</span></div>
+                  <div className="ml-4 text-purple-400">for <span className="text-orange-400">i</span>, <span className="text-orange-400">num</span> <span className="text-purple-400">in</span> <span className="text-blue-400">enumerate</span>(<span className="text-orange-400">nums</span>):</div>
+                  <div className="ml-8 text-orange-400">complement = <span className="text-orange-400">target</span> - <span className="text-orange-400">num</span></div>
+                  <div className="ml-8 text-purple-400">if <span className="text-orange-400">complement</span> <span className="text-purple-400">in</span> <span className="text-orange-400">seen</span>:</div>
+                  <div className="ml-12 text-purple-400">return <span className="text-green-400">[</span><span className="text-orange-400">seen</span><span className="text-green-400">[</span><span className="text-orange-400">complement</span><span className="text-green-400">]</span>, <span className="text-orange-400">i</span><span className="text-green-400">]</span></div>
+                  <div className="ml-8 text-orange-400">seen<span className="text-green-400">[</span><span className="text-orange-400">num</span><span className="text-green-400">]</span> = <span className="text-orange-400">i</span></div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default HomePage;
