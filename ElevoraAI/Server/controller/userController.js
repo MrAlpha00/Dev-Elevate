@@ -128,8 +128,8 @@ export const verifySignupOtp = async (req, res) => {
 
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
+      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
+      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
 
@@ -191,8 +191,8 @@ export const loginUser = async (req, res) => {
     // Set token in cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
+      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
+      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
       maxAge: 3 * 24 * 60 * 60 * 1000,
     });
 
@@ -347,8 +347,8 @@ export const googleUser = async (req, res) => {
     // Set cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: process.env.NODE_ENV === "production" ? "None" : "Lax",
+      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
+      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
       maxAge: 3 * 24 * 60 * 60 * 1000, // 3 days
     });
 
@@ -391,8 +391,8 @@ export const logout = async (req, res) => {
 
     res.clearCookie("token", {
       httpOnly: true,
-      secure: true,
-      sameSite: "None",
+      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
+      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
     });
 
     return res.status(200).json({
