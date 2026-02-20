@@ -175,7 +175,7 @@ interface ContributorCardProps {
   isProjectOwner?: boolean;
 }
 
-const ContributorCard: React.FC<ContributorCardProps> = ({ contributor, index, totalContributors, isProjectOwner = false }) => {
+const ContributorCard: React.FC<ContributorCardProps> = ({ contributor, index, totalContributors, isProjectOwner = false }: ContributorCardProps) => {
   const ratio = index / Math.max(1, totalContributors - 1);
   const hasPoints = contributor.points !== undefined && contributor.points > 0;
 
@@ -507,7 +507,7 @@ export default function ContributorsPageClient() {
             )}
             <div className="px-4 py-2 border rounded-full bg-blue-500/10 border-blue-500/20">
               <span className="font-semibold text-blue-400">
-                {stats?.totalCommits?.toLocaleString() || contributors.reduce((sum, c) => sum + c.contributions, 0).toLocaleString()}
+                {stats?.totalCommits?.toLocaleString() || contributors.reduce((sum: number, c: Contributor) => sum + c.contributions, 0).toLocaleString()}
               </span>{' '}
               Total Commits
             </div>
@@ -550,17 +550,17 @@ export default function ContributorsPageClient() {
                 const projectOwner = 'MrAlpha00';
 
                 // Separate contributors into different categories
-                const ownerContributor = contributors.find(c => c.login === projectOwner);
-                const gssocContributors = contributors.filter(c =>
+                const ownerContributor = contributors.find((c: Contributor) => c.login === projectOwner);
+                const gssocContributors = contributors.filter((c: Contributor) =>
                   c.login !== projectOwner &&
                   c.points !== undefined &&
                   c.points > 0
-                ).sort((a, b) => (b.points || 0) - (a.points || 0));
+                ).sort((a: Contributor, b: Contributor) => (b.points || 0) - (a.points || 0));
 
-                const nonGssocContributors = contributors.filter(c =>
+                const nonGssocContributors = contributors.filter((c: Contributor) =>
                   c.login !== projectOwner &&
                   (c.points === undefined || c.points === 0)
-                ).sort((a, b) => b.contributions - a.contributions);
+                ).sort((a: Contributor, b: Contributor) => b.contributions - a.contributions);
 
                 // Combine them in order: owner first, then gssoc contributors, then non-gssoc
                 const sortedContributors = [
@@ -569,7 +569,7 @@ export default function ContributorsPageClient() {
                   ...nonGssocContributors
                 ];
 
-                return sortedContributors.map((contributor, index) => (
+                return sortedContributors.map((contributor: Contributor, index: number) => (
                   <ContributorCard
                     key={contributor.login}
                     contributor={contributor}
