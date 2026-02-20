@@ -304,7 +304,7 @@ const TermsOfService: React.FC = () => {
                 }`}
             >
               <strong>GitHub:</strong>{" "}
-              https://github.com/abhisek2004/Elevora-AI.git
+              https://github.com/MrAlpha00/Dev-Elevate.git
             </p>
           </div>
           {/* Return to Dashboard Button */}

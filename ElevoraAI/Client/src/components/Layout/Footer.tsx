@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
     const fetchContributors = async () => {
       try {
         const response = await fetch(
-          "https://api.github.com/repos/abhisek2004/elevora-ai/contributors"
+          "https://api.github.com/repos/MrAlpha00/Dev-Elevate/contributors"
         );
         if (response.ok) {
           const data = await response.json();
@@ -83,7 +83,7 @@ const Footer: React.FC = () => {
               <div className="flex flex-wrap items-center gap-3 mt-4 text-sm">
                 <div className="flex items-center gap-x-0.5 text-purple-600">
                   <a
-                    href="https://github.com/abhisek2004/elevora-ai"
+                    href="https://github.com/MrAlpha00/Dev-Elevate"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`p-2 rounded-full transition-colors ${state.darkMode ? "hover:bg-gray-800" : "hover:bg-gray-200"}`}

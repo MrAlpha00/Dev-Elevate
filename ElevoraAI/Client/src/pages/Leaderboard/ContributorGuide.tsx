@@ -100,7 +100,7 @@ const ContributorGuide: React.FC = () => {
 
   // Git Commands
   const commands: Command[] = [
-    { id: "clone", title: "Clone Repository", cmd: "git clone https://github.com/abhisek2004/elevora-ai.git" },
+    { id: "clone", title: "Clone Repository", cmd: "git clone https://github.com/MrAlpha00/Dev-Elevate.git" },
     { id: "branch", title: "Create Branch", cmd: "git checkout -b feature/your-feature" },
     { id: "add", title: "Stage Changes", cmd: "git add ." },
     { id: "commit", title: "Commit Changes", cmd: 'git commit -m "Describe your changes"' },
@@ -165,7 +165,7 @@ const ContributorGuide: React.FC = () => {
           Contributor’s Guide
         </motion.button>
 
-        <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600" onClick={() => window.open("https://github.com/abhisek2004/elevora-ai", "_blank")}>
+        <motion.button whileHover={{ scale: 1.05 }} className="px-8 py-3 font-semibold text-white transition-all duration-300 rounded-full shadow-lg bg-gradient-to-r from-pink-500 to-orange-500 hover:from-pink-600 hover:to-orange-600" onClick={() => window.open("https://github.com/MrAlpha00/Dev-Elevate", "_blank")}>
           Start Contributing
         </motion.button>
       </div>

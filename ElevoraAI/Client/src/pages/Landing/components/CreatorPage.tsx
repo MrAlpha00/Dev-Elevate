@@ -49,7 +49,7 @@ const CreatorPage: React.FC = () => {
       description: "AI-powered education and career advancement platform",
       tech: ["React", "TypeScript", "Node.js", "AI/ML"],
       status: "Active",
-      link: "https://github.com/abhisek2004/elevora-ai.git",
+      link: "https://github.com/MrAlpha00/Dev-Elevate.git",
     },
     {
       name: "Portfolio Website",
@@ -63,7 +63,7 @@ const CreatorPage: React.FC = () => {
       description: "Contributing to the developer community",
       tech: ["JavaScript", "Python", "React", "Node.js"],
       status: "Ongoing",
-      link: "https://github.com/abhisek2004",
+      link: "https://github.com/MrAlpha00",
     },
   ];
 
@@ -103,7 +103,7 @@ const CreatorPage: React.FC = () => {
           <div className="flex flex-col items-center space-y-6 lg:flex-row lg:space-y-0 lg:space-x-8">
             <div className="relative">
               <img
-                src="https://github.com/abhisek2004.png"
+                src="https://github.com/MrAlpha00.png"
                 alt="Abhisek Panda"
                 className="w-32 h-32 border-4 border-blue-500 rounded-full shadow-lg"
               />
@@ -136,7 +136,7 @@ const CreatorPage: React.FC = () => {
 
               <div className="flex flex-wrap justify-center gap-4 lg:justify-start">
                 <a
-                  href="https://github.com/abhisek2004"
+                  href="https://github.com/MrAlpha00"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center px-4 py-2 space-x-2 text-white transition-colors bg-gray-800 rounded-lg hover:bg-gray-700"
@@ -498,12 +498,12 @@ const CreatorPage: React.FC = () => {
                   <p className="mb-2">
                     <strong>🐙 GitHub:</strong>
                     <a
-                      href="https://github.com/abhisek2004"
+                      href="https://github.com/MrAlpha00"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="ml-1 text-blue-500 hover:underline"
                     >
-                      https://github.com/abhisek2004
+                      https://github.com/MrAlpha00
                     </a>
                   </p>
                   <p className="mb-4">

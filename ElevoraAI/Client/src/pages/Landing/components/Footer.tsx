@@ -157,7 +157,7 @@ const HomePage = () => {
               </p>
               <div className="flex space-x-4">
                 {[
-                  { icon: Github, href: "https://github.com/abhisek2004/elevora-ai" },
+                  { icon: Github, href: "https://github.com/MrAlpha00/Dev-Elevate" },
                   { icon: FaBriefcase, href: "https://abhisekpanda072.vercel.app/" },
                   { icon: Linkedin, href: "https://www.linkedin.com/in/abhisekpanda2004/" },
                   { icon: Mail, href: "mailto:officialElevoraAI@gmail.com" },

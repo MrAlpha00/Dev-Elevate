@@ -14,8 +14,8 @@ import {
   Languages,
 } from "lucide-react";
 
-const GITHUB_USER = "abhisek2004";
-const GITHUB_REPO = "elevora-ai";
+const GITHUB_USER = "MrAlpha00";
+const GITHUB_REPO = "Dev-Elevate";
 
 const TechStackAndStats: React.FC = () => {
   const [stats, setStats] = useState({

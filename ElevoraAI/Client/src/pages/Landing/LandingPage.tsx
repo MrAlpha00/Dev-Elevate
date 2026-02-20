@@ -28,7 +28,7 @@ function ReportIssueButton() {
       {open && (
         <div className="flex flex-col w-56 py-2 mt-2 bg-white border border-gray-300 shadow-lg dark:bg-zinc-800 dark:border-gray-600 rounded-xl">
           <a
-            href="https://github.com/abhisek2004/elevora-ai/issues"
+            href="https://github.com/MrAlpha00/Dev-Elevate/issues"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 text-gray-900 transition-colors rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-zinc-700"
