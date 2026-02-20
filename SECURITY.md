@@ -1,12 +1,12 @@
 # 🔐 Security Policy
 
-Thank you for helping us keep **DevElevate** secure for all users! Security is a top priority in our project, which is designed to support developers, learners, and contributors across the globe.
+Thank you for helping us keep **ElevoraAI** secure for all users! Security is a top priority in our project, which is designed to support developers, learners, and contributors across the globe.
 
 ---
 
-## 📣 About DevElevate
+## 📣 About ElevoraAI
 
-**DevElevate** is a full-stack open-source platform built with:
+**ElevoraAI** is a full-stack open-source platform built with:
 
 * 🌐 Frontend: React, TypeScript, Shadcn UI, Tailwind CSS
 * 🔐 Backend: Node.js, Express, JWT Auth, MongoDB Atlas
@@ -16,7 +16,7 @@ Thank you for helping us keep **DevElevate** secure for all users! Security is a
 
 ## 🐞 Reporting a Vulnerability
 
-If you find a **security issue** in DevElevate, we kindly ask that you follow **responsible disclosure** practices:
+If you find a **security issue** in ElevoraAI, we kindly ask that you follow **responsible disclosure** practices:
 
 ### 🚨 Do NOT:
 
@@ -25,7 +25,7 @@ If you find a **security issue** in DevElevate, we kindly ask that you follow **
 ### ✅ Instead:
 
 * **Email us directly and privately** at:
-  📧 `officialdevelevate@gmail.com`
+  📧 `officialElevoraAI@gmail.com`
 
 * Please include:
 
@@ -71,12 +71,14 @@ If you're using a forked or older version, we **strongly recommend** syncing wit
 
 ## 🤝 Thanks for Your Contribution
 
-We value and appreciate all contributors who help us make DevElevate better and more secure. 🛡️
+We value and appreciate all contributors who help us make ElevoraAI better and more secure. 🛡️
 
 Let’s build safer, smarter, and more inclusive software—together.
 
 ---
 
 **Project Maintainer:**
-📧 [Gmail](mailto:officialdevelevate@gmail.com)
-🔗 [Github](https://github.com/abhisek2004/Dev-Elevate)
+📧 [Gmail](mailto:officialElevoraAI@gmail.com)
+🔗 [Github](https://github.com/abhisek2004/elevora-ai)
+
+

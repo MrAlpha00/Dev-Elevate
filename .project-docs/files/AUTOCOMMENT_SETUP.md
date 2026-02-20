@@ -2,7 +2,7 @@
 
 ## ✅ What's Been Implemented
 
-I've successfully added comprehensive GitHub workflows for auto-comments on issues and PRs in your Dev Elevate project. Here's what's now available:
+I've successfully added comprehensive GitHub workflows for auto-comments on issues and PRs in your Elevora AI project. Here's what's now available:
 
 ### 📂 Created Files Structure
 
@@ -193,7 +193,7 @@ If you need help with these workflows:
 
 ## 🎊 Congratulations!
 
-Your Dev Elevate project now has a comprehensive auto-comment system that will:
+Your Elevora AI project now has a comprehensive auto-comment system that will:
 
 - ✅ Welcome contributors automatically
 - ✅ Organize issues and PRs efficiently
@@ -205,4 +205,4 @@ Your Dev Elevate project now has a comprehensive auto-comment system that will:
 
 ---
 
-_This setup is specifically tailored for your Dev Elevate project and includes special support for GSSoC 2025 participants. The workflows will help create a welcoming and well-organized open-source community! 🌟_
+_This setup is specifically tailored for your Elevora AI project and includes special support for GSSoC 2025 participants. The workflows will help create a welcoming and well-organized open-source community! 🌟_

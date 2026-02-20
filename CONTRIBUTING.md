@@ -1,9 +1,9 @@
-# 🛠️ CONTRIBUTING GUIDELINES – DevElevate
+# 🛠️ CONTRIBUTING GUIDELINES – ElevoraAI
 
-Welcome to **DevElevate**! 🚀  
+Welcome to **ElevoraAI**! 🚀  
 
 We’re beyond thrilled to have you here and excited to see your ideas come to life!  
-**DevElevate** is an open-source initiative built to empower **students, developers, and professionals** through **intelligent learning tools, AI-driven career growth, and collaborative development**. 🌍✨  
+**ElevoraAI** is an open-source initiative built to empower **students, developers, and professionals** through **intelligent learning tools, AI-driven career growth, and collaborative development**. 🌍✨  
 
 > 💡 **Every single contribution counts!** From fixing a typo to building a new feature — you’re helping shape the future of learning.  
 
@@ -25,7 +25,7 @@ Here’s what you can contribute to:
 - 🤖 **AI Dataset / Prompt Improvements**
 - 🔒 **Security & Performance Optimizations**
 
-> 🧭 Whether you’re a beginner or a pro — DevElevate is the perfect space to learn, build, and grow together.
+> 🧭 Whether you’re a beginner or a pro — ElevoraAI is the perfect space to learn, build, and grow together.
 
 ---
 
@@ -42,8 +42,8 @@ Click on the **Fork** button in the top-right corner of this repository.
 ### 3. 📥 Clone Your Fork
 
 ```bash
-git clone https://github.com/<your-username>/Dev-Elevate.git
-cd Dev-Elevate
+git clone https://github.com/<your-username>/elevora-ai.git
+cd elevora-ai
 ````
 
 ### 4. 📦 Install Dependencies
@@ -53,14 +53,14 @@ The project consists of two parts — **Client (Frontend)** and **Server (Backen
 **Frontend Setup (React + Vite):**
 
 ```bash
-cd DevElevate/Client
+cd ElevoraAI/Client
 npm install
 ```
 
 **Backend Setup (Node.js + Express):**
 
 ```bash
-cd DevElevate/Server
+cd ElevoraAI/Server
 npm install
 ```
 
@@ -73,14 +73,14 @@ Run both client and server in separate terminals.
 **Backend:**
 
 ```bash
-cd DevElevate/Server
+cd ElevoraAI/Server
 node index.js
 ```
 
 **Frontend:**
 
 ```bash
-cd DevElevate/Client
+cd ElevoraAI/Client
 npm run dev
 ```
 
@@ -96,7 +96,7 @@ npm run dev
 If needed, configure your `.env` file:
 
 ```bash
-cd DevElevate/Server
+cd ElevoraAI/Server
 cp .env.sample .env
 ```
 
@@ -127,7 +127,7 @@ git push origin <branch-name>    # 🚀 Push safely
 To stay updated with the latest main branch:
 
 ```bash
-git remote add upstream https://github.com/abhisek2004/Dev-Elevate.git
+git remote add upstream https://github.com/abhisek2004/elevora-ai.git
 git pull upstream main
 git push origin main
 ```
@@ -148,7 +148,7 @@ git push origin main
 1. Fork → Clone → Work on changes
 2. Commit using meaningful messages
 3. Push changes to your branch
-4. Create a **Pull Request to the `main` branch** of [DevElevate](https://github.com/abhisek2004/Dev-Elevate)
+4. Create a **Pull Request to the `main` branch** of [ElevoraAI](https://github.com/abhisek2004/elevora-ai)
 5. Add proper description, screenshots (if UI), and related issue numbers (`Closes #issue_no`)
 
 > 🧩 PRs without proper descriptions may be delayed for review.
@@ -171,7 +171,7 @@ git push origin main
 
 ## 🧠 Issue Reporting Guide
 
-1. Visit [Issues](https://github.com/abhisek2004/Dev-Elevate/issues)
+1. Visit [Issues](https://github.com/abhisek2004/elevora-ai/issues)
 2. Check if the issue already exists
 3. Use clear titles & descriptions
 4. Add labels (`bug`, `feature`, `good first issue`)
@@ -182,7 +182,7 @@ git push origin main
 ## 🤝 Community & Mentorship
 
 We believe in **collaboration over competition**. 💪
-Get guidance, discuss your ideas, and connect with mentors in our **DevElevate Community Discussions** or Discord.
+Get guidance, discuss your ideas, and connect with mentors in our **ElevoraAI Community Discussions** or Discord.
 You’ll gain hands-on mentorship, feedback, and growth opportunities.
 
 ---
@@ -192,14 +192,14 @@ You’ll gain hands-on mentorship, feedback, and growth opportunities.
 * 📘 [How to Fork a Repo](https://docs.github.com/en/get-started/quickstart/fork-a-repo)
 * 🔄 [How to Create a Pull Request](https://opensource.com/article/19/7/create-pull-request-github)
 * 🧭 [GitHub Docs](https://docs.github.com/en)
-* 💬 Join DevElevate Discussions or Discord (coming soon)
+* 💬 Join ElevoraAI Discussions or Discord (coming soon)
 
 ---
 
 ## 👨‍💻 Project Owner & Maintainer
 
 **Abhisek Panda**
-📧 [officialdevelevate@gmail.com](mailto:officialdevelevate@gmail.com)
+📧 [officialElevoraAI@gmail.com](mailto:officialElevoraAI@gmail.com)
 🌐 [GitHub: abhisek2004](https://github.com/abhisek2004)
 
 ---
@@ -214,3 +214,5 @@ Your efforts — whether a small fix or a big feature — help us empower develo
 **Happy Coding! 🚀💻✨**
 
 ---
+
+
