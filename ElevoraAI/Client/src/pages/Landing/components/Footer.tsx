@@ -158,8 +158,8 @@ const HomePage = () => {
               <div className="flex space-x-4">
                 {[
                   { icon: Github, href: "https://github.com/MrAlpha00/Dev-Elevate" },
-                  { icon: FaBriefcase, href: "https://abhisekpanda072.vercel.app/" },
-                  { icon: Linkedin, href: "https://www.linkedin.com/in/abhisekpanda2004/" },
+                  { icon: FaBriefcase, href: "https://suhasm.online" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/mralpha00/" },
                   { icon: Mail, href: "mailto:officialElevoraAI@gmail.com" },
                 ].map((social, index) => (
                   <a
@@ -237,7 +237,7 @@ const HomePage = () => {
             <div className="text-sm text-yellow-400 flex flex-wrap items-center justify-center gap-1 sm:gap-2 transition duration-300 hover:text-pink-400 hover:drop-shadow-[0_0_12px_rgba(255,20,147,0.9)]">
               © 2025 <span className="font-semibold">Elevora AI</span>. All rights reserved. | Made with ❤️ by
               <a
-                href="https://www.linkedin.com/in/abhisekpanda2004/"
+                href="https://www.linkedin.com/in/mralpha00/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="ml-1 font-semibold text-yellow-400 transition duration-300 hover:text-pink-400"
