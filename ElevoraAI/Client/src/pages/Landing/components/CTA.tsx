@@ -24,7 +24,7 @@ const socials = [
   {
     name: "Discord",
     icon: <FaDiscord className="w-6 h-6" />,
-    url: "https://discord.gg/KwVy6twN",
+    url: "https://discord.gg/KyF7r7QkJ",
     description:
       "Join our Discord server to connect with the Elevora AI community",
     gradient: "from-indigo-500 via-purple-600 to-purple-700",
@@ -32,7 +32,7 @@ const socials = [
   {
     name: "LinkedIn",
     icon: <FaLinkedin className="w-6 h-6" />,
-    url: "https://www.linkedin.com/in/abhisekpanda2004/",
+    url: "https://www.linkedin.com/in/mralpha00/",
     description:
       "Connect with Abhisek Panda professionally and expand your network with Elevora AI",
     gradient: "from-blue-700 via-blue-800 to-blue-900",
@@ -118,8 +118,8 @@ const CommunityAndCTA = () => {
 
   return (
     <>
-      {/* ---------- Tailwind blob animation (add to globals.css or <style> tag) ---------- */}
-      <style jsx>{`
+      {/* ---------- Tailwind blob animation ---------- */}
+      <style>{`
         @keyframes blob {
           0%, 100% { transform: translate(0, 0) rotate(0deg); }
           25%      { transform: translate(30px, -30px) rotate(5deg); }

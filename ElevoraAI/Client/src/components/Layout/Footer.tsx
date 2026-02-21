@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                     <Github className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://www.linkedin.com/in/abhisekpanda2004/"
+                    href="https://www.linkedin.com/in/mralpha00/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`p-2 rounded-full transition-colors ${state.darkMode ? "hover:bg-gray-800" : "hover:bg-gray-200"}`}
@@ -99,7 +99,7 @@ const Footer: React.FC = () => {
                     <Linkedin className="w-6 h-6" />
                   </a>
                   <a
-                    href="https://abhisekpanda072.vercel.app/"
+                    href="https://suhasm.online"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`p-2 rounded-full transition-colors ${state.darkMode ? "hover:bg-gray-800" : "hover:bg-gray-200"}`}
@@ -156,7 +156,7 @@ const Footer: React.FC = () => {
           <div className="text-sm text-yellow-400 flex flex-wrap items-center justify-center gap-1 sm:gap-2 transition duration-300 hover:text-pink-400 hover:drop-shadow-[0_0_12px_rgba(255,20,147,0.9)]">
             © 2025 <span className="font-semibold">Elevora AI</span>. All rights reserved. | Made with ❤️ by
             <a
-              href="https://www.linkedin.com/in/abhisekpanda2004/"
+              href="https://www.linkedin.com/in/mralpha00/"
               target="_blank"
               rel="noopener noreferrer"
               className="ml-1 font-semibold text-yellow-400 transition duration-300 hover:text-pink-400"
