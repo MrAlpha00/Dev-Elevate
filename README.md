@@ -9,7 +9,7 @@
   <img width="200" height="200" alt="image" src="https://github.com/user-attachments/assets/49cb72f9-ff2c-43ef-9c59-c3d55ba12a15" />
   <p align="center">
   <b>This project is now OFFICIALLY accepted for: ❄ Code Social ❄ </b> <br><br>
-  <b>❄ Cognise. Connect. Cultivate. Code Social. ❄ 🚀💃🎉💻 </b>  
+  <b>❄ Cognise. Connect. Cultivate. Code Social. ❄ 🚀🎉💻 </b>  
 </p>
 </div>
 
