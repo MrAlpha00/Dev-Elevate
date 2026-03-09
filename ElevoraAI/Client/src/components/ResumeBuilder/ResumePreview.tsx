@@ -35,34 +35,34 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
           </h1>
           <div className="flex flex-wrap gap-4 text-sm">
             {state.resume.personalInfo.email && (
-              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
-                <Mail className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
+              <div className="flex items-center space-x-1 contact-item">
+                <Mail className="w-4 h-4" />
                 <span>{state.resume.personalInfo.email}</span>
               </div>
             )}
             {state.resume.personalInfo.phone && (
-              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
-                <Phone className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
+              <div className="flex items-center space-x-1 contact-item">
+                <Phone className="w-4 h-4" />
                 <span>{state.resume.personalInfo.phone}</span>
               </div>
             )}
             {state.resume.personalInfo.location && (
-              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
-                <MapPin className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
+              <div className="flex items-center space-x-1 contact-item">
+                <MapPin className="w-4 h-4" />
                 <span>{state.resume.personalInfo.location}</span>
               </div>
             )}
             {state.resume.personalInfo.linkedin && (
-              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
-                <Linkedin className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
+              <div className="flex items-center space-x-1 contact-item">
+                <Linkedin className="w-4 h-4" />
                 <a href={state.resume.personalInfo.linkedin} className="text-blue-600 hover:underline">
                   LinkedIn
                 </a>
               </div>
             )}
             {state.resume.personalInfo.github && (
-              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
-                <Github className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
+              <div className="flex items-center space-x-1 contact-item">
+                <Github className="w-4 h-4" />
                 <a href={state.resume.personalInfo.github} className="text-blue-600 hover:underline">
                   GitHub
                 </a>
@@ -134,8 +134,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded"
-                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1', verticalAlign: 'middle' }}
+                    className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded skill-badge"
                   >
                     {tech}
                   </span>
@@ -167,8 +166,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                 {state.resume.skills.technical.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded"
-                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1', verticalAlign: 'middle' }}
+                    className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded skill-badge"
                   >
                     {skill}
                   </span>
@@ -183,8 +181,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                 {state.resume.skills.soft.map((skill, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs rounded"
-                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1', verticalAlign: 'middle' }}
+                    className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs rounded skill-badge"
                   >
                     {skill}
                   </span>
