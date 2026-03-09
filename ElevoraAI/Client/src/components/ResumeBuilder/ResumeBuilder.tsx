@@ -9,12 +9,14 @@ import SkillsForm from './SkillsForm';
 import ResumePreview from './ResumePreview';
 import ATSScanner from './ATSScannerNew';
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 const ResumeBuilder: React.FC = () => {
   const { state, dispatch } = useGlobalState();
   const [activeSection, setActiveSection] = useState('personal');
   const [showPreview, setShowPreview] = useState(false);
   const previewRef = React.useRef<HTMLDivElement>(null);
+  const printRef = React.useRef<HTMLDivElement>(null);
   const [selectedSections] = useState({
     personal: true,
     experience: true,
@@ -78,130 +80,52 @@ const ResumeBuilder: React.FC = () => {
     }
   };
 
-  const downloadResume = () => {
+  const downloadResume = async () => {
     if (!state.resume) {
       alert('No resume data found.');
       return;
     }
 
-    const resume = state.resume;
-    const doc = new jsPDF({ orientation: 'portrait', unit: 'pt', format: 'a4' });
+    if (!printRef.current) return;
 
-    const left = 40;
-    const top = 40;
-    const lineHeight = 16;
-    const sectionGap = 10;
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const maxLineWidth = pageWidth - left * 2;
-    let y = top;
+    try {
+      const element = printRef.current;
 
-    const wrapAndPrint = (text: string, indent: number = 0) => {
-      const x = left + indent;
-      const lines = doc.splitTextToSize(text, maxLineWidth - indent);
-      doc.text(lines, x, y);
-      y += lines.length * lineHeight;
-    };
-
-    const drawSectionTitle = (title: string) => {
-      doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.text(title, left, y);
-      y += lineHeight;
-      doc.setFontSize(11);
-      doc.setFont('helvetica', 'normal');
-    };
-
-    // Header
-    doc.setFontSize(22);
-    doc.setFont('helvetica', 'bold');
-    doc.text(resume.personalInfo.name || 'Your Name', left, y);
-    y += lineHeight;
-
-    doc.setFontSize(11);
-    doc.setFont('helvetica', 'normal');
-    let contactX = left;
-    if (resume.personalInfo.email) {
-      doc.textWithLink(resume.personalInfo.email, contactX, y, { url: `mailto:${resume.personalInfo.email}` });
-      contactX += doc.getTextWidth(resume.personalInfo.email) + 15;
-    }
-    if (resume.personalInfo.phone) {
-      doc.text(resume.personalInfo.phone, contactX, y);
-      contactX += doc.getTextWidth(resume.personalInfo.phone) + 15;
-    }
-    if (resume.personalInfo.location) {
-      doc.text(resume.personalInfo.location, contactX, y);
-      contactX += doc.getTextWidth(resume.personalInfo.location) + 15;
-    }
-    if (resume.personalInfo.linkedin) {
-      doc.textWithLink('LinkedIn', contactX, y, { url: resume.personalInfo.linkedin });
-      contactX += doc.getTextWidth('LinkedIn') + 15;
-    }
-    if (resume.personalInfo.github) {
-      doc.textWithLink('GitHub', contactX, y, { url: resume.personalInfo.github });
-    }
-    y += lineHeight + 2;
-
-    if (resume.summary) {
-      drawSectionTitle('Professional Summary');
-      wrapAndPrint(resume.summary);
-      y += sectionGap;
-    }
-
-    if (resume.experience?.length > 0) {
-      drawSectionTitle('Experience');
-      resume.experience.forEach(exp => {
-        doc.setFont('helvetica', 'bold');
-        doc.text(`${exp.position} at ${exp.company} (${exp.duration})`, left, y);
-        y += lineHeight;
-        doc.setFont('helvetica', 'normal');
-        exp.description?.forEach(desc => {
-          wrapAndPrint(`- ${desc}`, 10);
-        });
-        y += 6;
+      const canvas = await html2canvas(element, {
+        scale: 2, // Higher resolution for better text clarity
+        useCORS: true,
+        logging: false,
+        backgroundColor: state.darkMode ? '#1f2937' : '#ffffff', // Match ResumePreview background
       });
-      y += sectionGap;
-    }
 
-    if (resume.education?.length > 0) {
-      drawSectionTitle('Education');
-      resume.education.forEach(edu => {
-        doc.text(
-          `${edu.degree} at ${edu.institution} (${edu.duration})${edu.gpa ? ` • GPA: ${edu.gpa}` : ''}`,
-          left,
-          y
-        );
-        y += lineHeight;
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
       });
-      y += sectionGap;
-    }
 
-    if (resume.projects?.length > 0) {
-      drawSectionTitle('Projects');
-      resume.projects.forEach(project => {
-        if (project.url) {
-          doc.textWithLink(project.name, left, y, { url: project.url });
-        } else {
-          doc.text(project.name, left, y);
-        }
-        y += lineHeight;
-        if (project.description) wrapAndPrint(project.description, 10);
-        if (project.technologies?.length > 0)
-          wrapAndPrint(`Tech: ${project.technologies.join(', ')}`, 10);
-        y += 6;
-      });
-      y += sectionGap;
-    }
+      const imgWidth = 210; // A4 width in mm
+      const pageHeight = 297; // A4 height in mm
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+      let position = 0;
 
-    if (resume.skills?.technical?.length || resume.skills?.soft?.length) {
-      drawSectionTitle('Skills');
-      if (resume.skills.technical.length > 0)
-        wrapAndPrint(`Technical: ${resume.skills.technical.join(', ')}`);
-      if (resume.skills.soft.length > 0)
-        wrapAndPrint(`Soft: ${resume.skills.soft.join(', ')}`);
-      y += sectionGap;
-    }
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
 
-    doc.save('resume.pdf');
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      pdf.save('resume.pdf');
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+      alert('Failed to generate PDF. Please try again.');
+    }
   };
 
   const saveResume = () => {
@@ -256,13 +180,12 @@ const ResumeBuilder: React.FC = () => {
                         <button
                           key={section.id}
                           onClick={() => setActiveSection(section.id)}
-                          className={`w-full p-3 rounded-lg border text-left transition-all ${
-                            activeSection === section.id
+                          className={`w-full p-3 rounded-lg border text-left transition-all ${activeSection === section.id
                               ? 'bg-blue-500 text-white border-blue-500'
                               : state.darkMode
-                              ? 'border-gray-700 hover:border-gray-600 text-gray-300'
-                              : 'border-gray-200 hover:border-gray-300 text-gray-900'
-                          }`}
+                                ? 'border-gray-700 hover:border-gray-600 text-gray-300'
+                                : 'border-gray-200 hover:border-gray-300 text-gray-900'
+                            }`}
                         >
                           <div className="flex items-center space-x-3">
                             <Icon className="w-5 h-5" />
@@ -289,6 +212,20 @@ const ResumeBuilder: React.FC = () => {
             </div>
           </>
         )}
+      </div>
+
+      {/* Hidden container for PDF generation */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '-10000px',
+          left: '-10000px',
+          width: '794px' // Standard A4 width in pixels at 96 DPI
+        }}
+      >
+        <div ref={printRef}>
+          <ResumePreview sections={selectedSections} />
+        </div>
       </div>
     </div>
   );
