@@ -90,21 +90,26 @@ const ResumeBuilder: React.FC = () => {
     try {
       await document.fonts.ready;
       const element = printRef.current;
+      element.classList.add("pdf-mode");
 
       const opt = {
         margin: [10, 0, 10, 0] as [number, number, number, number],
         filename: 'resume.pdf',
         image: { type: 'jpeg' as const, quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, letterRendering: true, backgroundColor: state.darkMode ? '#1f2937' : '#ffffff' },
+        html2canvas: { scale: 3, useCORS: true, letterRendering: true, backgroundColor: state.darkMode ? '#1f2937' : '#ffffff' },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const },
         enableLinks: true,
         pagebreak: { mode: ['css', 'legacy'] }
       };
 
       await html2pdf().set(opt).from(element).save();
+      element.classList.remove("pdf-mode");
     } catch (error) {
       console.error('Error generating PDF:', error);
       alert('Failed to generate PDF. Please try again.');
+      if (printRef.current) {
+        printRef.current.classList.remove("pdf-mode");
+      }
     }
   };
 
@@ -204,24 +209,28 @@ const ResumeBuilder: React.FC = () => {
           pageBreakAfter: 'auto'
         }}
       >
-        <div className="pdf-export" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
+        <div className="pdf-container" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
           <style>
             {`
-              .pdf-export .contact-item svg, .pdf-export .contact-item i {
-                position: relative;
-                top: 2px;
+              .pdf-mode svg {
+                vertical-align: middle !important;
+                transform: translateY(2px);
               }
-              .pdf-export .contact-item {
-                display: inline-flex;
-                align-items: center;
+              .pdf-mode .contact-item {
+                display: inline-flex !important;
+                align-items: center !important;
                 gap: 6px;
               }
-              .pdf-export .skill-badge {
-                display: inline-block;
-                padding: 6px 12px;
-                line-height: 20px;
-                vertical-align: middle;
-                min-height: 24px;
+              .pdf-mode .skill-badge {
+                display: inline-block !important;
+                padding: 6px 12px !important;
+                line-height: 24px !important;
+                height: 24px !important;
+                vertical-align: middle !important;
+              }
+              .pdf-mode .skill-badge span {
+                position: relative;
+                top: 1px;
               }
             `}
           </style>
