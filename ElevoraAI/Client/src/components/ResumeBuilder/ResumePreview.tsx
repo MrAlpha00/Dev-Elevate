@@ -136,7 +136,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                     key={techIndex}
                     className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded skill-badge"
                   >
-                    {tech}
+                    <span>{tech}</span>
                   </span>
                 ))}
               </div>
@@ -168,7 +168,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                     key={index}
                     className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded skill-badge"
                   >
-                    {skill}
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>
@@ -183,7 +183,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                     key={index}
                     className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs rounded skill-badge"
                   >
-                    {skill}
+                    <span>{skill}</span>
                   </span>
                 ))}
               </div>
