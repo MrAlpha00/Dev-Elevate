@@ -88,6 +88,7 @@ const ResumeBuilder: React.FC = () => {
     if (!printRef.current) return;
 
     try {
+      await document.fonts.ready;
       const element = printRef.current;
 
       const opt = {
@@ -203,7 +204,29 @@ const ResumeBuilder: React.FC = () => {
           pageBreakAfter: 'auto'
         }}
       >
-        <div ref={printRef} style={{ pageBreakAfter: 'auto' }}>
+        <div className="pdf-export" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
+          <style>
+            {`
+              .pdf-export .contact-item svg, .pdf-export .contact-item i {
+                vertical-align: middle;
+                position: relative;
+                top: 1px;
+              }
+              .pdf-export .contact-item {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+              }
+              .pdf-export .skill-badge {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 6px 10px;
+                line-height: 1.2;
+                vertical-align: middle;
+              }
+            `}
+          </style>
           <ResumePreview sections={selectedSections} />
         </div>
       </div>
