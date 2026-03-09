@@ -35,34 +35,34 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
           </h1>
           <div className="flex flex-wrap gap-4 text-sm">
             {state.resume.personalInfo.email && (
-              <div className="flex items-center space-x-1">
-                <Mail className="w-4 h-4" />
+              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
+                <Mail className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
                 <span>{state.resume.personalInfo.email}</span>
               </div>
             )}
             {state.resume.personalInfo.phone && (
-              <div className="flex items-center space-x-1">
-                <Phone className="w-4 h-4" />
+              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
+                <Phone className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
                 <span>{state.resume.personalInfo.phone}</span>
               </div>
             )}
             {state.resume.personalInfo.location && (
-              <div className="flex items-center space-x-1">
-                <MapPin className="w-4 h-4" />
+              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
+                <MapPin className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
                 <span>{state.resume.personalInfo.location}</span>
               </div>
             )}
             {state.resume.personalInfo.linkedin && (
-              <div className="flex items-center space-x-1">
-                <Linkedin className="w-4 h-4" />
+              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
+                <Linkedin className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
                 <a href={state.resume.personalInfo.linkedin} className="text-blue-600 hover:underline">
                   LinkedIn
                 </a>
               </div>
             )}
             {state.resume.personalInfo.github && (
-              <div className="flex items-center space-x-1">
-                <Github className="w-4 h-4" />
+              <div className="flex items-center space-x-1" style={{ alignItems: 'center' }}>
+                <Github className="w-4 h-4" style={{ verticalAlign: 'middle' }} />
                 <a href={state.resume.personalInfo.github} className="text-blue-600 hover:underline">
                   GitHub
                 </a>
@@ -73,12 +73,12 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
       )}
 
       {/* Professional Summary */}
-{show.personal && state.resume.summary && (
-  <div className="mb-6 break-words whitespace-pre-wrap">
-    <h2 className="text-xl font-bold mb-3">Professional Summary</h2>
-    <p className="text-sm leading-relaxed">{state.resume.summary}</p>
-  </div>
-)}
+      {show.personal && state.resume.summary && (
+        <div className="mb-6 break-words whitespace-pre-wrap">
+          <h2 className="text-xl font-bold mb-3">Professional Summary</h2>
+          <p className="text-sm leading-relaxed">{state.resume.summary}</p>
+        </div>
+      )}
 
 
 
@@ -135,6 +135,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                   <span
                     key={techIndex}
                     className="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-xs rounded"
+                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1', verticalAlign: 'middle' }}
                   >
                     {tech}
                   </span>
@@ -167,6 +168,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                   <span
                     key={index}
                     className="px-2 py-1 bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300 text-xs rounded"
+                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1', verticalAlign: 'middle' }}
                   >
                     {skill}
                   </span>
@@ -182,6 +184,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
                   <span
                     key={index}
                     className="px-2 py-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 text-xs rounded"
+                    style={{ display: 'inline-flex', alignItems: 'center', lineHeight: '1', verticalAlign: 'middle' }}
                   >
                     {skill}
                   </span>
