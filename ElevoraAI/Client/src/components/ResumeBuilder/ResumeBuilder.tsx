@@ -199,9 +199,19 @@ const ResumeBuilder: React.FC = () => {
         )}
       </div>
 
-      <div className="pdf-container" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
-        <style>
-          {`
+      {/* Hidden container for PDF generation */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '-10000px',
+          left: '-10000px',
+          width: '794px', // Standard A4 width in pixels at 96 DPI
+          pageBreakAfter: 'auto'
+        }}
+      >
+        <div className="pdf-container" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
+          <style>
+            {`
               .pdf-mode svg {
                 vertical-align: middle !important;
                 transform: translateY(2px);
@@ -233,11 +243,11 @@ const ResumeBuilder: React.FC = () => {
                 display: block !important;
               }
             `}
-        </style>
-        <ResumePreview sections={selectedSections} />
+          </style>
+          <ResumePreview sections={selectedSections} />
+        </div>
       </div>
     </div>
-    </div >
   );
 };
 
