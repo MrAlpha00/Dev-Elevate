@@ -199,19 +199,9 @@ const ResumeBuilder: React.FC = () => {
         )}
       </div>
 
-      {/* Hidden container for PDF generation */}
-      <div
-        style={{
-          position: 'absolute',
-          top: '-10000px',
-          left: '-10000px',
-          width: '794px', // Standard A4 width in pixels at 96 DPI
-          pageBreakAfter: 'auto'
-        }}
-      >
-        <div className="pdf-container" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
-          <style>
-            {`
+      <div className="pdf-container" ref={printRef} style={{ pageBreakAfter: 'auto' }}>
+        <style>
+          {`
               .pdf-mode svg {
                 vertical-align: middle !important;
                 transform: translateY(2px);
@@ -222,22 +212,32 @@ const ResumeBuilder: React.FC = () => {
                 gap: 6px;
               }
               .pdf-mode .skill-badge {
-                display: inline-block !important;
-                padding: 6px 12px !important;
-                line-height: 24px !important;
-                height: 24px !important;
-                vertical-align: middle !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                height: 26px !important;
+                padding: 0 10px !important;
+                line-height: 26px !important;
+                border-radius: 6px !important;
               }
               .pdf-mode .skill-badge span {
-                position: relative;
-                top: 1px;
+                display: inline-block !important;
+                line-height: 26px !important;
+              }
+              .pdf-mode .skill-badge,
+              .pdf-mode .skill-badge * {
+                transform: none !important;
+                position: static !important;
+              }
+              .pdf-mode .skills-container {
+                display: block !important;
               }
             `}
-          </style>
-          <ResumePreview sections={selectedSections} />
-        </div>
+        </style>
+        <ResumePreview sections={selectedSections} />
       </div>
     </div>
+    </div >
   );
 };
 
