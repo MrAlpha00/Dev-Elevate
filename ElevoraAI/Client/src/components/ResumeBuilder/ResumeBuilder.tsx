@@ -214,30 +214,27 @@ const ResumeBuilder: React.FC = () => {
             {`
               .pdf-mode svg {
                 vertical-align: middle !important;
-                transform: translateY(2px);
+                transform: translateY(2px) !important;
               }
               .pdf-mode .contact-item {
                 display: inline-flex !important;
                 align-items: center !important;
-                gap: 6px;
+                gap: 6px !important;
               }
               .pdf-mode .skill-badge {
                 display: inline-flex !important;
                 align-items: center !important;
                 justify-content: center !important;
-                height: 26px !important;
+                height: 24px !important;
                 padding: 0 10px !important;
-                line-height: 26px !important;
                 border-radius: 6px !important;
+                box-sizing: border-box !important;
               }
               .pdf-mode .skill-badge span {
                 display: inline-block !important;
-                line-height: 26px !important;
-              }
-              .pdf-mode .skill-badge,
-              .pdf-mode .skill-badge * {
-                transform: none !important;
-                position: static !important;
+                position: relative !important;
+                top: -1.5px !important;
+                line-height: 1 !important;
               }
               .pdf-mode .skills-container {
                 display: block !important;
