@@ -95,7 +95,7 @@ const ResumeBuilder: React.FC = () => {
         margin: [10, 0, 10, 0] as [number, number, number, number],
         filename: 'resume.pdf',
         image: { type: 'jpeg' as const, quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true, backgroundColor: state.darkMode ? '#1f2937' : '#ffffff' },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true, backgroundColor: state.darkMode ? '#1f2937' : '#ffffff' },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const },
         enableLinks: true,
         pagebreak: { mode: ['css', 'legacy'] }
@@ -208,9 +208,8 @@ const ResumeBuilder: React.FC = () => {
           <style>
             {`
               .pdf-export .contact-item svg, .pdf-export .contact-item i {
-                vertical-align: middle;
                 position: relative;
-                top: 1px;
+                top: 2px;
               }
               .pdf-export .contact-item {
                 display: inline-flex;
@@ -218,12 +217,11 @@ const ResumeBuilder: React.FC = () => {
                 gap: 6px;
               }
               .pdf-export .skill-badge {
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                padding: 6px 10px;
-                line-height: 1.2;
+                display: inline-block;
+                padding: 6px 12px;
+                line-height: 20px;
                 vertical-align: middle;
+                min-height: 24px;
               }
             `}
           </style>
