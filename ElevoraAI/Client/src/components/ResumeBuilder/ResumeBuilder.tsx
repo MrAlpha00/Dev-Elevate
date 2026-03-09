@@ -8,8 +8,7 @@ import ProjectsForm from './ProjectsForm';
 import SkillsForm from './SkillsForm';
 import ResumePreview from './ResumePreview';
 import ATSScanner from './ATSScannerNew';
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+import html2pdf from 'html2pdf.js';
 
 const ResumeBuilder: React.FC = () => {
   const { state, dispatch } = useGlobalState();
@@ -91,37 +90,16 @@ const ResumeBuilder: React.FC = () => {
     try {
       const element = printRef.current;
 
-      const canvas = await html2canvas(element, {
-        scale: 2, // Higher resolution for better text clarity
-        useCORS: true,
-        logging: false,
-        backgroundColor: state.darkMode ? '#1f2937' : '#ffffff', // Match ResumePreview background
-      });
+      const opt = {
+        margin: [0, 0, 0, 0] as [number, number, number, number],
+        filename: 'resume.pdf',
+        image: { type: 'jpeg' as const, quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, backgroundColor: state.darkMode ? '#1f2937' : '#ffffff' },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const },
+        enableLinks: true
+      };
 
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF({
-        orientation: 'portrait',
-        unit: 'mm',
-        format: 'a4',
-      });
-
-      const imgWidth = 210; // A4 width in mm
-      const pageHeight = 297; // A4 height in mm
-      const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
-      let position = 0;
-
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-
-      while (heightLeft > 0) {
-        position = heightLeft - imgHeight;
-        pdf.addPage();
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-        heightLeft -= pageHeight;
-      }
-
-      pdf.save('resume.pdf');
+      await html2pdf().set(opt).from(element).save();
     } catch (error) {
       console.error('Error generating PDF:', error);
       alert('Failed to generate PDF. Please try again.');
@@ -181,10 +159,10 @@ const ResumeBuilder: React.FC = () => {
                           key={section.id}
                           onClick={() => setActiveSection(section.id)}
                           className={`w-full p-3 rounded-lg border text-left transition-all ${activeSection === section.id
-                              ? 'bg-blue-500 text-white border-blue-500'
-                              : state.darkMode
-                                ? 'border-gray-700 hover:border-gray-600 text-gray-300'
-                                : 'border-gray-200 hover:border-gray-300 text-gray-900'
+                            ? 'bg-blue-500 text-white border-blue-500'
+                            : state.darkMode
+                              ? 'border-gray-700 hover:border-gray-600 text-gray-300'
+                              : 'border-gray-200 hover:border-gray-300 text-gray-900'
                             }`}
                         >
                           <div className="flex items-center space-x-3">
