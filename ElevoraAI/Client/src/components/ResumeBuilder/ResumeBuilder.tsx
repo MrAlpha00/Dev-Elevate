@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { useGlobalState } from '../../contexts/GlobalContext';
-import { Download, Save, Edit, Eye } from 'lucide-react';
+import { Download, Save, Edit, Eye, FileText } from 'lucide-react';
 import PersonalInfoForm from './PersonalInfoForm';
 import ExperienceForm from './ExperienceForm';
 import EducationForm from './EducationForm';
 import ProjectsForm from './ProjectsForm';
 import SkillsForm from './SkillsForm';
 import ResumePreview from './ResumePreview';
+import ATSResumePreview from './ATSResumePreview';
 import ATSScanner from './ATSScannerNew';
 import html2pdf from 'html2pdf.js';
 
@@ -16,6 +17,7 @@ const ResumeBuilder: React.FC = () => {
   const [showPreview, setShowPreview] = useState(false);
   const previewRef = React.useRef<HTMLDivElement>(null);
   const printRef = React.useRef<HTMLDivElement>(null);
+  const plainPrintRef = React.useRef<HTMLDivElement>(null);
   const [selectedSections] = useState({
     personal: true,
     experience: true,
@@ -113,6 +115,35 @@ const ResumeBuilder: React.FC = () => {
     }
   };
 
+  const downloadPlainResume = async () => {
+    if (!state.resume) {
+      alert('No resume data found.');
+      return;
+    }
+
+    if (!plainPrintRef.current) return;
+
+    try {
+      await document.fonts.ready;
+      const element = plainPrintRef.current;
+
+      const opt = {
+        margin: [10, 10, 10, 10] as [number, number, number, number],
+        filename: 'resume-ats-plain.pdf',
+        image: { type: 'jpeg' as const, quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true, letterRendering: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const },
+        enableLinks: true,
+        pagebreak: { mode: ['css', 'legacy'] }
+      };
+
+      await html2pdf().set(opt).from(element).save();
+    } catch (error) {
+      console.error('Error generating Plain PDF:', error);
+      alert('Failed to generate ATS PDF. Please try again.');
+    }
+  };
+
   const saveResume = () => {
     alert('Resume saved successfully!');
   };
@@ -142,6 +173,10 @@ const ResumeBuilder: React.FC = () => {
           <button onClick={downloadResume} className="flex items-center space-x-2 px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-xl shadow-sm transition-all">
             <Download className="w-4 h-4" />
             <span>Download PDF</span>
+          </button>
+          <button onClick={downloadPlainResume} className="flex items-center space-x-2 px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white rounded-xl shadow-sm transition-all">
+            <FileText className="w-4 h-4" />
+            <span>Plain PDF</span>
           </button>
         </div>
 
@@ -242,6 +277,21 @@ const ResumeBuilder: React.FC = () => {
             `}
           </style>
           <ResumePreview sections={selectedSections} />
+        </div>
+      </div>
+
+      {/* Hidden container for Plain PDF generation */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '-10000px',
+          left: '-10000px',
+          width: '794px', // Standard A4 width
+          pageBreakAfter: 'auto'
+        }}
+      >
+        <div ref={plainPrintRef} style={{ pageBreakAfter: 'auto' }}>
+          <ATSResumePreview sections={selectedSections} />
         </div>
       </div>
     </div>
