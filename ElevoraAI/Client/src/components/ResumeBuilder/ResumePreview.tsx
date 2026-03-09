@@ -87,7 +87,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-3">Experience</h2>
           {state.resume.experience.map((exp, index) => (
-            <div key={index} className="mb-4">
+            <div key={index} className="mb-4" style={{ pageBreakInside: 'avoid', breakInside: 'avoid' }}>
               <div className="flex justify-between items-start mb-1">
                 <h3 className="font-semibold">{exp.position}</h3>
                 <span className="text-sm text-gray-600 dark:text-gray-400">{exp.duration}</span>
@@ -108,7 +108,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-3">Education</h2>
           {state.resume.education.map((edu, index) => (
-            <div key={index} className="mb-3">
+            <div key={index} className="mb-3" style={{ pageBreakInside: 'avoid', breakInside: 'avoid' }}>
               <div className="flex justify-between items-start mb-1">
                 <h3 className="font-semibold">{edu.degree}</h3>
                 <span className="text-sm text-gray-600 dark:text-gray-400">{edu.duration}</span>
@@ -127,7 +127,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
         <div className="mb-6">
           <h2 className="text-xl font-bold mb-3">Projects</h2>
           {state.resume.projects.map((project, index) => (
-            <div key={index} className="mb-4">
+            <div key={index} className="mb-4" style={{ pageBreakInside: 'avoid', breakInside: 'avoid' }}>
               <h3 className="font-semibold mb-1">{project.name}</h3>
               <p className="text-sm mb-2">{project.description}</p>
               <div className="flex flex-wrap gap-2 mb-2">
@@ -158,7 +158,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
 
       {/* Skills */}
       {show.skills && (state.resume.skills.technical.length > 0 || state.resume.skills.soft.length > 0) && (
-        <div className="mb-6">
+        <div className="mb-6" style={{ pageBreakInside: 'avoid', breakInside: 'avoid' }}>
           <h2 className="text-xl font-bold mb-3">Skills</h2>
           {state.resume.skills.technical.length > 0 && (
             <div className="mb-3">
