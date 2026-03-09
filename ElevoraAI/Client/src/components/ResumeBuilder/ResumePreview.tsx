@@ -157,7 +157,7 @@ const ResumePreview: React.FC<ResumePreviewProps> = ({ sections }) => {
 
       {/* Skills */}
       {show.skills && (state.resume.skills.technical.length > 0 || state.resume.skills.soft.length > 0) && (
-        <div className="mb-6" style={{ pageBreakInside: 'avoid', breakInside: 'avoid' }}>
+        <div className="mb-6 skills-container" style={{ pageBreakInside: 'avoid', breakInside: 'avoid' }}>
           <h2 className="text-xl font-bold mb-3">Skills</h2>
           {state.resume.skills.technical.length > 0 && (
             <div className="mb-3">
