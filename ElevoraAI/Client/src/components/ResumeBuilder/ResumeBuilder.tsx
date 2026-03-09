@@ -91,12 +91,13 @@ const ResumeBuilder: React.FC = () => {
       const element = printRef.current;
 
       const opt = {
-        margin: [0, 0, 0, 0] as [number, number, number, number],
+        margin: [10, 0, 10, 0] as [number, number, number, number],
         filename: 'resume.pdf',
         image: { type: 'jpeg' as const, quality: 0.98 },
         html2canvas: { scale: 2, useCORS: true, backgroundColor: state.darkMode ? '#1f2937' : '#ffffff' },
         jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' as const },
-        enableLinks: true
+        enableLinks: true,
+        pagebreak: { mode: ['css', 'legacy'] }
       };
 
       await html2pdf().set(opt).from(element).save();
@@ -198,10 +199,11 @@ const ResumeBuilder: React.FC = () => {
           position: 'absolute',
           top: '-10000px',
           left: '-10000px',
-          width: '794px' // Standard A4 width in pixels at 96 DPI
+          width: '794px', // Standard A4 width in pixels at 96 DPI
+          pageBreakAfter: 'auto'
         }}
       >
-        <div ref={printRef}>
+        <div ref={printRef} style={{ pageBreakAfter: 'auto' }}>
           <ResumePreview sections={selectedSections} />
         </div>
       </div>
