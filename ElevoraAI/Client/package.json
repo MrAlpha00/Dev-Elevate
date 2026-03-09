@@ -38,6 +38,7 @@
     "firebase": "^12.4.0",
     "framer-motion": "^12.23.24",
     "html2canvas": "^1.4.1",
+    "html2pdf.js": "^0.14.0",
     "jspdf": "^4.0.0",
     "lucide-react": "^0.344.0",
     "mathjs": "^14.7.0",
