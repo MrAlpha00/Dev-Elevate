@@ -761,16 +761,16 @@ Includes:
 ## 🌐 Connect with Me
 
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a92d4e36-c38a-4af2-bbfa-aae37e35ccbf" alt="Abhisek Panda_DSC0019" height="200"/>
+  <img src="https://github.com/user-attachments/assets/" alt="A" height="200"/>
 </p>
 
-- 👨‍💻 **Website Creator:** [Abhisek Panda](https://abhisekpanda072.vercel.app)
-- 🐙 **GitHub:** [abhisek2004](https://github.com/abhisek2004)
-- 💼 **LinkedIn:** [abhisekpanda2004](https://www.linkedin.com/in/abhisekpanda2004/)
+- 👨‍💻 **Website Creator:** [Suhas M](https://suhasm.online)
+- 🐙 **GitHub:** [Mralpha00](https://github.com/mralpha00)
+- 💼 **LinkedIn:** [Mralpha00](https://www.linkedin.com/in/mralpha00/)
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
-<h1 align="center">🌐 Currently Project Admin & Mentor for <a href="https://github.com/abhisek2004/elevora-ai" target="_blank">ElevoraAI</a> under Winter of Code Social ❄ — Let’s Get Started!</h1>
+<h1 align="center">🌐 Currently Project Admin & Mentor for <a href="https://github.com/mralpha00/elevora-ai" target="_blank">ElevoraAI</a> under Winter of Code Social ❄ — Let’s Get Started!</h1>
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/e65b8a7c-08a6-4162-9e24-f4c08977d6fa" width="100px" height="100px" /></a>
@@ -785,53 +785,11 @@ Includes:
 <table align="center">
   <tr>
     <td align="center">
-      <h2>🚀 GirlScript Summer of Code 2025 (GSSoC'25)</h2>
-      <img src="https://github.com/apu52/METAVERSE/assets/114172928/e79eb6de-81b1-4ffb-b6ed-f018bb977e88" alt="GSSoC" width="60%">
-        <img src="https://github.com/user-attachments/assets/22605f6d-f782-4ad9-a274-3373ab3f07f4" alt="Selected Project Admin badge" height="200"/>
-  &nbsp;&nbsp;&nbsp;
+ 
       <br/>
       <h3>👥 Project Admin & 👨‍🏫 Mentors – ElevoraAI (GSSoC'25)</h3>
       <table>
-        <tr>
-          <th>Role</th>
-          <th>Name</th>
-          <th>GitHub Profile</th>
-          <th>LinkedIn Profile</th>
-        </tr>
-        <tr>
-          <td>Project Admin</td>
-          <td>Abhisek Panda</td>
-          <td><a href="https://github.com/abhisek2004">abhisek2004</a></td>
-          <td><a href="http://www.linkedin.com/in/abhisekpanda2004">Abhisek Panda</a></td>
-        </tr>
-        <tr>
-          <td>Mentor 1</td>
-          <td>Pinak Viramgama</td>
-          <td><a href="https://github.com/pinakviramgama">pinakviramgama</a></td>
-          <td><a href="https://www.linkedin.com/in/gecr-ai230200143075">Pinak Viramgama</a></td>
-        </tr>
-        <tr>
-          <td>Mentor 2</td>
-          <td>Avansh Yadav</td>
-          <td><a href="https://github.com/Avansh2006">Avansh2006</a></td>
-          <td><a href="https://www.linkedin.com/in/avanshyadav/">Avansh Yadav</a></td>
-        </tr>
-        <tr>
-          <td>Mentor 3</td>
-          <td>Amisha Gupta</td>
-          <td><a href="https://github.com/amishagupta31">amishagupta31</a></td>
-          <td><a href="https://www.linkedin.com/in/amishagupta31/">Amisha Gupta</a></td>
-        </tr>
-        <tr>
-          <td>Mentor 4</td>
-          <td>Jay Sawant</td>
-          <td><a href="https://github.com/Jay2006sawant">Jay2006sawant</a></td>
-          <td><a href="https://www.linkedin.com/in/jay-sawant-4b59aa324/">Jay Sawant</a></td>
-        </tr>
-      </table>
-    </td>
-  </tr>
-
+     
   <tr>
     <td align="center">
       <h2>🎃 Hacktoberfest 2025</h2>
@@ -870,14 +828,14 @@ You all are the heart of this community! 💖
 
 | Contributor           | Role                 | Points | PRs | Commits | GitHub |
 | --------------------- | ------------------- | ------ | --- | ------- | ------ | 
-| GOBINDA-GAGAN         | 👑 Contributor      | 457    | 66  | 105     | [GitHub](https://github.com/GOBINDA-GAGAN) | - |
-| Richajaishwal0        | 🏆 Contributor      | 93     | 14  | 17      | [GitHub](https://github.com/Richajaishwal0) | - |
-| Coder-010506          | 🏆 Contributor      | 50     | 5   | 11      | [GitHub](https://github.com/Coder-010506) | - |
-| Nagasrineelamshetty   | 🏆 Contributor      | 41     | 5   | 5       | [GitHub](https://github.com/Nagasrineelamshetty) | - |
-| manasdutta04          | 🏆 Contributor      | 34     | 4   | 5       | [GitHub](https://github.com/manasdutta04) | - |
-| akofficial10          | 🏆 Contributor      | 28     | 4   | 4       | [GitHub](https://github.com/akofficial10) | - |
-| 100NikhilBro          | 🏆 Contributor      | 24     | 3   | 6       | [GitHub](https://github.com/100NikhilBro) | - |
-| Kritika11052005       | 🏆 Contributor      | 23     | 3   | 8       | [GitHub](https://github.com/Kritika11052005) | - |
+| Suhas m        | 👑 Contributor      | 457    | 66  | 105     | [GitHub](https://github.com/) | - |
+| vishal        | 🏆 Contributor      | 93     | 14  | 17      | [GitHub](https://github.com/) | - |
+| Vijay          | 🏆 Contributor      | 50     | 5   | 11      | [GitHub](https://github.com/) | - |
+| Payal         | 🏆 Contributor      | 41     | 5   | 5       | [GitHub](https://github.com/) | - |
+|           | 🏆 Contributor      | 34     | 4   | 5       | [GitHub](https://github.com/) | - |
+|           | 🏆 Contributor      | 28     | 4   | 4       | [GitHub](https://github.com/) | - |
+|           | 🏆 Contributor      | 24     | 3   | 6       | [GitHub](https://github.com/) | - |
+|        | 🏆 Contributor      | 23     | 3   | 8       | [GitHub](https://github.com/) | - |
 
 </details>
 
