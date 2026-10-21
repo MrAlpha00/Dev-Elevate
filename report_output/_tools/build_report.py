@@ -368,6 +368,8 @@ def build():
         for row in t.rows:
             for i, w in enumerate(widths):
                 row.cells[i].width = Inches(w)
+        for i, w in enumerate(widths):
+            t.columns[i].width = Inches(w)
         doc.add_paragraph().paragraph_format.space_after = Pt(4)
         return t
 
@@ -656,6 +658,8 @@ def build_front_matter_tables(doc):
         for row in t.rows:
             for i, w in enumerate(widths):
                 row.cells[i].width = Inches(w)
+        for i, w in enumerate(widths):
+            t.columns[i].width = Inches(w)
         return t
 
     def new_heading(text):
