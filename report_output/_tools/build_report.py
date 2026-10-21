@@ -622,7 +622,7 @@ def build_front_matter_tables(doc):
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         t.autofit = False
         set_table_borders(t)
-        cell_margins(t, top=25, bottom=25, left=90, right=90)
+        cell_margins(t, top=12, bottom=12, left=90, right=90)
         hdr = t.rows[0]
         set_repeat_header(hdr)
         for i, h in enumerate(headers):
@@ -631,10 +631,10 @@ def build_front_matter_tables(doc):
             p = c.paragraphs[0]
             p.alignment = WD_ALIGN_PARAGRAPH.CENTER
             p.paragraph_format.first_line_indent = Inches(0)
-            p.paragraph_format.space_before = Pt(1)
-            p.paragraph_format.space_after = Pt(1)
+            p.paragraph_format.space_before = Pt(0.5)
+            p.paragraph_format.space_after = Pt(0.5)
             p.paragraph_format.line_spacing = 1.0
-            style_run(p.add_run(h), size=11, bold=True)
+            style_run(p.add_run(h), size=10, bold=True)
             set_cell_bg(c, "E8E8E8")
         for row in rows:
             cells = t.add_row().cells
@@ -648,13 +648,13 @@ def build_front_matter_tables(doc):
                 p.paragraph_format.line_spacing = 1.0
                 if i == 0:
                     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    style_run(p.add_run(str(val)), size=10.5, bold=True)
+                    style_run(p.add_run(str(val)), size=10, bold=True)
                 elif i == len(headers) - 1:
                     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    style_run(p.add_run(str(val)), size=10.5)
+                    style_run(p.add_run(str(val)), size=10)
                 else:
                     p.alignment = WD_ALIGN_PARAGRAPH.LEFT
-                    style_run(p.add_run(str(val)), size=10.5)
+                    style_run(p.add_run(str(val)), size=10)
         for row in t.rows:
             for i, w in enumerate(widths):
                 row.cells[i].width = Inches(w)
