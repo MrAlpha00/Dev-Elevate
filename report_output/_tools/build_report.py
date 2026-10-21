@@ -416,6 +416,7 @@ def build():
             kind = blk[0]
             if kind == "h1":
                 if blk[1] == "ABSTRACT":
+                    in_abstract[0] = True
                     p = doc.add_paragraph()
                     p.alignment = WD_ALIGN_PARAGRAPH.CENTER
                     p.paragraph_format.first_line_indent = Inches(0)
