@@ -290,7 +290,7 @@ CH3 = [
           "or a controller; three are declared and never imported, and one is an empty file "
           "that defines no schema at all. The principal collections and their relationships "
           "are summarised in Table 3.6 and are drawn in the entity-relationship diagram of "
-          "Figure 4.3."),
+          "Figure 4.4."),
     ("table", "Table 3.6: Principal collections, purpose and notable fields",
      ["Collection", "Purpose", "Principal fields"],
      [["User", "Account, credential and gamification state",
@@ -461,11 +461,11 @@ CH4 = [
           "feature-specific components, the contexts directory holds the four providers that "
           "carry cross-module state, the services directory holds the modules that wrap the "
           "HTTP client, and the api directory holds the thin endpoint wrappers used by the "
-          "administration and assessment screens. Figure 4.8 maps the nineteen navigation "
+          "administration and assessment screens. Figure 4.2 maps the nineteen navigation "
           "entries to their functional groups and to the server route group that serves "
           "each one, and it marks the two groups for which the server provides no support."),
     ("fig", "figures/fig4_8_module_map.png",
-     "Fig. 4.8: Front-end module map and the corresponding server route groups", 6.1),
+     "Fig. 4.2: Front-end module map and the corresponding server route groups", 6.1),
     ("p", "The server follows a matching convention. A functional area has one route file, "
           "one or more controller files and one or more model files. The route file "
           "declares the mount path relative to the application root, the HTTP method, the "
@@ -477,7 +477,7 @@ CH4 = [
           "application to the implementing file in a single step."),
 
     ("h2", "4.4", "Use-Case Model"),
-    ("p", "Figure 4.4 states the use-case model of the system. The learner actor performs "
+    ("p", "Figure 4.5 states the use-case model of the system. The learner actor performs "
           "sixteen use cases, grouped in the figure into registration and profile "
           "management, learning, assessment, code practice, contest participation and "
           "community participation. The administrator actor performs six use cases, all of "
@@ -486,7 +486,7 @@ CH4 = [
           "program is delegated to the compiler service rather than performed by the "
           "platform."),
     ("fig", "figures/fig4_2_usecase.png",
-     "Fig. 4.2: Use-case diagram for the learner, the administrator and the external services", 6.1),
+     "Fig. 4.3: Use-case diagram for the learner, the administrator and the external services", 6.1),
     ("p", "The use-case model clarifies an important boundary of the system. The platform "
           "does not itself place the learner in employment: the placement module supplies "
           "prepared material and links, and the résumé and cover-letter modules produce "
@@ -496,12 +496,12 @@ CH4 = [
           "notification channel is provided."),
 
     ("h2", "4.5", "Data Model and Entity Relationships"),
-    ("p", "The entity-relationship diagram of Figure 4.3 is derived directly from the "
+    ("p", "The entity-relationship diagram of Figure 4.4 is derived directly from the "
           "Mongoose schemas. The diagram shows the eleven entities that are the subject of "
           "reference relationships and omits the remaining collections, which are "
           "independent of the others."),
     ("fig", "figures/fig4_3_erd.png",
-     "Fig. 4.3: Entity-relationship model derived from the Mongoose schemas", 6.2),
+     "Fig. 4.4: Entity-relationship model derived from the Mongoose schemas", 6.2),
     ("p", "The central entity is the user, to which the notes, the reviews, the progress "
           "records, the quiz attempts, the skill assessments, the contest submissions, the "
           "video progress records and the notifications are all attached. The quiz and the "
@@ -519,7 +519,7 @@ CH4 = [
           "without recomputing the scoring rule."),
 
     ("h2", "4.6", "Authentication and Authorisation Flow"),
-    ("p", "Figure 4.4 shows the flow of the authentication and authorisation processes. Two "
+    ("p", "Figure 4.5 shows the flow of the authentication and authorisation processes. Two "
           "paths reach a token: the registration path, in which a one-time password is "
           "mailed to the applicant and verified against the stored token record, and the "
           "credential path, in which the password is compared with the stored hash. A third "
@@ -527,7 +527,7 @@ CH4 = [
           "library for a session token. All three issue a token whose payload contains the "
           "user identifier and the role."),
     ("fig", "figures/fig4_4_auth_flow.png",
-     "Fig. 4.4: Authentication, token issuance and role-based authorisation flow", 6.1),
+     "Fig. 4.5: Authentication, token issuance and role-based authorisation flow", 6.1),
     ("p", "On each subsequent request the identity middleware reads the token from the "
           "cookie or from the authorization header, verifies the signature, loads the user "
           "record with the password excluded, and attaches the record to the request. The "
@@ -540,13 +540,13 @@ CH4 = [
 
     ("h2", "4.7", "Artificial Intelligence Request and Response Flow"),
     ("p", "The artificial-intelligence features of the system are reached in three ways. "
-          "Figure 4.5 traces the conversational path, in which the learner types a question "
+          "Figure 4.6 traces the conversational path, in which the learner types a question "
           "in the Study Buddy panel, the client posts it to the server route, the controller "
           "forwards it to the Gemini content generation interface with the provider key "
           "taken from the environment, and the reply is returned to the browser and rendered "
           "as Markdown with syntax highlighting."),
     ("fig", "figures/fig4_5_ai_sequence.png",
-     "Fig. 4.5: Request and response sequence for the AI Study Buddy", 6.1),
+     "Fig. 4.6: Request and response sequence for the AI Study Buddy", 6.1),
     ("p", "The generative path differs in that the output is stored rather than displayed. "
           "When the learner requests a generated quiz, the controller builds a prompt from "
           "the requested topic, difficulty and question count, sends it to the provider, "
@@ -565,7 +565,7 @@ CH4 = [
           "with the attempt, which makes the evaluation reproducible."),
 
     ("h2", "4.8", "Code Submission and Execution Flow"),
-    ("p", "Figure 4.6 describes the two execution paths of the system. The practice path "
+    ("p", "Figure 4.7 describes the two execution paths of the system. The practice path "
           "begins in the embedded editor, where the learner writes source code in one of "
           "the supported languages and triggers the run or submit action with the keyboard "
           "or with the toolbar. The client base64-encodes the source, selects the numeric "
@@ -574,7 +574,7 @@ CH4 = [
           "through a public application programming interface aggregator, with the "
           "synchronised wait option so that the response carries the result of the run."),
     ("fig", "figures/fig4_6_code_judge_flow.png",
-     "Fig. 4.6: Code submission and Judge0 execution flow for practice and for contests", 6.1),
+     "Fig. 4.7: Code submission and Judge0 execution flow for practice and for contests", 6.1),
     ("p", "The contest path is more elaborate. The submission is accepted only when the "
           "contest is open and the participant is registered, the source is posted to the "
           "configured Judge0 instance, and the server polls for the result at intervals of "
@@ -593,7 +593,7 @@ CH4 = [
 
     ("h2", "4.9", "Real-Time Contest Workflow"),
     ("p", "The contest module is the only part of the system that uses the WebSocket "
-          "channel. Figure 4.7 shows the workflow. The client establishes a socket "
+          "channel. Figure 4.8 shows the workflow. The client establishes a socket "
           "connection, presenting a token in the handshake, and then emits an event that "
           "causes it to join the room named for the contest. The server maintains the "
           "participant count for the room and broadcasts it. When a submission is judged, "
@@ -601,7 +601,7 @@ CH4 = [
           "contest identifier, the participant, the problem and the status to every member "
           "of the room."),
     ("fig", "figures/fig4_7_realtime_contest.png",
-     "Fig. 4.7: Real-time contest workflow over the Socket.IO channel", 6.0),
+     "Fig. 4.8: Real-time contest workflow over the Socket.IO channel", 6.0),
     ("p", "The handshake middleware in the server is intended to bind the socket to an "
           "authenticated user by verifying the token presented in the handshake and loading "
           "the corresponding user record. The implementation resolves the user from a "

@@ -1046,7 +1046,7 @@ REFERENCES = [
      "Framework\",", "Available at: https://tailwindcss.com/docs", None),
     ("ref", "[19]", "Microsoft Corporation.", "\"Monaco Editor — The Editor That Powers "
      "Visual Studio Code\",", "Available at: https://microsoft.github.io/monaco-editor/", None),
-    ("ref", "[20]", "The Firebase Team.", "\"Firebase Authentication — Sign in with Google\","
+    ("ref", "[20]", "The Firebase Team.", "\"Firebase Authentication — Sign in with Google\", "
      "and the Firebase JavaScript SDK documentation.", "Available at: "
      "https://firebase.google.com/docs/auth", None),
     ("ref", "[21]", "Auth0, Inc.", "\"JSON Web Token (JWT) — RFC 7519\",", "Available at: "

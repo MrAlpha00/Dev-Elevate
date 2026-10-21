@@ -1,0 +1,491 @@
+{
+ "toc": [
+  {
+   "kind": "chapter",
+   "key": "CHAPTER – 1",
+   "label": "INTRODUCTION"
+  },
+  {
+   "kind": "section",
+   "key": "1.1",
+   "label": "Background and Context"
+  },
+  {
+   "kind": "section",
+   "key": "1.2",
+   "label": "Problem Statement"
+  },
+  {
+   "kind": "section",
+   "key": "1.3",
+   "label": "Objectives"
+  },
+  {
+   "kind": "section",
+   "key": "1.4",
+   "label": "Scope of the System"
+  },
+  {
+   "kind": "section",
+   "key": "1.5",
+   "label": "Intended Users"
+  },
+  {
+   "kind": "section",
+   "key": "1.6",
+   "label": "Development Approach"
+  },
+  {
+   "kind": "section",
+   "key": "1.7",
+   "label": "Organization of the Report"
+  },
+  {
+   "kind": "chapter",
+   "key": "CHAPTER – 2",
+   "label": "LITERATURE SURVEY"
+  },
+  {
+   "kind": "section",
+   "key": "2.1",
+   "label": "Scope of the Survey"
+  },
+  {
+   "kind": "section",
+   "key": "2.2",
+   "label": "E-Learning Platforms"
+  },
+  {
+   "kind": "section",
+   "key": "2.3",
+   "label": "Online Judges and Competitive Programming"
+  },
+  {
+   "kind": "section",
+   "key": "2.4",
+   "label": "Artificial Intelligence in Education"
+  },
+  {
+   "kind": "section",
+   "key": "2.5",
+   "label": "Role-Based Access Control"
+  },
+  {
+   "kind": "section",
+   "key": "2.6",
+   "label": "Gamification and Real-Time Collaboration"
+  },
+  {
+   "kind": "section",
+   "key": "2.7",
+   "label": "Applicant Tracking Systems and Résumé Optimisation"
+  },
+  {
+   "kind": "section",
+   "key": "2.8",
+   "label": "Open Source Development as a Learning Model"
+  },
+  {
+   "kind": "section",
+   "key": "2.9",
+   "label": "Comparative Summary"
+  },
+  {
+   "kind": "section",
+   "key": "2.10",
+   "label": "Conclusion of the Survey"
+  },
+  {
+   "kind": "chapter",
+   "key": "CHAPTER – 3",
+   "label": "SYSTEM SPECIFICATION"
+  },
+  {
+   "kind": "section",
+   "key": "3.1",
+   "label": "System Overview"
+  },
+  {
+   "kind": "section",
+   "key": "3.2",
+   "label": "User Roles and Permissions"
+  },
+  {
+   "kind": "section",
+   "key": "3.3",
+   "label": "Functional Requirements"
+  },
+  {
+   "kind": "section",
+   "key": "3.4",
+   "label": "Non-Functional Requirements"
+  },
+  {
+   "kind": "section",
+   "key": "3.5",
+   "label": "Hardware, Software and Development Requirements"
+  },
+  {
+   "kind": "section",
+   "key": "3.6",
+   "label": "Technology Stack"
+  },
+  {
+   "kind": "section",
+   "key": "3.7",
+   "label": "External Services and Dependencies"
+  },
+  {
+   "kind": "section",
+   "key": "3.8",
+   "label": "Database and Storage Approach"
+  },
+  {
+   "kind": "section",
+   "key": "3.9",
+   "label": "Security and Privacy Considerations"
+  },
+  {
+   "kind": "section",
+   "key": "3.10",
+   "label": "Assumptions and Constraints"
+  },
+  {
+   "kind": "section",
+   "key": "3.11",
+   "label": "Feasibility Analysis"
+  },
+  {
+   "kind": "chapter",
+   "key": "CHAPTER – 4",
+   "label": "DESIGN"
+  },
+  {
+   "kind": "section",
+   "key": "4.1",
+   "label": "Design Principles"
+  },
+  {
+   "kind": "section",
+   "key": "4.2",
+   "label": "Overall System Architecture"
+  },
+  {
+   "kind": "section",
+   "key": "4.3",
+   "label": "Module Organisation and Component Boundaries"
+  },
+  {
+   "kind": "section",
+   "key": "4.4",
+   "label": "Use-Case Model"
+  },
+  {
+   "kind": "section",
+   "key": "4.5",
+   "label": "Data Model and Entity Relationships"
+  },
+  {
+   "kind": "section",
+   "key": "4.6",
+   "label": "Authentication and Authorisation Flow"
+  },
+  {
+   "kind": "section",
+   "key": "4.7",
+   "label": "Artificial Intelligence Request and Response Flow"
+  },
+  {
+   "kind": "section",
+   "key": "4.8",
+   "label": "Code Submission and Execution Flow"
+  },
+  {
+   "kind": "section",
+   "key": "4.9",
+   "label": "Real-Time Contest Workflow"
+  },
+  {
+   "kind": "section",
+   "key": "4.10",
+   "label": "Administration Workflows"
+  },
+  {
+   "kind": "section",
+   "key": "4.11",
+   "label": "User Interface Design"
+  },
+  {
+   "kind": "chapter",
+   "key": "CHAPTER – 5",
+   "label": "IMPLEMENTATION"
+  },
+  {
+   "kind": "section",
+   "key": "5.1",
+   "label": "Repository Structure"
+  },
+  {
+   "kind": "section",
+   "key": "5.2",
+   "label": "Client Routing and Application Providers"
+  },
+  {
+   "kind": "section",
+   "key": "5.3",
+   "label": "Navigation Shell and Public Interface"
+  },
+  {
+   "kind": "section",
+   "key": "5.4",
+   "label": "Server Entry Point and Middleware Pipeline"
+  },
+  {
+   "kind": "section",
+   "key": "5.5",
+   "label": "Interface Surface"
+  },
+  {
+   "kind": "section",
+   "key": "5.6",
+   "label": "Authentication and Session Handling"
+  },
+  {
+   "kind": "section",
+   "key": "5.7",
+   "label": "Role-Based Access Control Implementation"
+  },
+  {
+   "kind": "section",
+   "key": "5.8",
+   "label": "Dashboard Module"
+  },
+  {
+   "kind": "section",
+   "key": "5.9",
+   "label": "Learning Hub, Notes and Video Modules"
+  },
+  {
+   "kind": "section",
+   "key": "5.10",
+   "label": "Quiz and Skill Assessment Implementation"
+  },
+  {
+   "kind": "section",
+   "key": "5.11",
+   "label": "Artificial Intelligence Integrations and Failure Handling"
+  },
+  {
+   "kind": "section",
+   "key": "5.12",
+   "label": "Code Editor and Compiler Integration"
+  },
+  {
+   "kind": "section",
+   "key": "5.13",
+   "label": "Contest Leaderboard and Rating"
+  },
+  {
+   "kind": "section",
+   "key": "5.14",
+   "label": "Notes, Community and Technology Feed"
+  },
+  {
+   "kind": "section",
+   "key": "5.15",
+   "label": "Résumé Builder and Cover Letter Generation"
+  },
+  {
+   "kind": "section",
+   "key": "5.16",
+   "label": "Administration Console"
+  },
+  {
+   "kind": "section",
+   "key": "5.17",
+   "label": "Notifications, Productivity Tools and Search"
+  },
+  {
+   "kind": "section",
+   "key": "5.18",
+   "label": "Error Handling"
+  },
+  {
+   "kind": "section",
+   "key": "5.19",
+   "label": "Build and Deployment"
+  },
+  {
+   "kind": "section",
+   "key": "5.20",
+   "label": "Repository Screen Recording"
+  },
+  {
+   "kind": "chapter",
+   "key": "CHAPTER – 6",
+   "label": "RESULT AND TESTING"
+  },
+  {
+   "kind": "section",
+   "key": "6.1",
+   "label": "Evaluation Approach"
+  },
+  {
+   "kind": "section",
+   "key": "6.2",
+   "label": "Test Environment"
+  },
+  {
+   "kind": "section",
+   "key": "6.3",
+   "label": "Results of the Static Analysis"
+  },
+  {
+   "kind": "section",
+   "key": "6.4",
+   "label": "Test Cases and Observed Results"
+  },
+  {
+   "kind": "section",
+   "key": "6.5",
+   "label": "Defects and Security Findings"
+  },
+  {
+   "kind": "section",
+   "key": "6.6",
+   "label": "Limitations of the Evaluation"
+  },
+  {
+   "kind": "section",
+   "key": "6.7",
+   "label": "Discussion"
+  },
+  {
+   "kind": "chapter",
+   "key": "CONCLUSION",
+   "label": "CONCLUSION"
+  },
+  {
+   "kind": "section",
+   "key": "Future Enhancements",
+   "label": "Future Enhancements"
+  },
+  {
+   "kind": "chapter",
+   "key": "REFERENCES",
+   "label": "REFERENCES"
+  }
+ ],
+ "figures": [
+  {
+   "number": "4.1",
+   "caption": "Fig. 4.1: Overall system architecture of Elevora AI"
+  },
+  {
+   "number": "4.2",
+   "caption": "Fig. 4.2: Front-end module map and the corresponding server route groups"
+  },
+  {
+   "number": "4.3",
+   "caption": "Fig. 4.3: Use-case diagram for the learner, the administrator and the external services"
+  },
+  {
+   "number": "4.4",
+   "caption": "Fig. 4.4: Entity-relationship model derived from the Mongoose schemas"
+  },
+  {
+   "number": "4.5",
+   "caption": "Fig. 4.5: Authentication, token issuance and role-based authorisation flow"
+  },
+  {
+   "number": "4.6",
+   "caption": "Fig. 4.6: Request and response sequence for the AI Study Buddy"
+  },
+  {
+   "number": "4.7",
+   "caption": "Fig. 4.7: Code submission and Judge0 execution flow for practice and for contests"
+  },
+  {
+   "number": "4.8",
+   "caption": "Fig. 4.8: Real-time contest workflow over the Socket.IO channel"
+  },
+  {
+   "number": "5.1",
+   "caption": "Fig. 5.1: Sign-in screen of the deployed Elevora AI application"
+  },
+  {
+   "number": "5.2",
+   "caption": "Fig. 5.2: Public landing page of the deployed application"
+  },
+  {
+   "number": "5.3",
+   "caption": "Fig. 5.3: Interface documentation page published by the application"
+  },
+  {
+   "number": "5.4",
+   "caption": "Fig. 5.4: Project documentation page of the deployed application"
+  },
+  {
+   "number": "5.5",
+   "caption": "Fig. 5.5: Contributor guide page of the deployed application"
+  },
+  {
+   "number": "5.6",
+   "caption": "Fig. 5.6: Frame of the repository screen recording of the authentication flow"
+  },
+  {
+   "number": "5.7",
+   "caption": "Fig. 5.7: Later frame of the repository screen recording of the authentication flow"
+  }
+ ],
+ "tables": [
+  {
+   "number": "2.1",
+   "caption": "Table 2.1: Comparison of related system classes with Elevora AI"
+  },
+  {
+   "number": "3.1",
+   "caption": "Table 3.1: Roles and the permissions attached to them"
+  },
+  {
+   "number": "3.2",
+   "caption": "Table 3.2: Functional requirements, evidence and observed status"
+  },
+  {
+   "number": "3.3",
+   "caption": "Table 3.3: Non-functional requirements and the position observed"
+  },
+  {
+   "number": "3.4",
+   "caption": "Table 3.4: Technology stack, declared version and actual use"
+  },
+  {
+   "number": "3.5",
+   "caption": "Table 3.5: External services, credentials and degradation behaviour"
+  },
+  {
+   "number": "3.6",
+   "caption": "Table 3.6: Principal collections, purpose and notable fields"
+  },
+  {
+   "number": "5.1",
+   "caption": "Table 5.1: Directory layout of the two applications"
+  },
+  {
+   "number": "5.2",
+   "caption": "Table 5.2: Endpoint groups by functional area and declared protection"
+  },
+  {
+   "number": "6.1",
+   "caption": "Table 6.1: Environment used for the evaluation"
+  },
+  {
+   "number": "6.2",
+   "caption": "Table 6.2: Test cases, expected and observed results"
+  },
+  {
+   "number": "6.3",
+   "caption": "Table 6.3: Defects and security findings"
+  }
+ ]
+}

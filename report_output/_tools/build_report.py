@@ -8,6 +8,7 @@ Typography follows the reference report (finalreport.pdf):
 """
 import io
 import os
+import re
 import sys
 
 from docx import Document
@@ -70,6 +71,14 @@ def insert_ordered(parent, element, seq):
     pos = list(seq).index('w:' + name)
     parent.insert_element_before(element, *seq[pos + 1:])
     return element
+
+
+def split_caption(cap):
+    """'Fig. 4.1: Overall architecture' -> ('4.1', 'Overall architecture')."""
+    m = re.match(r"^\s*(Fig\.|Figure|Table)\s*([\d.]+)\s*[:.\-]\s*(.*)$", cap)
+    if m:
+        return m.group(2), m.group(3).strip()
+    return "", cap.strip()
 
 
 def set_cell_bg(cell, hexcolor):
@@ -299,8 +308,15 @@ def build():
 
     def section(number_text, title_text):
         p = doc.add_paragraph(style="SectionHeading")
-        style_run(p.add_run("%s  %s" % (number_text, title_text)), size=14, bold=True)
-        TOC_ENTRIES.append(("section", number_text, title_text))
+        if title_text is None:
+            # an unnumbered, labelled subsection such as "Future Enhancements"
+            text = number_text
+            key, label = number_text, number_text
+        else:
+            text = "%s  %s" % (number_text, title_text)
+            key, label = number_text, title_text
+        style_run(p.add_run(text), size=14, bold=True)
+        TOC_ENTRIES.append(("section", key, label))
         return p
 
     def table_block(caption, headers, rows, widths, number):
@@ -311,8 +327,13 @@ def build():
         cp.paragraph_format.space_after = Pt(4)
         cp.paragraph_format.keep_with_next = True
         cp.paragraph_format.line_spacing = 1.0
-        style_run(cp.add_run(caption), size=11, bold=True)
-        TBL_ENTRIES.append((number, caption))
+        style_run(cp.add_run("Table %s: %s" % (number, split_caption(caption)[1])), size=11, bold=True)
+        TBL_ENTRIES.append((number, "Table %s: %s" % (number, split_caption(caption)[1])))
+
+        # scale the requested column widths so that the table never exceeds
+        # the printable width of the page (A4 minus the two 1 inch margins)
+        scale = 6.2 / float(sum(widths))
+        widths = [w * scale for w in widths]
 
         t = doc.add_table(rows=1, cols=len(headers))
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
@@ -360,8 +381,9 @@ def build():
         p.paragraph_format.keep_with_next = True
         p.add_run().add_picture(path, width=Inches(width))
         cp = doc.add_paragraph(style="FigureCaption")
-        style_run(cp.add_run(caption), size=12)
-        FIG_ENTRIES.append((number, caption))
+        cap_text = "Fig. %s: %s" % (number, split_caption(caption)[1])
+        style_run(cp.add_run(cap_text), size=12)
+        FIG_ENTRIES.append((number, cap_text))
 
     def code_block(source, text):
         t = doc.add_table(rows=1, cols=1)
@@ -413,7 +435,10 @@ def build():
                     style_run(p.add_run("REFERENCES"), size=18, bold=True)
                     TOC_ENTRIES.append(("chapter", "REFERENCES", "REFERENCES"))
                 else:
-                    doc.add_page_break()
+                    # the body already starts on a new page because of the
+                    # section break, so no extra page break is needed there
+                    if blk[1] != "CHAPTER – 1":
+                        doc.add_page_break()
                     chapter(blk[1], blk[2], blk[1])
             elif kind == "h2":
                 section(blk[1], blk[2])
@@ -424,12 +449,20 @@ def build():
             elif kind == "n":
                 bullet(blk[1], numbered=True, number=blk[2] if len(blk) > 2 else "")
             elif kind == "table":
-                number = "%d.%d" % (chapter_no[0], table_no[0])
-                table_no[0] += 1
+                m = re.search(r"Table\s+(\d+\.\d+)", blk[1])
+                if m:
+                    number = m.group(1)
+                else:
+                    table_no[0] += 1
+                    number = "%d.%d" % (chapter_no[0], table_no[0])
                 table_block(blk[1], blk[2], blk[3], blk[4], number)
             elif kind == "fig":
-                number = "%s.%d" % (chapter_no[0], fig_no[0])
-                fig_no[0] += 1
+                m = re.search(r"(?:Fig\.|Figure)\s*(\d+\.\d+)", blk[2])
+                if m:
+                    number = m.group(1)
+                else:
+                    fig_no[0] += 1
+                    number = "%d.%d" % (chapter_no[0], fig_no[0])
                 figure_block(blk[1], blk[2], blk[3], number)
             elif kind == "code":
                 code_block(blk[1], blk[2])
@@ -523,9 +556,24 @@ def build():
     build_front_matter_tables(doc)
 
     doc.save(DOCX)
+    dump_entries()
     print("saved", DOCX)
     print("toc entries", len(TOC_ENTRIES), "figures", len(FIG_ENTRIES),
           "tables", len(TBL_ENTRIES))
+
+
+def dump_entries():
+    """Write the TOC / figure / table keys so the page resolver can use them."""
+    import json
+    data = {
+        "toc": [{"kind": k, "key": key, "label": label} for k, key, label in TOC_ENTRIES],
+        "figures": [{"number": n, "caption": c} for n, c in FIG_ENTRIES],
+        "tables": [{"number": n, "caption": c} for n, c in TBL_ENTRIES],
+    }
+    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "toc_entries.json")
+    with open(path, "w", encoding="utf-8") as fh:
+        json.dump(data, fh, indent=1, ensure_ascii=False)
+    print("wrote", path)
 
 
 # ------------------------------------------------------------------ front matter tables
@@ -622,10 +670,16 @@ def build_front_matter_tables(doc):
     for kind, key, label in TOC_ENTRIES:
         page = pagemap.get(key, "00")
         if kind == "chapter":
-            sl += 1
-            rows.append((sl, label, page))
+            if key.startswith("CHAPTER"):
+                sl += 1
+                rows.append((sl, label, page))
+            else:
+                rows.append(("", label, page))
         else:
-            rows.append(("", "%s   %s" % (key, label), page))
+            if key == label:
+                rows.append(("", label, page))
+            else:
+                rows.append(("", "%s   %s" % (key, label), page))
 
     toc_tbl = new_table(["SL. NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], rows)
 
