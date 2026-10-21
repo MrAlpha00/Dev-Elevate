@@ -1,0 +1,26 @@
+{
+ "fig5_2_landing.png": {
+  "source": "live_landing.pdf",
+  "pages": 9,
+  "chars": 733,
+  "text": "AI-Powered Learning Platform\nMaster Your\nMaster Your\nTech Journey\nTech Journey\nYour personalized smart learning & placement hub powered by AI. Master DSA,\nMERN, AI/ML, and land your dream job with our comprehensive platform.\n50K+\nActive Learners\n1000+\nSuccess Stories\n24/7\nAI Support\nTrusted by developers worldwide\nStart Learning Now\nWatch Demo\nMERN\nJ\nPython\nDevOps\nElevora AI\nElevora AI\nSmart Learning Hub\n🔒 We Value Your Privacy\n✕\nWe use cookies to enhance your browsing experience, serve\npersonalized content, and analyze traffic. By clicking Accept, you agree\nto our policy. Cookie Policy.\nAccept\nReject\n💬 Report an Issue ▼\n10/21/26, 9:36 PM\nElevora AI - AI-Powered Education & Career Platform\nhttps://elevoraai.vercel.app/\n1/9\n"
+ },
+ "fig5_3_api_docs.png": {
+  "source": "live_apidocs.pdf",
+  "pages": 7,
+  "chars": 844,
+  "text": "API Documentation\nAvailable Endpoints\nAPI Documentation\nComprehensive RESTful APIs for authentication, user management, community\nfeatures, ATS scanning, admin controls, and notifications in the Elevora AI platform.\nAvailable Endpoints\nAPI\nMethod\nEndpoint\nDescription\nUser Signup\nPOST\n/api/v1/auth/signup\nRegister a new user with\nrole-based access.\nUser Login\nPOST\n/api/v1/auth/login\nAuthenticate user and\nreturn JWT token.\nUser Streak\nGET\n/api/v1/user/streak\nGet user's current streak\ninformation.\nLatest News\nGET\n/api/v1/latest-news\nFetch latest tech news\nupdates.\nSubmit\nFeedback\nPOST\n/api/v1/feedback\nSubmit user feedback to\nthe platform.\nATS Resume\nScan\nPOST\n/api/v1/ats/scan\nAnalyze resume for ATS\ncompatibility and\nkeywords.\n10/21/26, 9:37 PM\nElevora AI - AI-Powered Education & Career Platform\nhttps://elevoraai.vercel.app/api-docs\n1/7\n"
+ },
+ "fig5_4_documentation.png": {
+  "source": "pub_1.pdf",
+  "pages": 6,
+  "chars": 254,
+  "text": "Elevora AI Documentation\nFull-Stack AI-Powered Smart Education and Career Advancement Platform for\nStudents, Developers, and Job Seekers\n10/21/26, 9:39 PM\nElevora AI - AI-Powered Education & Career Platform\nhttps://elevoraai.vercel.app/documentation\n1/6\n"
+ },
+ "fig5_5_contributor_guide.png": {
+  "source": "pub_3.pdf",
+  "pages": 5,
+  "chars": 523,
+  "text": "🌟 About elevora-ai\nelevora-ai is an open-source platform for developers to contribute, learn,\nand grow by collaborating on real-world projects. Perfect for first-time\ncontributors!\nExplore Issues\nBeginner-friendly tasks to get familiar with the project.\nClean Contributions\nKeep your PRs neat, tested, and documented.\nCollaborate Actively\nDiscuss ideas, review code, and learn with other contributors.\n10/21/26, 9:39 PM\nElevora AI - AI-Powered Education & Career Platform\nhttps://elevoraai.vercel.app/contributor-guide\n1/5\n"
+ }
+}

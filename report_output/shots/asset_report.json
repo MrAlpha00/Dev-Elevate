@@ -1,0 +1,26 @@
+{
+ "public": {},
+ "gif": [
+  {
+   "index": 112,
+   "path": "C:\\Users\\user\\Downloads\\Dev-Elevate-main\\Dev-Elevate-main\\report_output\\shots\\loginflow_112.png",
+   "mean": 38.9,
+   "std": 29.7,
+   "colors": 973
+  },
+  {
+   "index": 187,
+   "path": "C:\\Users\\user\\Downloads\\Dev-Elevate-main\\Dev-Elevate-main\\report_output\\shots\\loginflow_187.png",
+   "mean": 226.7,
+   "std": 52.8,
+   "colors": 2570
+  },
+  {
+   "index": 237,
+   "path": "C:\\Users\\user\\Downloads\\Dev-Elevate-main\\Dev-Elevate-main\\report_output\\shots\\loginflow_237.png",
+   "mean": 238.9,
+   "std": 33.7,
+   "colors": 2204
+  }
+ ]
+}
