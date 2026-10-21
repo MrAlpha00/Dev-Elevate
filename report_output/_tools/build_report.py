@@ -23,8 +23,9 @@ import content_part1 as c1
 import content_part2 as c2
 import content_part3 as c3
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REPORT_DIR = os.path.join(ROOT, "report_output")
+TOOLS_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT = os.path.dirname(os.path.dirname(TOOLS_DIR))     # repository root
+REPORT_DIR = os.path.dirname(TOOLS_DIR)                 # report_output/
 DOCX = os.path.join(REPORT_DIR, "ElevoraAI_Final_Report.docx")
 
 SERIF = "Times New Roman"
@@ -34,6 +35,41 @@ MONO = "Consolas"
 TOC_ENTRIES = []   # (kind, key, label)
 FIG_ENTRIES = []   # (number, caption)
 TBL_ENTRIES = []   # (number, caption)
+
+# --- child element order required by the WordprocessingML schema ----------
+PPR_SEQ = ('w:pStyle', 'w:keepNext', 'w:keepLines', 'w:pageBreakBefore', 'w:framePr',
+           'w:widowControl', 'w:numPr', 'w:suppressLineNumbers', 'w:pBdr', 'w:shd',
+           'w:tabs', 'w:suppressAutoHyphens', 'w:kinsoku', 'w:wordWrap',
+           'w:overflowPunct', 'w:topLinePunct', 'w:autoSpaceDE', 'w:autoSpaceDN',
+           'w:bidi', 'w:adjustRightInd', 'w:snapToGrid', 'w:spacing', 'w:ind',
+           'w:contextualSpacing', 'w:mirrorIndents', 'w:suppressOverlap', 'w:jc',
+           'w:textDirection', 'w:textAlignment', 'w:textboxTightWrap', 'w:outlineLvl',
+           'w:divId', 'w:cnfStyle', 'w:rPr', 'w:sectPr', 'w:pPrChange')
+RPR_SEQ = ('w:rStyle', 'w:rFonts', 'w:b', 'w:bCs', 'w:i', 'w:iCs', 'w:caps',
+           'w:smallCaps', 'w:strike', 'w:dstrike', 'w:outline', 'w:shadow',
+           'w:emboss', 'w:imprint', 'w:noProof', 'w:snapToGrid', 'w:vanish',
+           'w:webHidden', 'w:color', 'w:spacing', 'w:w', 'w:kern', 'w:position',
+           'w:sz', 'w:szCs', 'w:highlight', 'w:u', 'w:effect', 'w:bdr', 'w:shd',
+           'w:fitText', 'w:vertAlign', 'w:rtl', 'w:cs', 'w:em', 'w:lang',
+           'w:eastAsianLayout', 'w:specVanish', 'w:oMath')
+TBLPR_SEQ = ('w:tblStyle', 'w:tblpPr', 'w:tblOverlap', 'w:bidiVisual',
+             'w:tblStyleRowBandSize', 'w:tblStyleColBandSize', 'w:tblW', 'w:jc',
+             'w:tblCellSpacing', 'w:tblInd', 'w:tblBorders', 'w:shd', 'w:tblLayout',
+             'w:tblCellMar', 'w:tblLook', 'w:tblCaption', 'w:tblDescription',
+             'w:tblPrChange')
+SECTPR_SEQ = ('w:headerReference', 'w:footerReference', 'w:footnotePr', 'w:endnotePr',
+              'w:type', 'w:pgSz', 'w:pgMar', 'w:paperSrc', 'w:pgBorders',
+              'w:lnNumType', 'w:pgNumType', 'w:cols', 'w:formProt', 'w:vAlign',
+              'w:noEndnote', 'w:titlePg', 'w:textDirection', 'w:bidi', 'w:rtlGutter',
+              'w:docGrid', 'w:printerSettings', 'w:sectPrChange')
+
+
+def insert_ordered(parent, element, seq):
+    """Insert *element* into *parent* honouring the schema order in *seq*."""
+    name = element.tag.split('}')[-1]
+    pos = list(seq).index('w:' + name)
+    parent.insert_element_before(element, *seq[pos + 1:])
+    return element
 
 
 def set_cell_bg(cell, hexcolor):
@@ -56,7 +92,7 @@ def set_table_borders(table, sz=6):
         el.set(qn("w:space"), "0")
         el.set(qn("w:color"), "000000")
         borders.append(el)
-    tblPr.append(borders)
+    insert_ordered(tblPr, borders, TBLPR_SEQ)
 
 
 def set_repeat_header(row):
@@ -74,7 +110,7 @@ def cell_margins(table, top=60, bottom=60, left=90, right=90):
         el.set(qn("w:w"), str(val))
         el.set(qn("w:type"), "dxa")
         mar.append(el)
-    tblPr.append(mar)
+    insert_ordered(tblPr, mar, TBLPR_SEQ)
 
 
 def add_field(paragraph, instr, size=11, bold=False):
@@ -105,7 +141,7 @@ def add_border(paragraph, edge="bottom", sz=12, space=4):
     bdr = pPr.find(qn("w:pBdr"))
     if bdr is None:
         bdr = OxmlElement("w:pBdr")
-        pPr.append(bdr)
+        insert_ordered(pPr, bdr, PPR_SEQ)
     el = OxmlElement("w:%s" % edge)
     el.set(qn("w:val"), "single")
     el.set(qn("w:sz"), str(sz))
@@ -122,7 +158,7 @@ def set_pgnum(section, fmt, start=None):
     el.set(qn("w:fmt"), fmt)
     if start is not None:
         el.set(qn("w:start"), str(start))
-    sectPr.append(el)
+    insert_ordered(sectPr, el, SECTPR_SEQ)
 
 
 def style_run(run, size=12, bold=False, italic=False, font=SERIF, caps=False):
@@ -141,7 +177,7 @@ def style_run(run, size=12, bold=False, italic=False, font=SERIF, caps=False):
     if caps:
         c = OxmlElement("w:caps")
         c.set(qn("w:val"), "1")
-        rPr.append(c)
+        insert_ordered(rPr, c, RPR_SEQ)
     return run
 
 
@@ -366,20 +402,14 @@ def build():
                     style_run(p.add_run("ABSTRACT"), size=18, bold=True)
                 elif blk[1] == "CONCLUSION":
                     doc.add_page_break()
-                    p = doc.add_paragraph()
-                    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    p.paragraph_format.first_line_indent = Inches(0)
+                    p = doc.add_paragraph(style="ChapterTitle")
                     p.paragraph_format.space_after = Pt(16)
-                    p.paragraph_format.line_spacing = 1.15
                     style_run(p.add_run("CONCLUSION"), size=18, bold=True)
                     TOC_ENTRIES.append(("chapter", "CONCLUSION", "CONCLUSION"))
                 elif blk[1] == "REFERENCES":
                     doc.add_page_break()
-                    p = doc.add_paragraph()
-                    p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-                    p.paragraph_format.first_line_indent = Inches(0)
+                    p = doc.add_paragraph(style="ChapterTitle")
                     p.paragraph_format.space_after = Pt(16)
-                    p.paragraph_format.line_spacing = 1.15
                     style_run(p.add_run("REFERENCES"), size=18, bold=True)
                     TOC_ENTRIES.append(("chapter", "REFERENCES", "REFERENCES"))
                 else:
@@ -394,7 +424,7 @@ def build():
             elif kind == "n":
                 bullet(blk[1], numbered=True, number=blk[2] if len(blk) > 2 else "")
             elif kind == "table":
-                number = "T%d.%d" % (chapter_no[0], table_no[0])
+                number = "%d.%d" % (chapter_no[0], table_no[0])
                 table_no[0] += 1
                 table_block(blk[1], blk[2], blk[3], blk[4], number)
             elif kind == "fig":
@@ -499,9 +529,33 @@ def build():
 
 
 # ------------------------------------------------------------------ front matter tables
+PAGEMAP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "pagemap.json")
+
+
+def load_pagemap():
+    """Page numbers resolved from the previous PDF render (key -> page label)."""
+    try:
+        import json
+        with open(PAGEMAP_PATH, encoding="utf-8") as fh:
+            data = json.load(fh)
+        if isinstance(data, dict):
+            return data
+    except Exception:
+        pass
+    return {}
+
+
+def clean_caption(cap):
+    """'Fig. 4.1: Overall architecture' -> 'Overall architecture'."""
+    import re
+    s = re.sub(r"^\s*(Fig\.|Figure|Table)\s*[\d.]+\s*[:.\-]?\s*", "", cap)
+    return s.strip().rstrip(".")
+
+
 def build_front_matter_tables(doc):
     """Insert the TOC, list of figures and list of tables in the front matter."""
-    body = doc.element.body
+    pagemap = load_pagemap()
+
     # locate the paragraph that holds the "TABLE OF CONTENTS" heading
     toc_p = None
     for p in doc.paragraphs:
@@ -510,7 +564,7 @@ def build_front_matter_tables(doc):
             break
     assert toc_p is not None
 
-    def new_table_after(anchor_el, headers, widths, rows):
+    def new_table(headers, widths, rows):
         t = doc.add_table(rows=1, cols=len(headers))
         t.alignment = WD_TABLE_ALIGNMENT.CENTER
         t.autofit = False
@@ -551,48 +605,56 @@ def build_front_matter_tables(doc):
         for row in t.rows:
             for i, w in enumerate(widths):
                 row.cells[i].width = Inches(w)
-        anchor_el.addnext(t._tbl)
         return t
 
-    # ---- contents rows
+    def new_heading(text):
+        p = doc.add_paragraph()
+        p.alignment = WD_ALIGN_PARAGRAPH.CENTER
+        p.paragraph_format.first_line_indent = Inches(0)
+        p.paragraph_format.space_after = Pt(14)
+        p.paragraph_format.space_before = Pt(0)
+        style_run(p.add_run(text), size=18, bold=True)
+        return p
+
+    # ---- contents rows -------------------------------------------------
     rows = []
     sl = 0
     for kind, key, label in TOC_ENTRIES:
+        page = pagemap.get(key, "00")
         if kind == "chapter":
             sl += 1
-            rows.append((sl, label, "00"))
+            rows.append((sl, label, page))
         else:
-            rows.append(("", label, "00"))
-    toc_tbl = new_table_after(toc_p._p, ["SL. NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], rows)
+            rows.append(("", "%s   %s" % (key, label), page))
 
-    # ---- list of figures
-    fig_p = doc.add_paragraph()
-    fig_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    fig_p.paragraph_format.first_line_indent = Inches(0)
-    fig_p.paragraph_format.space_after = Pt(14)
-    style_run(fig_p.add_run("FIGURE OF CONTENT"), size=18, bold=True)
-    toc_p._p.addnext(fig_p._p)
-    # order: contents table, then figure heading, then figure table
-    fig_rows = [(num, cap.replace("Fig. ", ""), "00") for num, cap in FIG_ENTRIES]
-    fig_tbl = new_table_after(fig_p._p, ["FIG NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], fig_rows)
+    toc_tbl = new_table(["SL. NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], rows)
 
-    # ---- list of tables
-    tbl_p = doc.add_paragraph()
-    tbl_p.alignment = WD_ALIGN_PARAGRAPH.CENTER
-    tbl_p.paragraph_format.first_line_indent = Inches(0)
-    tbl_p.paragraph_format.space_after = Pt(14)
-    style_run(tbl_p.add_run("LIST OF TABLES"), size=18, bold=True)
-    fig_p._p.addnext(tbl_p._p)
-    tbl_rows = [(num, cap, "00") for num, cap in TBL_ENTRIES]
-    tbl_tbl = new_table_after(tbl_p._p, ["TABLE NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], tbl_rows)
+    # ---- list of figures ------------------------------------------------
+    fig_rows = [(num, clean_caption(cap), pagemap.get("FIG:" + num, "00"))
+                for num, cap in FIG_ENTRIES]
 
-    # page breaks: figure heading starts a new page, table heading starts a new page
+    # ---- list of tables -------------------------------------------------
+    tbl_rows = [(num, clean_caption(cap), pagemap.get("TBL:" + num, "00"))
+                for num, cap in TBL_ENTRIES]
+
+    fig_p = new_heading("FIGURE OF CONTENT")
+    fig_tbl = new_table(["FIG NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], fig_rows)
+    tbl_p = new_heading("LIST OF TABLES")
+    tbl_tbl = new_table(["TABLE NO", "NAME", "PAGE NO"], [0.9, 4.1, 1.27], tbl_rows)
+
+    # ---- move everything into the front matter, in the intended order ---
+    # anchor starts at the TABLE OF CONTENTS heading; every element is
+    # inserted directly after the previous one so the order is preserved.
+    anchor = toc_p._p
+    for el in (toc_tbl._tbl, fig_p._p, fig_tbl._tbl, tbl_p._p, tbl_tbl._tbl):
+        anchor.addnext(el)
+        anchor = el
+
+    # the two list headings start on a fresh page
     for p in (fig_p, tbl_p):
         pb = OxmlElement("w:pageBreakBefore")
-        p._p.get_or_add_pPr().append(pb)
+        insert_ordered(p._p.get_or_add_pPr(), pb, PPR_SEQ)
 
-    # the body section break must stay after these tables: ensure ordering
-    # (contents -> figures -> tables -> body section) by moving the sectPr marker
     return toc_tbl, fig_tbl, tbl_tbl
 
 
