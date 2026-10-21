@@ -1,0 +1,19 @@
+{
+ "console": [
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+  "error: Pattern attribute value ^[a-zA-Z0-9._%+-]+@(gmail\\.com|outlook\\.com|yahoo\\.com|hotmail\\.com|icloud\\.com|protonmail\\.com|aol\\.com)$ is not a valid regular expression: Uncaught SyntaxError: Invalid regu",
+  "error: Failed to load resource: the server responded with a status of 404 ()",
+  "log: === LOGIN RESPONSE ===",
+  "log: Backend user: undefined",
+  "log: User _id: undefined",
+  "log: =====================",
+  "error: Login error: User not found",
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o",
+  "verbose: [DOM] Input elements should have autocomplete attributes (suggested: \"current-password\"): (More info: https://goo.gl/9p2vKq) %o"
+ ],
+ "failed_requests": []
+}

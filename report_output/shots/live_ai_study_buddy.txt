@@ -1,0 +1,25 @@
+URL: https://elevoraai.vercel.app/login
+
+Welcome Back!
+
+Sign in to continue your learning journey
+
+User not found
+Email Address
+Password
+
+Forgot Password?
+
+🔑 Admin Credentials
+
+Email: officialElevoraAI@gmail.com
+
+Password: ElevoraAI@2025
+
+Sign In
+or
+Continue with Google
+
+Use your Google account to sign in quickly.
+
+Don't have an account?Sign Up
