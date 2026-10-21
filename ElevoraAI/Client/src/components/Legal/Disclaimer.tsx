@@ -73,7 +73,11 @@ const Disclaimer: React.FC = () => {
                     state.darkMode ? "text-gray-300" : "text-gray-700"
                   }`}
                 >
+<<<<<<< HEAD
                   <strong>Name:</strong> Mr Alpha
+=======
+                  <strong>Name:</strong> Abhisek Panda
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                 </p>
                 <p
                   className={`${
@@ -130,7 +134,11 @@ const Disclaimer: React.FC = () => {
             <div className="flex justify-center items-center">
               <img
                 src="https://github.com/MrAlpha00.png"
+<<<<<<< HEAD
                 alt="Mr Alpha"
+=======
+                alt="Abhisek Panda"
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                 className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg"
               />
             </div>

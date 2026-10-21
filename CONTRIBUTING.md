@@ -198,7 +198,11 @@ You’ll gain hands-on mentorship, feedback, and growth opportunities.
 
 ## 👨‍💻 Project Owner & Maintainer
 
+<<<<<<< HEAD
 **Mr Alpha**
+=======
+**Abhisek Panda**
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
 📧 [officialElevoraAI@gmail.com](mailto:officialElevoraAI@gmail.com)
 🌐 [GitHub: abhisek2004](https://github.com/abhisek2004)
 

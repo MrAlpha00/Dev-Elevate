@@ -14,7 +14,11 @@ If you encounter any issues while contributing or using the platform, you can se
 
 You can also email the project lead directly:
 
+<<<<<<< HEAD
 📩 **Mr Alpha** – [officialdevelevate@gmail.com](mailto:officialdevelevate@gmail.com)
+=======
+📩 **Abhisek Panda** – [officialdevelevate@gmail.com](mailto:officialdevelevate@gmail.com)
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
 
 ## 🔹 First-Time Contributor?
 

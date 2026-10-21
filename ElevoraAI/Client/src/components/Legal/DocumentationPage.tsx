@@ -305,7 +305,11 @@ npm run dev   # Runs on http://localhost:5173`}
             {/* Footer with improved contrast */}
             <footer className="pt-6 pb-8 mt-12 text-center text-indigo-600 border-t dark:text-indigo-400 border-indigo-200/50 dark:border-gray-700/50">
                 <p className="mb-2 text-base font-medium text-indigo-800 dark:text-indigo-200">
+<<<<<<< HEAD
                     Built with <span className="text-red-500">❤️</span> for GSSoC 2025 by Mr Alpha & Team.
+=======
+                    Built with <span className="text-red-500">❤️</span> for GSSoC 2025 by Abhisek Panda & Team.
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                 </p>
                 <p className="text-sm text-indigo-600 dark:text-indigo-400">
                     Explore Full Docs: <a

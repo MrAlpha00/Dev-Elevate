@@ -122,7 +122,11 @@ Get a glimpse of our **fully functional, AI-powered learning & career platform**
 
 # 👋 Hey there, tech fam!
 
+<<<<<<< HEAD
 I'm *Mr Alpha* 👨‍🎓, currently pursuing my *Bachelor of Technology (B.Tech)* in *Computer Science* 💻 *Final Year* 🎓.
+=======
+I'm *Abhisek Panda* 👨‍🎓, currently pursuing my *Bachelor of Technology (B.Tech)* in *Computer Science* 💻 *Final Year* 🎓.
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
 
 💡 My tech journey is driven by a *passion* for mastering the *✨ MERN Stack, along with strong skills in **☕ Java* and *📊 Data Structures & Algorithms (DSA)*.
 I’m also an *🌍 Open Source Contributor*, always eager to learn, build, and share knowledge with the community.

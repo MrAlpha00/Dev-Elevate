@@ -242,7 +242,11 @@ const HomePage = () => {
                 rel="noopener noreferrer"
                 className="ml-1 font-semibold text-yellow-400 transition duration-300 hover:text-pink-400"
               >
+<<<<<<< HEAD
                 Mr Alpha
+=======
+                Abhisek Panda
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
               </a>
             </div>
           </div>

@@ -75,7 +75,11 @@ This also includes interactions when a person represents the community in public
 
 If you experience or witness unacceptable behavior, please report it immediately to:
 
+<<<<<<< HEAD
 📧 **Mr Alpha**
+=======
+📧 **Abhisek Panda**
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
 📬 Email: **[officialElevoraAI@gmail.com](mailto:officialElevoraAI@gmail.com)**
 All complaints will be handled with **confidentiality**, **sincerity**, and **swift resolution**.
 

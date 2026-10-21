@@ -206,7 +206,11 @@ const TermsOfService: React.FC = () => {
               <strong>Email:</strong> officialelevoraai@gmail.com
             </p>
             <p>
+<<<<<<< HEAD
               <strong>Creator:</strong> Mr Alpha
+=======
+              <strong>Creator:</strong> Abhisek Panda
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
             </p>
             <p>
               <strong>GitHub:</strong>{" "}

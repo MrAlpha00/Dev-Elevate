@@ -94,7 +94,11 @@ const CreatorPage: React.FC = () => {
       <div className="px-4 py-12 mx-auto max-w-6xl sm:px-6 lg:px-8">
         {/* Hero Section */}
 
+<<<<<<< HEAD
         {/* Mr Alpha Section */}
+=======
+        {/* Abhisek Panda Section */}
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
         <div
           className={`${
             state.darkMode
@@ -106,7 +110,11 @@ const CreatorPage: React.FC = () => {
             <div className="relative">
               <img
                 src="https://github.com/MrAlpha00.png"
+<<<<<<< HEAD
                 alt="Mr Alpha"
+=======
+                alt="Abhisek Panda"
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                 className="w-32 h-32 rounded-full border-4 border-blue-500 shadow-lg"
               />
               <div className="flex absolute -right-2 -bottom-2 justify-center items-center w-8 h-8 bg-green-500 rounded-full border-4 border-white dark:border-gray-800">
@@ -120,7 +128,11 @@ const CreatorPage: React.FC = () => {
                   state.darkMode ? "text-white" : "text-gray-900"
                 }`}
               >
+<<<<<<< HEAD
                 Mr Alpha 👨‍💻
+=======
+                Abhisek Panda 👨‍💻
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
               </h1>
               <p
                 className={`text-xl mb-4 ${
@@ -506,7 +518,11 @@ const CreatorPage: React.FC = () => {
               >
                 <div>
                   <p className="mb-2">
+<<<<<<< HEAD
                     <strong>👨‍💻 Website Creator:</strong> Mr Alpha
+=======
+                    <strong>👨‍💻 Website Creator:</strong> Abhisek Panda
+>>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                   </p>
                   <p className="mb-2">
                     <strong>🌍 Portfolio:</strong>
