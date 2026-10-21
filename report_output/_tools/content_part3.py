@@ -993,78 +993,101 @@ CONCLUSION = [
 
 REFERENCES = [
     ("h1", "REFERENCES", None),
-    ("ref", "[1]", "Richardson, L. and", "Fielding, R.", "\"REST\" Web Architecture "
-     "Dissertation, Chapter 5: Resource-Oriented Architecture, University of California, "
-     "Irvine, 2000. Available at: https://www.ics.uci.edu/~fielding/pubs/dissertation/"
-     "rest_arch_style.htm", None),
-    ("ref", "[2]", "Brown, E.", "Getting Started with Django 5.0", "O'Reilly Media, 2024. "
+    ("ref", "[1]", "Fielding, R. T.",
+     "Architectural Styles and the Design of Network-based Software Architectures",
+     "Doctoral dissertation, Chapter 5: Representational State Transfer (REST), "
+     "University of California, Irvine, 2000. Available at: "
+     "https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm"),
+    ("ref", "[2]", "Django Software Foundation.",
+     "Django 5.0 Documentation",
      "Consulted for the repository, template and object-relational mapping conventions "
-     "compared in Section 2.2. Available at: https://docs.djangoproject.com/en/5.0/", None),
-    ("ref", "[3]", "OpenJS Foundation.", "Express — Node.js Web Application Framework, "
-     "Version 5 documentation.", "Available at: https://expressjs.com/en/guide/routing.html", None),
-    ("ref", "[4]", "MongoDB Inc.", "Mongoose 8.x Documentation — Schemas, Models and "
-     "Middleware.", "Available at: https://mongoosejs.com/docs/", None),
-    ("ref", "[5]", "OpenJS Foundation.", "jsonwebtoken — JSON Web Token implementation for "
-     "Node.js.", "Available at: https://github.com/auth0/node-jsonwebtoken", None),
+     "compared in Section 2.2. Available at: https://docs.djangoproject.com/en/5.0/"),
+    ("ref", "[3]", "OpenJS Foundation.",
+     "Express \u2014 Node.js Web Application Framework, Version 5 Documentation",
+     "Available at: https://expressjs.com/en/guide/routing.html"),
+    ("ref", "[4]", "MongoDB Inc.",
+     "Mongoose 8.x Documentation \u2014 Schemas, Models and Middleware",
+     "Available at: https://mongoosejs.com/docs/"),
+    ("ref", "[5]", "OpenJS Foundation.",
+     "jsonwebtoken \u2014 JSON Web Token Implementation for Node.js",
+     "Available at: https://github.com/auth0/node-jsonwebtoken"),
     ("ref", "[6]", "Sandhu, R. S., Coyne, E. J., Feinstein, H. L. and Youman, C. E.",
-     "\"Role-Based Access Control Models\",", "IEEE Computer, vol. 29, no. 2, pp. 38-47, "
-     "February 1996. Cited in Section 2.5 as the origin of the role-based model applied "
-     "in Sections 3.2 and 4.6.", None),
-    ("ref", "[7]", "Hamari, J., Koivisto, J. and Sarsa, H.", "\"Does Gamification Work? A "
-     "Literature Review of Empirical Studies on Gamification\",", "Proceedings of the 47th "
-     "Hawaii International Conference on System Sciences (HICSS-47), 2014, pp. 1-10. Cited "
-     "in Section 2.6.", None),
-    ("ref", "[8]", "Mollick, E. R. and Mollick, L.", "\"Using AI to Implement Effective "
-     "Teaching Strategies in Classrooms: Five Strategies, Including Prompts\",", "SSRN "
-     "Electronic Journal, 2023. Available at: "
-     "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4323286", None),
-    ("ref", "[9]", "Pinto, G., Steinmacher, I. and Gerosa, M. A.", "\"More Common Than You "
-     "Think: An In-depth Study of Casual Contributors\",", "Proceedings of the 23rd IEEE "
-     "International Conference on Software Analysis, Evolution and Reengineering "
-     "(SANER), 2016, pp. 199-208. Cited in Section 2.8.", None),
-    ("ref", "[10]", "Elo, A. E.", "\"The Rating of Chess Players\",", "US Chess Federation, "
-     "New York, 1978. The basis of the rating computation implemented in "
-     "Server/utils/ratingCalculator.js and described in Section 5.13.", None),
-    ("ref", "[11]", "Judge0 Ltd. and the Judge0 open-source contributors.", "\"Judge0 — "
-     "Open Source Code and CPU Judge\",", "Available at: https://judge0.com/ and "
-     "https://github.com/judge0/judge0", None),
-    ("ref", "[12]", "Google.", "\"Gemini API — Generative Language API Documentation\", "
-     "v1beta models endpoint.", "Available at: "
-     "https://ai.google.dev/gemini-api/docs", None),
-    ("ref", "[13]", "OpenAI.", "\"OpenAI API Reference — Chat Completions\",", "Available at: "
-     "https://platform.openai.com/docs/api-reference/chat", None),
-    ("ref", "[14]", "Groq, Inc.", "\"Groq API Documentation — OpenAI-compatible "
-     "Inference Endpoint\",", "Available at: https://console.groq.com/docs", None),
-    ("ref", "[15]", "Socket.IO Inc.", "\"Socket.IO 4.x Documentation — Rooms and "
-     "Broadcasting\",", "Available at: https://socket.io/docs/v4/", None),
-    ("ref", "[16]", "Meta Platforms, Inc. and contributors.", "\"React 18 — A JavaScript "
-     "Library for Building User Interfaces\",", "Available at: https://react.dev/ and "
-     "https://react.dev/blog/2022/03/29/react-v18", None),
-    ("ref", "[17]", "Evan You and contributors.", "\"Vite — Next Generation Frontend "
-     "Tooling\",", "Available at: https://vitejs.dev/guide/", None),
-    ("ref", "[18]", "Adam Wathan and contributors.", "\"Tailwind CSS — A Utility-First CSS "
-     "Framework\",", "Available at: https://tailwindcss.com/docs", None),
-    ("ref", "[19]", "Microsoft Corporation.", "\"Monaco Editor — The Editor That Powers "
-     "Visual Studio Code\",", "Available at: https://microsoft.github.io/monaco-editor/", None),
-    ("ref", "[20]", "The Firebase Team.", "\"Firebase Authentication — Sign in with Google\", "
-     "and the Firebase JavaScript SDK documentation.", "Available at: "
-     "https://firebase.google.com/docs/auth", None),
-    ("ref", "[21]", "Auth0, Inc.", "\"JSON Web Token (JWT) — RFC 7519\",", "Available at: "
-     "https://jwt.io/", None),
-    ("ref", "[22]", "Nodemailer.", "\"Nodemailer — Email Sending Library for Node.js\",", "Available at: "
-     "https://nodemailer.com/", None),
-    ("ref", "[23]", "Google Developers.", "\"YouTube Data API v3 Documentation\",", "Available at: https://developers.google.com/youtube/v3/docs", None),
-    ("ref", "[24]", "NewsAPI.", "\"NewsAPI — Top Headlines Endpoint Documentation\",", "Available at: https://newsapi.org/docs", None),
-    ("ref", "[25]", "Paystack, Inc. and Stripe, Inc.", "\"Stripe — Payment Links and "
-     "Checkout Documentation\",", "Consulted in relation to the subscription module "
-     "described in Sections 3.3 and 5.15. Available at: https://docs.stripe.com/", None),
-    ("ref", "[26]", "Mozilla Foundation and contributors.", "\"MDN Web Docs — Fetch API, "
-     "Web Storage and Regular Expressions\",", "Available at: https://developer.mozilla.org/",
-     None),
-    ("ref", "[27]", "The OpenJS Foundation and contributors.", "\"Express, Node.js and "
-     "Socket.IO — Documentation and Release Notes\",", "Consulted for the versions and the "
-     "middleware semantics recorded in Table 3.4.", None),
-    ("ref", "[28]", "MrAlpha00.", "\"Dev-Elevate — Elevora AI Project Repository\", "
-     "GitHub, 2025.", "The software described in this report. Available at: "
-     "https://github.com/MrAlpha00/Dev-Elevate", None),
+     "Role-Based Access Control Models",
+     "IEEE Computer, vol. 29, no. 2, pp. 38-47, February 1996. Cited in Section 2.5 "
+     "as the origin of the role-based model applied in Sections 3.2 and 4.6."),
+    ("ref", "[7]", "Hamari, J., Koivisto, J. and Sarsa, H.",
+     "Does Gamification Work? A Literature Review of Empirical Studies on Gamification",
+     "Proceedings of the 47th Hawaii International Conference on System Sciences "
+     "(HICSS-47), 2014. Cited in Section 2.6."),
+    ("ref", "[8]", "Mollick, E. R. and Mollick, L.",
+     "Using AI to Implement Effective Teaching Strategies in Classrooms: Five Strategies, "
+     "Including Prompts",
+     "SSRN Electronic Journal, 2023. Available at: "
+     "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4323286"),
+    ("ref", "[9]", "Pinto, G., Steinmacher, I. and Gerosa, M. A.",
+     "More Common Than You Think: An In-depth Study of Casual Contributors",
+     "Proceedings of the 23rd IEEE International Conference on Software Analysis, "
+     "Evolution and Reengineering (SANER), 2016, pp. 199-208. Cited in Section 2.8."),
+    ("ref", "[10]", "Elo, A. E.",
+     "The Rating of Chess Players, Past and Present",
+     "Arco Publishing, New York, 1978. The basis of the rating computation implemented "
+     "in Server/utils/ratingCalculator.js and described in Section 5.13."),
+    ("ref", "[11]", "Judge0 Ltd. and the Judge0 open-source contributors.",
+     "Judge0 \u2014 Open Source Code and CPU Judge",
+     "Available at: https://judge0.com/ and https://github.com/judge0/judge0"),
+    ("ref", "[12]", "Google.",
+     "Gemini API \u2014 Generative Language API Documentation, v1beta Models Endpoint",
+     "Available at: https://ai.google.dev/gemini-api/docs"),
+    ("ref", "[13]", "OpenAI.",
+     "OpenAI API Reference \u2014 Chat Completions",
+     "Available at: https://platform.openai.com/docs/api-reference/chat"),
+    ("ref", "[14]", "Groq, Inc.",
+     "Groq API Documentation \u2014 OpenAI-compatible Inference Endpoint",
+     "Available at: https://console.groq.com/docs"),
+    ("ref", "[15]", "Socket.IO Inc.",
+     "Socket.IO 4.x Documentation \u2014 Rooms and Broadcasting",
+     "Available at: https://socket.io/docs/v4/"),
+    ("ref", "[16]", "Meta Platforms, Inc. and contributors.",
+     "React 18 \u2014 A JavaScript Library for Building User Interfaces",
+     "Available at: https://react.dev/ and "
+     "https://react.dev/blog/2022/03/29/react-v18"),
+    ("ref", "[17]", "You, E. and contributors.",
+     "Vite \u2014 Next Generation Frontend Tooling",
+     "Available at: https://vitejs.dev/guide/"),
+    ("ref", "[18]", "Wathan, A. and contributors.",
+     "Tailwind CSS \u2014 A Utility-First CSS Framework",
+     "Available at: https://tailwindcss.com/docs"),
+    ("ref", "[19]", "Microsoft Corporation.",
+     "Monaco Editor \u2014 The Editor That Powers Visual Studio Code",
+     "Available at: https://microsoft.github.io/monaco-editor/"),
+    ("ref", "[20]", "The Firebase Team.",
+     "Firebase Authentication \u2014 Sign in with Google",
+     "and the Firebase JavaScript SDK documentation. Available at: "
+     "https://firebase.google.com/docs/auth"),
+    ("ref", "[21]", "Auth0, Inc.",
+     "JSON Web Token (JWT) \u2014 RFC 7519",
+     "Available at: https://jwt.io/"),
+    ("ref", "[22]", "Nodemailer.",
+     "Nodemailer \u2014 Email Sending Library for Node.js",
+     "Available at: https://nodemailer.com/"),
+    ("ref", "[23]", "Google Developers.",
+     "YouTube Data API v3 Documentation",
+     "Available at: https://developers.google.com/youtube/v3/docs"),
+    ("ref", "[24]", "NewsAPI.",
+     "NewsAPI \u2014 Top Headlines Endpoint Documentation",
+     "Available at: https://newsapi.org/docs"),
+    ("ref", "[25]", "Stripe, Inc.",
+     "Stripe \u2014 Payment Links and Checkout Documentation",
+     "Consulted in relation to the subscription module described in Sections 3.3 and "
+     "5.15. Available at: https://docs.stripe.com/"),
+    ("ref", "[26]", "Mozilla Foundation and contributors.",
+     "MDN Web Docs \u2014 Fetch API, Web Storage and Regular Expressions",
+     "Available at: https://developer.mozilla.org/"),
+    ("ref", "[27]", "The OpenJS Foundation and contributors.",
+     "Express, Node.js and Socket.IO \u2014 Documentation and Release Notes",
+     "Consulted for the versions and the middleware semantics recorded in Table 3.4."),
+    ("ref", "[28]", "MrAlpha00.",
+     "Dev-Elevate \u2014 Elevora AI Project Repository",
+     "GitHub, 2025. The software described in this report. Available at: "
+     "https://github.com/MrAlpha00/Dev-Elevate"),
 ]

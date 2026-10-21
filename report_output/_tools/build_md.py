@@ -3,8 +3,12 @@
 
 The Markdown file mirrors the DOCX one-to-one and links the figures and
 screenshots that live in report_output/figures and report_output/shots.
+A two-pass render is used so that the table of contents, the figure list and
+the table list can be emitted before the body while still carrying the real
+page numbers resolved from the PDF.
 """
 import io
+import json
 import os
 import re
 import sys
@@ -29,80 +33,90 @@ def esc(text):
 
 
 def main():
-    out = []
-    chapter_no = [0]
-    table_no = [0]
-    fig_no = [0]
+    with open(os.path.join(TOOLS_DIR, "pagemap.json"), encoding="utf-8") as fh:
+        pagemap = json.load(fh)
+
+    body = []
+    front = []
     toc = []
     figs = []
     tbls = []
+    chapter_no = [0]
+    table_no = [0]
+    fig_no = [0]
 
-    def para(text):
-        out.append(text)
-        out.append("")
+    def plain(text):
+        body.append(text)
+        body.append("")
 
     def h1(num, title):
         if num == "ABSTRACT":
-            out.append("# ABSTRACT")
-            out.append("")
-            toc.append(("chapter", "ABSTRACT", "ABSTRACT"))
+            body.append("# ABSTRACT")
+            body.append("")
             return
         if num in ("CONCLUSION", "REFERENCES"):
-            out.append("# %s" % num)
-            out.append("")
+            body.append("# %s" % num)
+            body.append("")
             toc.append(("chapter", num, num))
             return
         chapter_no[0] = int(re.search(r"(\d+)", num).group(1))
         table_no[0] = 0
         fig_no[0] = 0
-        out.append("# CHAPTER %s" % re.sub(r"\s*[–\-]\s*", " - ", num))
-        out.append("")
-        out.append("## %s" % title)
-        out.append("")
-        toc.append(("chapter", num, title))
+        body.append("# %s" % num.replace("\u2014", "\u2013"))
+        body.append("")
+        if title:
+            body.append("## %s" % title)
+            body.append("")
+        toc.append(("chapter", num, title or num))
 
     def h2(num, title):
-        out.append("### %s  %s" % (num, title))
-        out.append("")
+        body.append("### %s   %s" % (num, title))
+        body.append("")
         toc.append(("section", num, title))
 
     def table(caption, headers, rows):
-        number = "%d.%d" % (chapter_no[0], table_no[0])
         table_no[0] += 1
-        out.append("**Table %s: %s**" % (number, caption.split(":", 1)[-1].strip()))
-        out.append("")
-        out.append("| " + " | ".join(esc(h) for h in headers) + " |")
-        out.append("|" + "|".join([" --- "] * len(headers)) + "|")
+        number = "%d.%d" % (chapter_no[0], table_no[0])
+        body.append("**Table %s: %s**" % (number, caption.split(":", 1)[-1].strip()))
+        body.append("")
+        body.append("| " + " | ".join(esc(h) for h in headers) + " |")
+        body.append("|" + "|".join([" --- "] * len(headers)) + "|")
         for r in rows:
-            out.append("| " + " | ".join(esc(c) for c in r) + " |")
-        out.append("")
+            body.append("| " + " | ".join(esc(c) for c in r) + " |")
+        body.append("")
         tbls.append((number, caption))
 
     def figure(rel_path, caption, width):
-        number = "%d.%d" % (chapter_no[0], fig_no[0])
         fig_no[0] += 1
-        out.append("![%s](%s)" % (clean_caption(caption), rel_path.replace("\\", "/")))
-        out.append("")
-        out.append("*Fig. %s: %s*" % (number, caption.split(":", 1)[-1].strip()))
-        out.append("")
+        number = "%d.%d" % (chapter_no[0], fig_no[0])
+        body.append("![%s](%s)" % (clean_caption(caption), rel_path.replace("\\", "/")))
+        body.append("")
+        body.append("*Fig. %s: %s*" % (number, caption.split(":", 1)[-1].strip()))
+        body.append("")
         figs.append((number, caption))
 
     def code(source, text):
-        out.append("```")
-        out.append(text)
-        out.append("```")
-        out.append("")
-        out.append("*Extract: %s*" % source)
-        out.append("")
+        body.append("```")
+        body.append(text)
+        body.append("```")
+        body.append("")
+        body.append("*Extract: %s*" % source)
+        body.append("")
 
     def ref(num, author, title, extra):
-        line = "**%s** %s %s" % (num, author, title)
+        author = author.strip()
+        if not author.endswith("."):
+            author += "."
+        line = '**%s** *%s* "%s"' % (num, author, title.strip())
         if extra:
-            line += " " + extra
-        out.append(line)
-        out.append("")
+            line += ", " + extra.strip()
+        body.append(line)
+        body.append("")
 
-    def render(blocks):
+    def render(blocks, target):
+        nonlocal body
+        saved = body
+        body = target
         for blk in blocks:
             kind = blk[0]
             if kind == "h1":
@@ -110,13 +124,13 @@ def main():
             elif kind == "h2":
                 h2(blk[1], blk[2])
             elif kind == "p":
-                para(blk[1])
+                plain(blk[1])
             elif kind == "b":
-                out.append("- %s" % blk[1])
-                out.append("")
+                body.append("- %s" % blk[1])
+                body.append("")
             elif kind == "n":
-                out.append("%s. %s" % (blk[2] if len(blk) > 2 else "", blk[1]))
-                out.append("")
+                body.append("%s. %s" % (blk[2] if len(blk) > 2 else "", blk[1]))
+                body.append("")
             elif kind == "table":
                 table(blk[1], blk[2], blk[3])
             elif kind == "fig":
@@ -125,16 +139,18 @@ def main():
                 code(blk[1], blk[2])
             elif kind == "ref":
                 ref(blk[1], blk[2], blk[3], blk[4] if len(blk) > 4 else "")
+        body = saved
 
-    render(c1.FRONT)
+    # pass 1: front matter and body, collecting the three indexes
+    render(c1.FRONT, front)
+    for module, chapter in ((c1.CH1, 1), (c1.CH2, 2), (c2.CH3, 3), (c2.CH4, 4),
+                            (c3.CH5, 5), (c3.CH6, 6)):
+        chapter_no[0] = chapter
+        render(module, body)
+    render(c3.CONCLUSION, body)
+    render(c3.REFERENCES, body)
 
-    # ---------------- table of contents (generated, with real page numbers)
-    import json
-    try:
-        with open(os.path.join(TOOLS_DIR, "pagemap.json"), encoding="utf-8") as fh:
-            pagemap = json.load(fh)
-    except Exception:
-        pagemap = {}
+    out = list(front)
 
     out.append("# TABLE OF CONTENTS")
     out.append("")
@@ -142,12 +158,11 @@ def main():
     out.append("|---|---|---|")
     sl = 0
     for kind, key, label in toc:
-        page = pagemap.get(key, "")
         if kind == "chapter":
             sl += 1
-            out.append("| %d | %s | %s |" % (sl, label, page))
+            out.append("| %d | %s | %s |" % (sl, label, pagemap.get(key, "")))
         else:
-            out.append("| | %s   %s | %s |" % (key, label, page))
+            out.append("| | %s   %s | %s |" % (key, label, pagemap.get(key, "")))
     out.append("")
 
     out.append("# FIGURE OF CONTENT")
@@ -168,21 +183,7 @@ def main():
 
     out.append("---")
     out.append("")
-
-    chapter_no[0] = 1
-    render(c1.CH1)
-    chapter_no[0] = 2
-    render(c1.CH2)
-    chapter_no[0] = 3
-    render(c2.CH3)
-    chapter_no[0] = 4
-    render(c2.CH4)
-    chapter_no[0] = 5
-    render(c3.CH5)
-    chapter_no[0] = 6
-    render(c3.CH6)
-    render(c3.CONCLUSION)
-    render(c3.REFERENCES)
+    out.extend(body)
 
     with io.open(MD, "w", encoding="utf-8", newline="\n") as fh:
         fh.write("\n".join(out).rstrip() + "\n")

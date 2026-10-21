@@ -255,6 +255,15 @@ def build():
     sec_style.paragraph_format.first_line_indent = Inches(0)
     sec_style.paragraph_format.keep_with_next = True
 
+    # give the two custom heading styles an outline level so that the Word
+    # navigation pane (and any reader that follows the document outline)
+    # presents the chapters and sections hierarchically
+    for _style, _level in ((ch_style, 0), (sec_style, 1)):
+        _pPr = _style.element.get_or_add_pPr()
+        _ol = OxmlElement("w:outlineLvl")
+        _ol.set(qn("w:val"), str(_level))
+        _pPr.append(_ol)
+
     cap_style = styles.add_style("FigureCaption", 1)
     cap_style.base_style = styles["Normal"]
     cap_style.font.name = SERIF
@@ -381,7 +390,7 @@ def build():
         p.paragraph_format.space_before = Pt(10)
         p.paragraph_format.space_after = Pt(2)
         p.paragraph_format.keep_with_next = True
-        p.add_run().add_picture(path, width=Inches(width))
+        p.add_run().add_picture(path, width=Inches(min(width, 6.0)))
         cp = doc.add_paragraph(style="FigureCaption")
         cap_text = "Fig. %s: %s" % (number, split_caption(caption)[1])
         style_run(cp.add_run(cap_text), size=12)
@@ -480,9 +489,12 @@ def build():
                 pf.space_after = Pt(6)
                 pf.line_spacing = 1.25
                 style_run(p.add_run(blk[1] + " "), size=11, bold=True)
-                style_run(p.add_run(blk[2] + " "), size=11, italic=True)
-                style_run(p.add_run("\"" + blk[3] + "\", "), size=11)
-                style_run(p.add_run(blk[4]), size=11)
+                authors = blk[2].strip()
+                if not authors.endswith("."):
+                    authors += "."
+                style_run(p.add_run(authors + " "), size=11, italic=True)
+                style_run(p.add_run("\"" + blk[3].strip() + "\", "), size=11)
+                style_run(p.add_run(blk[4].strip()), size=11)
 
     # ----------------------------------------------------------- front matter
     chapter_no = [0]
