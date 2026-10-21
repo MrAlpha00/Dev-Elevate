@@ -90,7 +90,8 @@ def main():
         key, kind, label = e["key"], e["kind"], e["label"]
         if kind == "chapter":
             if key.startswith("CHAPTER"):
-                pat = re.compile(r"CHAPTER\s*[–\-—]\s*\d+")
+                num = re.search(r"(\d+)", key).group(1)
+                pat = re.compile(r"CHAPTER\s*[–\-—]\s*%s\b" % num)
                 hit = None
                 for p in body:
                     if pat.search(p["text"]):
