@@ -411,6 +411,8 @@ def build():
         style_run(cap.add_run("Extract: %s" % source), size=10, italic=True)
 
     # --------------------------------------------------------- render blocks
+    in_abstract = [False]
+
     def render(blocks):
         for blk in blocks:
             kind = blk[0]
