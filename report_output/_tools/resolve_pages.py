@@ -108,10 +108,11 @@ def main():
                 if hit:
                     pagemap[key] = label_of(hit)
         else:
-            # section heading: "<number>  <title>"
-            hit = find_first("%s %s" % (key, label))
+            # section heading: "<number>  <title>", or a bare label
+            needle = label if key == label else "%s %s" % (key, label)
+            hit = find_first(needle)
             if hit is None:
-                hit = find_first("%s %s" % (key, label.replace("’", "'")))
+                hit = find_first(needle.replace("’", "'"))
             if hit:
                 pagemap[key] = label_of(hit)
 
