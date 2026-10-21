@@ -446,7 +446,7 @@ def build():
             elif kind == "h2":
                 section(blk[1], blk[2])
             elif kind == "p":
-                para(blk[1])
+                para(blk[1], line=1.35 if in_abstract[0] else 1.5)
             elif kind == "b":
                 bullet(blk[1])
             elif kind == "n":
