@@ -1,0 +1,643 @@
+﻿ts. 
+The primary purpose of the Online Bus Ticket Booking System is to simplify the 
+ticketing process for both passengers and bus operators. The system allows users to search for 
+available buses, select suitable routes, check seat availability, make bookings, and receive 
+confirmation instantly. This eliminates unnecessary delays and reduces dependency on 
+physical ticket counters. In addition, bus operators can manage schedules, maintain passenger 
+records, update bus details, and monitor bookings through a well-structured backend interface. 
+This digitization not only enhances the efficiency of operations but also improves customer 
+satisfaction by offering transparency, accuracy, and convenience. 
+The need for automation in the bus reservation system arises due to several limitations 
+in the conventional approach. Manual ticketing leads to problems such as human errors, 
+duplicate bookings, misplaced records, limited accessibility, and difficulties in managing peak- 
+--- page 8 size 596x842
+Online Bus Ticket Booking System Introduction 
+Dept.of ECE,GECR 2025-26 2 
+ 
+ 
+ 
+season demands. With the introduction of online systems, these challenges are addressed 
+effectively through real-time data processing, centralized storage, and automated workflows. 
+The system ensures that seats are booked in a first -come-first-serve manner and availability 
+updates reflect instantly, thereby preventing double booking and maintaining accuracy. 
+This project also aims to provide a seamless and intuitive interface to the users. Keeping 
+user experience as a priority, the system is designed to be easy to navigate, even for non - 
+technical users. The interface typically includes modules for login, registration, route search, 
+bus details, fare details, seat selection, payment processing (if implemented conceptually), and 
+ticket download. Each module is developed systematically using software engineering 
+principles ensuring correctness, consistency, and completeness. Proper validation techniques 
+are employed to maintain data integrity and avoid invalid entries. 
+From a software engineering perspective, the project demonstrates the entire flow of 
+developing a real-world application: from requirement analysis, system design, documentation, 
+implementation, testing, and evaluation. The process starts with identifying user requirements, 
+both functional (e.g., booking a ticket, searching buses) and non-functional (e.g., performance, 
+security, reliability). Based on these requirements, various diagrams such as Data Flow 
+Diagrams (DFD), UML diagrams, flowcharts, and ER diagrams are prepared to visualize the 
+system architecture and interactions. These diagrams serve as a blueprint for the development 
+phase and ensure that all stakeholders understand the system clearly before coding begins. 
+The development process follows a suitable SDLC model such as Waterfall, 
+Incremental, V-Model, or Agile depending on project requirements. In academic projects, the 
+Waterfall model is commonly used as it provides a linear and structured approach, making it 
+easier to understand and implement. Following the SDLC phases helps maintain project 
+quality, identify errors early, and ensure that the final product meets the expected outcomes. 
+Testing is another crucial part of this project, where different testing methods like unit testing, 
+integration testing, and system testing are used to ensure the correctness and reliability of the 
+system. Proper documentation is also maintained throughout the development, which is 
+essential in software engineering. 
+One of the major advantages of an online booking system is its accessibility. The system 
+can be accessed at any time, from anywhere, using any device with internet connectivity. This 
+24/7 availability allows users to make last-minute bookings without the need to visit a physical 
+counter. Furthermore, the system increases the operational efficiency of the bus company by 
+--- page 9 size 596x842
+Online Bus Ticket Booking System Introduction 
+Dept.of ECE,GECR 2025-26 3 
+ 
+ 
+ 
+simplifying record keeping, reducing manpower requirements, and enabling better decision - 
+making through accurate data analytics. The stored data can provide insights into passenger 
+behavior, peak travel times, popular routes, and ticket demand, which can be used for future 
+planning and system enhancement. 
+Security and data protection are also important aspects of this project. As the system 
+deals with sensitive information such as personal details, contact numbers, and possibly online 
+payments, it ensures secure transactions and data privacy. Techniques such as input validation, 
+encrypted storage, and secure communication protocols can be integrated to make the system 
+robust against potential threats. Although the mini -project may not implement advanced 
+security features, the design considerations include security as an important requirement. 
+The structured and systematic development of this system using software engineering 
+principles emphasizes the importance of planning, documentation, and quality assurance in 
+building reliable software. As technology continues to evolve, the system can be further 
+expanded with features like online payment integration, real -time bus tracking, automated 
+notifications, and mobile app versions. Overall, the project successfully demonstrates the 
+significance of software engineering methodologies in solving real -world problems and 
+creating impactful digital applications. 
+--- page 10 size 596x842
+Online Bus Ticket Booking System Literature Survey 
+ 
+ 
+CHAPTER . 2 
+LITERATURE SURVEY 
+The increasing popularity of digital services in the transportation sector has led to 
+significant research and development in online ticket reservation systems. Several studies 
+highlight the limitations of traditional manual ticketing, including long queues, human errors, 
+data redundancy, and lack of real-time availability updates. Sharma & Gupta (2019) conducted 
+a study on .Digital Ticketing Systems for Public Transport., where they emphasized that 
+traditional manual booking methods lead to long queues, human errors, and poor record 
+management. Their research showed that online bus ticketing systems significantly improve 
+efficiency by automating seat allocation, maintaining accurate schedules, and providing real - 
+time availability. They concluded that integrating web-based booking platforms enhances user 
+satisfaction and reduces operational costs for transport agencies. 
+. Reddy & Kumar (2020) in their paper .Web -Based Bus Reservation Framework. 
+proposed a user -friendly online bus booking model that supports route search, fare 
+display, and secure reservations. Their work highlighted the importance of centralized 
+databases, which help eliminate double bookings and enable seamless updates of bus 
+schedules. They also stressed that such systems increase transparency and accessibility, 
+especially in rural and semi-urban regions where travel planning is difficult. 
+. Factors Affecting Online Bus Ticket Reservation." As progress develops, PC -based 
+service applications are promoted to intranet-based services, and the rapid adoption of 
+web technology has changed everything into cyber based applications accessible 
+virtually, internationally, and on- demand over the internet. What is new is the capacity 
+to scale services rapidly; this paradigm shift in service provisioning affects the 
+deployment of real time applications. According to this study on online ticketing, each 
+component should be investigated for the lucrative prospects that cyber applications 
+reveal. Results identified on-demand, cashless, and one-to-one privacy determinants as 
+keenness variables, less costly, specific circumstances, and time-saving as acceptability 
+factors. This study would help cyber -based service providers satisfy the requirements 
+posed by the expanding scope of their services(Marfo & Quansah, 2020; Bagrecha & 
+Alam, 2016). 
+Dept.of ECE,GECR 2025-26 4 
+--- page 11 size 596x842
+Online Bus Ticket Booking System System Specification 
+Dept.of ECE,GECR 2025-26 5 
+ 
+ 
+CHAPTER . 3 
+SYSTEM SPECIFICATION 
+1. Project overview 
+An online platform to let passengers search routes, view schedules, choose seats, book 
+tickets, and get e-tickets. Operators manage buses, routes, schedules and view booking reports. 
+Built as a web application (responsive) with an admin dashboard and optional mobile-friendly 
+UI. 
+2. Functional requirements 
+i. User account management 
+ 
+. Register/login (email/phone + password), password reset. 
+. Profile management (name, contact, ID proof optional). 
+ 
+ii. Search & Browse 
+ 
+. Search by origin, destination, date. 
+. Filter by time, price, operator, bus type. 
+ 
+iii. Bus & Seat management 
+ 
+. Display seat layout; seat selection/reservation in real time. 
+. Show fare breakdown and availability. 
+ 
+iv. Booking & cancellation 
+ 
+. Create bookings with unique PNR/ticket ID. 
+. Online cancellation with refund rules. 
+ 
+v. Payment (optional) 
+ 
+. Integration with payment gateway (card/UPI/wallet). 
+. Payment status handling and reconciliation. 
+ 
+vi. E-ticket & validation 
+ 
+. Generate e-ticket (PDF/QR code). 
+. Validate QR/PNR on board. 
+--- page 12 size 596x842
+Online Bus Ticket Booking System System Specification 
+Dept.of ECE,GECR 2025-26 6 
+ 
+ 
+ 
+vii. Admin & Operator features 
+ 
+. CRUD for buses, routes, schedules and fares. 
+. Booking reports and daily summaries. 
+. Seat allocation, trip manifest download. 
+ 
+viii. Notifications 
+ 
+. Email/SMS/Push for booking confirmation, reminders, cancellations. 
+ 
+ix. Audit & logging 
+ 
+. Track user operations, payment events, admin changes. 
+ 
+4. Non-functional requirements 
+ 
+. Performance: Page response < 2s for major pages under normal load. Booking 
+transaction latency < 3s. 
+. Scalability: Support vertical/horizontal scaling; handle peak loads (e.g., festival 
+season). 
+. Availability: 99% uptime target for production. 
+. Security: TLS for all traffic, hashed passwords (bcrypt/argon2), input validation, role- 
+based access control. 
+. Reliability: ACID-like booking flow to avoid double bookings (use DB transactions / 
+optimistic locking). 
+. Usability: Responsive UI; accessible (basic WCAG compliance). 
+. Maintainability: Modular code, RESTful APIs, documentation. 
+. Localization: Support multiple languages if needed. 
+ 
+5. Software Requirements 
+MATLAB Software 
+ 
+o MATLAB R2018a or later 
+ 
+o MATLAB App Designer (for GUI) 
+ 
+o MATLAB Database Toolbox (if connecting to a database) 
+ 
+o MATLAB Web App Server (optional, for online deployment) 
+--- page 13 size 596x842
+Online Bus Ticket Booking System System Specification 
+Dept.of ECE,GECR 2025-26 7 
+ 
+ 
+ 
+Operating System 
+ 
+o Windows 10 or later 
+ 
+o macOS 
+ 
+o Linux (Ubuntu) 
+ 
+Database (any one) 
+ 
+o MySQL 
+ 
+o SQLite (simple) 
+ 
+o MATLAB tables (for small projects) 
+ 
+5. Hardware Requirements 
+For Development Computer 
+ 
+. Processor: Dual-core or higher 
+ 
+. RAM: 4 GB (8 GB recommended) 
+ 
+. Storage: 5.10 GB free space 
+ 
+. Display: 1366.768 resolution or higher 
+ 
+For Users (Client Devices) 
+ 
+. Any device with: 
+ 
+o Internet connection 
+ 
+o Web browser(Only needed if using MATLAB Web App or deployed system) 
+ 
+For Server (if deployed online) 
+ 
+. Basic server/computer with: 
+ 
+o 4 GB RAM 
+ 
+o Dual-core processor 
+ 
+o Stable internet 
+ 
+o Installed MATLAB Web App Server 
+--- page 14 size 596x842
+Online Bus Ticket Booking System Design 
+Dept.of ECE,GECR 2025-26 8 
+ 
+ 
+ 
+CHAPTER . 4 
+DESIGN 
+The design of the Online Bus Ticket Booking System focuses on creating a structured, 
+user-friendly, and modular architecture that supports efficient ticket booking and 
+administrative management. The system follows a layered design approach consisting of the 
+Presentation Layer, Application Logic Layer, and Database Layer. The presentation layer 
+includes the user interface developed using MATLAB App Designer or a web-based UI, where 
+users can search buses, select seats, make bookings, and download e -tickets. This interface 
+emphasizes simplicity, clarity, and responsiveness for an easy user experience. 
+Here's how the Modeling Activity fits into the SDLC for an Online Bus Ticket  Booking 
+System. 
+1. Creating Use Case Models 
+Objective: 
+ 
+Define the different user interactions (use cases) with the system, helping to clarify the system's 
+functional requirements. 
+Key Activities: 
+ 
+. Identify Actors: Identify the key users (actors) of the system, including 
+. Customers: Users who will search, book tickets, make payments, and manage 
+. bookings. Admin: Users who will manage buses, routes, schedules, and view booking 
+data. 
+. Payment Gateway: External actor for processing payments. 
+. Customer Support: Internal users who may assist customers in case of issues or 
+inquiries. 
+. Identify Use Cases: For each actor, identify the actions (use cases) they will perform 
+ 
+Example use cases for customers: 
+ 
+. Search for Buses 
+. Select Seats 
+. Book Ticket 
+. Make Payment 
+--- page 15 size 596x842
+Online Bus Ticket Booking System Design 
+Dept.of ECE,GECR 2025-26 9 
+ 
+ 
+ 
+. View/Cancel Bookings 
+ 
+Example use cases for admins: 
+ 
+. Add/Remove Buses 
+. Manage Routes and Schedules 
+. View of Customer Data and Bookings 
+. Use Case Diagram: Create a use case diagram to visualize the system's actors and their 
+interactions with the system. 
+ 
+Fig:4.1 Use Case Diagram 
+Outcome: 
+ 
+The use case diagram helps clarify the primary functionalities of the system and their 
+interactions with users. It also helps to prioritize which use cases need to be developed first 
+based on business requirements 
+2. Creating Data Models (Entity-Relationship Diagrams) 
+Objective: 
+ 
+Design the data structure and relationships between different entities in the system. 
+ 
+Key Activities: 
+ 
+Identify Entities: Identify the key entities in the system. For a bus ticket reservation 
+system,common entities include: 
+--- page 16 size 596x842
+Online Bus Ticket Booking System Design 
+Dept.of ECE,GECR 2025-26 10 
+ 
+ 
+ 
+. Customer: Stores customer information such as name, email, password, and booking 
+history. 
+. Bus: Information about each bus, including bus number, route, seats, and availability 
+. Ticket: Stores booking details such as ticket ID, booking date, customer ID, bus ID. 
+seat number, and payment status 
+. Route: The bus route, including the starting point, destination, and schedule 
+. Payment: Details of payments made, including payment method, status, and 
+transaction details. 
+Define Relationships: Define how these entities relate to one another. For example 
+ 
+. A Customer can book multiple Tickets. 
+. A Bus can operate on multiple Routes. 
+. A Route can have multiple Buses assigned to 
+. A Ticket linked to a Customer and a Bus 
+ 
+Entity-Relationship Diagram (ERD): Use an ERD to visually represent those entities 
+and relationships. 
+ 
+Fig:4.2 ERD 
+ 
+Outcome: 
+ 
+The ERD serves as a blueprint for the database design. It defines the structure of the database 
+and ensures that all the necessary data relationships are properly modeled. 
+--- page 17 size 596x842
+Online Bus Ticket Booking System Design 
+Dept.of ECE,GECR 2025-26 11 
+ 
+ 
+ 
+3. Designing Class Diagrams (Object-Oriented Modeling) 
+Objective: 
+ 
+Create class diagrams to represent the object-oriented design of the system. 
+ 
+Key Activities: 
+ 
+Identify Key Classes: Based on the system's features and use cases, define the key classes that 
+represent real-world entities. For instance: 
+. Customer Class: Represents a user in the system. 
+. Ticket Class: Represents the ticket booked by a user 
+. Bus Class: Represents a bus in the system. 
+. Route Class: Represents a bus route 
+. Payment Class: Represents the payment for a ticket. 
+ 
+Define Attributes and Methods: For each class, identify its attributes (data fields) and 
+methods (functions or actions it can perform). 
+Class Diagram: Create a class diagram to visually represent the structure and relationship 
+Of these clases. 
+ 
+ 
+Fig:4.3 Class Diagram 
+ 
+ 
+--- page 18 size 596x842
+Online Bus Ticket Booking System Design 
+Dept.of ECE,GECR 2025-26 12 
+ 
+ 
+ 
+Outcome: 
+ 
+The class diagram gives a high -level view of how the system's objects (classes) interact with 
+each other. It's an essential blueprint for coding and helps define the structure of the system in 
+object-oriented terms. 
+4. Creating Sequence Diagrams 
+Objective: 
+ 
+Define the flow of messages between objects or components over time, especially during 
+specific interactions like booking a ticket, 
+Key Activities: 
+ 
+. Identify Key Interactions: For example, when a customer books a ticket, they interact 
+with multiple components; searching for buses, selecting seats, confirming the booking, 
+and making the payment. 
+. Message Flow: Show how messages are passed between objects in the system over 
+time during specific use case execution. 
+Sequence Diagram: Create a sequence diagram to visually represent the flow of messages 
+during a user interaction (e.g., booking a ticket). 
+ 
+Fig:4.4 Sequence Diagram (Booking a Ticket) 
+ 
+ 
+ 
+ 
+--- page 19 size 596x842
+Online Bus Ticket Booking System Implementation 
+Dept.of ECE,GECR 2025-26 13 
+ 
+ 
+CHAPTER . 5 
+IMPLEMENTATION 
+1. System Initialization: 
+The application begins by loading predefined data for routes, buses, seat availability and 
+initializes an empty list for bookings. If a saved bookings.mat file exists, previous bookings 
+are loaded automatically. 
+2. Frontend Creation (GUI): 
+A user interface is built using MATLAB.s uifigure, containing text fields, dropdowns, buttons, 
+tables, labels, and list boxes to allow user interaction. 
+ 
+3. User Input Collection: 
+The customer enters the origin and destination cities into input fields and clicks the Search 
+button to begin the ticket booking process. 
+4. Backend Search Logic: 
+The backend compares the user.s origin and destination with the stored bus route database and 
+filters matching buses using simple string comparisons. 
+ 
+5. Displaying Available Buses: 
+All matched buses are presented in a UITable showing bus ID, number, type, route, fare, 
+remaining seats, and schedule. 
+6. Bus Selection Handling: 
+When the user clicks on a row in the bus table, the corresponding bus object is stored as the 
+currently selected bus. 
+7. Seat Loading: 
+The system reads the selected bus.s available seats and loads them into a list box to let the user 
+choose a seat number. 
+--- page 20 size 596x842
+Online Bus Ticket Booking System Implementation 
+Dept.of ECE,GECR 2025-26 14 
+ 
+ 
+ 
+8. Seat Validation: 
+The system ensures that the selected seat is still available; if not, it alerts the user to choose 
+another. 
+9. Customer Information Input: 
+User provides name, email, and phone number, which are validated to ensure non-empty values 
+before confirming booking. 
+10. Booking Confirmation Step: 
+Before payment, the system displays a summary including bus details, selected seat, route, and 
+fare for user verification. 
+11. Payment Method Selection: 
+The user chooses a payment method (Card/UPI/Cash) via a dropdown prior to completing the 
+purchase. 
+12. Payment Processing (Backend): 
+A simulated payment engine runs using a success probability (e.g., 90%). It generates a unique 
+payment ID and returns success or failure. 
+13. Payment Feedback to Frontend: 
+The GUI displays whether the payment was successful. On failure, the booking process stops 
+and seat remains unblocked. 
+14. Booking Creation: 
+If payment succeeds, a unique ticket ID is generated and a booking record is constructed 
+containing customer, bus, route, seat, fare, payment, and timestam 
+15. Seat Blocking in Database: 
+The selected seat is removed from the bus.s available seat list, ensuring it cannot be selected 
+again. 
+--- page 21 size 596x842
+Online Bus Ticket Booking System Implementation 
+Dept.of ECE,GECR 2025-26 15 
+ 
+ 
+ 
+16. Data Persistence: 
+All confirmed bookings are appended to the data.bookings structure and saved permanently 
+into bookings.mat. 
+17. Refreshing GUI Elements: 
+After booking, the buses table, seat list, and customer fields are cleared or updated so the user 
+can start another process easily. 
+18. Viewing All Bookings: 
+A .Show Bookings. button loads and displays all previous bookings inside a text-area 
+component in the UI. 
+19. Error and Exception Handling: 
+The system manages invalid inputs, unavailable seats, missing selections, and failed payments, 
+ensuring a smooth user experience. 
+20. Extensibility and Maintenance: 
+The architecture allows easy addition of features: cancellation, seat maps, admin panels, 
+database storage, or App Designer interface enhancement. 
+Source code: 
+function code = generateConfirmationCode() 
+prefix = 'BUS'; 
+datePart = datestr(now,'yyyymmdd'); 
+ 
+randomPart = char(randi([65 90],1,3)); % Random letters 
+randomNum = randi([1000 9999]); % Random numbers 
+code = sprintf('%s-%s-%s%d', prefix, datePart, randomPart, randomNum); 
+end 
+--- page 22 size 596x842
+Online Bus Ticket Booking System Result 
+Dept.of ECE,GECR 2025-26 16 
+ 
+ 
+Chapter 6 
+RESULT 
+ 
+The Online Bus Ticket Booking System was successfully developed and tested using 
+MATLAB. The system meets the required functional specifications and demonstrates efficient 
+performance in all key modules such as bus search, seat selection, booking confirmation, and 
+ticket generation. 
+The major results achieved are: 
+ 
+1. User-Friendly Interface 
+The system provides a simple, interactive, and easy-to-use graphical interface. Users can search 
+buses, check seat availability, and book tickets with minimal navigation steps. 
+2. Accurate Bus Search and Availability Checking 
+The system correctly filters buses based on: 
+ 
+. Source 
+. Destination 
+. Date of Journey 
+ 
+The output accurately displays only the matching buses along with timing, fare, and seat 
+availability. 
+3. Successful Ticket Booking Module 
+The seat selection and booking process works smoothly. 
+After selecting a seat, the system: 
+. Records passenger details 
+. Updates the seat availability 
+. Generates a digital ticket for the user 
+ 
+4. Automated Fare Calculation 
+The fare calculation engine generates correct fare based on: 
+--- page 23 size 596x842
+Online Bus Ticket Booking System Result 
+Dept.of ECE,GECR 2025-26 17 
+ 
+ 
+ 
+. Bus type 
+. Number of seats selected 
+. Distance or preset fare values 
+ 
+The system was tested with multiple inputs, and all results matched expected values. 
+ 
+5. Ticket Generation Output 
+On successful booking, the system displays: 
+ 
+. Passenger name 
+. Bus ID and name 
+. Source and destination 
+. Journey date and time 
+. Seat number 
+. Total fare 
+ 
+The ticket is also saved/displayed as confirmation. 
+ 
+6. Data Handling and Reliability 
+ 
+. The system can store and retrieve booking data consistently. 
+. All operations (search, book, cancel) performed reliably during testing. 
+ 
+7. Error Handling and Validation 
+The system successfully provides error messages for: 
+ 
+. Invalid inputs 
+. Incorrect date selection 
+. Seats not available 
+. Missing passenger details 
+ 
+8. System Performance 
+The results show: 
+ 
+. Fast processing and output display 
+. No system crashes during multiple test runs 
+. Consistent performance for repeated bookings 
+--- page 24 size 596x842
+Online Bus Ticket Booking System Result 
+Dept.of ECE,GECR 2025-26 18 
+ 
+ 
+ 
+9. Snapshots 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Fig:6.1 Snapshots 
+--- page 25 size 596x842
+Online Bus Ticket Booking System Conclusion 
+Dept.of ECE,GECR 2025-26 19 
+ 
+ 
+CONCLUSION 
+The Online Bus Ticket Booking System developed using MATLAB successfully 
+fulfills the key objectives of automating the bus reservation process and providing a fast, 
+convenient platform for users to book tickets. The system simplifies the traditional manual 
+booking workflow by integrating essential features such as bus search, seat availability 
+checking, fare calculation, booking confirmation, and ticket generation into a single user - 
+friendly interface. 
+Through the implementation and testing phases, the system demonstrated reliable 
+performance, accurate data handling, and smooth execution of all core functions. Users can 
+easily search for buses based on source, destination, and date, select seats, and instantly receive 
+booking confirmation. The automated seat management and fare calculation ensure that the 
+booking process remains efficient and error-free. 
+In addition, the project showcases the capabilities of MATLAB for developing 
+application-level systems with interactive GUI components, highlighting its potential beyond 
+mathematical and simulation tasks. The software design follows modular principles, making 
+the system scalable and easy to maintain or upgrade in the future. 
+Overall, the project achieves its intended purpose by providing a modern, efficient 
+alternative to traditional ticket booking methods. It enhances user convenience, reduces manual 
+workload, eliminates human errors, and demonstrates how software engineering and MATLAB 
+programming can be combined to create practical real-world applications. 
+--- page 26 size 596x842
+Dept.of ECE,GECR 2025-26 20 
+ 
+ 
+Online Bus Ticket Booking System Reference 
+ 
+REFERENCE 
+TEXTBOOKS 
+ 
+1. Kevin O. C., (2012): Web-Based Bus Reservation and Ticketing System: College of 
+Computer Studies, Ateneo de Naga University, Naga City, Philippines 
+2. Madden A .D., (2000): "A definition of information", Aslib Proceedings, Vol. 52 Iss: 9, 
+pp.343 . 349 
+3. System: Faculty of Information and Communications ,Technology,Universiti teknikal 
+Malaysia Melaka Wee K. L. (2007): Bus Reservation . 
+4. Sommerville, Ian. Software Engineering, 10th Edition. Pearson Education, 2015. 
+5. Patel, Dharmik & Chavda, Rutvik. "Enhancing Public Transport Ticketing System 
+Using Online Booking." International Journal of Emerging Technology and Advanced 
+Engineering, Vol. 4, Issue 7, 2014. 
+ 
+WEBSITES 
+1. https://openai.com/index/chatgpt/ 
+2. https://www.scribd.com/document/161299783/Bus-Ticket-ReservationSystem/ 
+3. https://www.researchgate.net/publication/326468848_Online_Bus_Ticket_Reservatio 
+n System 
+
