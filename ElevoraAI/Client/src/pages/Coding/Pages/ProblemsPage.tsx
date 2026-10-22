@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import axios from "axios";
+import axiosInstance from "../../../api/axiosinstance";
 import { useGlobalState } from '../../../contexts/GlobalContext';
 
 const languages = [
@@ -38,27 +38,31 @@ const CompilerPage = () => {
   }, [htmlCode, cssCode, jsCode]);
 
   const handleRun = async () => {
-    const encodedCode = btoa(code);
-    const response = await axios.post("http://localhost:4000/api/v1/compiler", {
-      source_code: encodedCode,
-      language_id: selectedLanguage.id,
-      stdin: stdin,
-      is_base64: true,
-    });
+    try {
+      const encodedCode = btoa(code);
+      const response = await axiosInstance.post("/api/v1/compiler", {
+        source_code: encodedCode,
+        language_id: selectedLanguage.id,
+        stdin: stdin,
+        is_base64: true,
+      });
 
-    const data = (await response.data) as {
-      stdout?: string;
-      stderr?: string;
-      compile_output?: string;
-    };
-    if (data?.stdout) {
-      setOutput(data.stdout);
-    } else if (data.stderr) {
-      setOutput(data.stderr);
-    } else if (data.compile_output) {
-      setOutput(data.compile_output);
-    } else {
-      setOutput("No output");
+      const data = response.data as {
+        stdout?: string;
+        stderr?: string;
+        compile_output?: string;
+      };
+      if (data?.stdout) {
+        setOutput(data.stdout);
+      } else if (data.stderr) {
+        setOutput(data.stderr);
+      } else if (data.compile_output) {
+        setOutput(data.compile_output);
+      } else {
+        setOutput("No output");
+      }
+    } catch (error: any) {
+      setOutput(error?.response?.data?.error || error?.response?.data?.message || "Execution failed");
     }
   };
 

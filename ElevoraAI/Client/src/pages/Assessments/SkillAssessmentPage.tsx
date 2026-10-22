@@ -26,7 +26,7 @@ import {
   Tooltip,
 } from "recharts";
 import { format } from "date-fns";
-import { ArrowRight, RefreshCw, TrendingUp } from "lucide-react";
+import { ArrowRight, CheckCircle2, RefreshCw, TrendingUp, XCircle } from "lucide-react";
 
 type AssessmentPhase =
   | "idle"
@@ -667,6 +667,138 @@ const SkillAssessmentPage: React.FC = () => {
               )}
             </div>
           </section>
+
+          {/* Answer Review Section */}
+          {submittedAssessment.responses && submittedAssessment.responses.length > 0 && (
+            <section
+              className={`rounded-2xl border ${
+                state.darkMode
+                  ? "bg-gray-800/70 border-gray-700"
+                  : "bg-white border-gray-200"
+              } p-6 shadow-sm space-y-6`}
+            >
+              <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                <div>
+                  <h3 className="text-xl font-bold">Answer Review</h3>
+                  <p
+                    className={`text-sm ${
+                      state.darkMode ? "text-gray-400" : "text-gray-600"
+                    }`}
+                  >
+                    Review each question, your selected answer, and the correct solutions.
+                  </p>
+                </div>
+                <div className="flex items-center gap-4 text-sm font-semibold">
+                  <span className="flex items-center gap-1.5 text-emerald-500">
+                    <CheckCircle2 className="w-4 h-4" />
+                    {submittedAssessment.correctCount} Correct
+                  </span>
+                  <span className="flex items-center gap-1.5 text-rose-500">
+                    <XCircle className="w-4 h-4" />
+                    {submittedAssessment.totalQuestions - submittedAssessment.correctCount} Incorrect
+                  </span>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                {submittedAssessment.responses.map((response, index) => {
+                  const questionText =
+                    response.prompt ||
+                    assessmentQuestions.find((q) => q.id === response.questionId)?.prompt ||
+                    `Question ${index + 1}`;
+
+                  return (
+                    <div
+                      key={response.questionId || index}
+                      className={`rounded-xl border p-5 transition-all ${
+                        response.isCorrect
+                          ? state.darkMode
+                            ? "border-emerald-500/30 bg-emerald-950/10"
+                            : "border-emerald-200 bg-emerald-50/50"
+                          : state.darkMode
+                          ? "border-rose-500/30 bg-rose-950/10"
+                          : "border-rose-200 bg-rose-50/50"
+                      }`}
+                    >
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="flex items-start gap-3">
+                          <span
+                            className={`mt-0.5 flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                              response.isCorrect
+                                ? "bg-emerald-500 text-white"
+                                : "bg-rose-500 text-white"
+                            }`}
+                          >
+                            {index + 1}
+                          </span>
+                          <h4 className="text-base font-semibold">{questionText}</h4>
+                        </div>
+                        <span
+                          className={`inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-semibold ${
+                            response.isCorrect
+                              ? "bg-emerald-500/20 text-emerald-400"
+                              : "bg-rose-500/20 text-rose-400"
+                          }`}
+                        >
+                          {response.isCorrect ? "Correct" : "Incorrect"}
+                        </span>
+                      </div>
+
+                      <div className="mt-4 grid gap-3 sm:grid-cols-2 text-sm sm:pl-9">
+                        <div
+                          className={`rounded-lg border p-3 ${
+                            response.isCorrect
+                              ? state.darkMode
+                                ? "border-emerald-500/40 bg-emerald-900/20 text-emerald-300"
+                                : "border-emerald-300 bg-emerald-100/60 text-emerald-900"
+                              : state.darkMode
+                              ? "border-rose-500/40 bg-rose-900/20 text-rose-300"
+                              : "border-rose-300 bg-rose-100/60 text-rose-900"
+                          }`}
+                        >
+                          <p className="text-xs font-medium uppercase tracking-wider opacity-80 mb-1">
+                            Your Answer
+                          </p>
+                          <p className="font-semibold">
+                            {response.userAnswer || (
+                              <span className="italic opacity-70">No answer provided</span>
+                            )}
+                          </p>
+                        </div>
+
+                        {!response.isCorrect && (
+                          <div
+                            className={`rounded-lg border p-3 ${
+                              state.darkMode
+                                ? "border-emerald-500/40 bg-emerald-900/20 text-emerald-300"
+                                : "border-emerald-300 bg-emerald-100/60 text-emerald-900"
+                            }`}
+                          >
+                            <p className="text-xs font-medium uppercase tracking-wider opacity-80 mb-1">
+                              Correct Answer
+                            </p>
+                            <p className="font-semibold">{response.correctAnswer}</p>
+                          </div>
+                        )}
+                      </div>
+
+                      {(response.explanation || response.feedback) && (
+                        <div
+                          className={`mt-3 sm:pl-9 text-xs ${
+                            state.darkMode ? "text-gray-400" : "text-gray-600"
+                          }`}
+                        >
+                          <span className="font-medium text-gray-500">Explanation: </span>
+                          {response.explanation || response.feedback}
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+          )}
+        </>
         )}
 
         <section

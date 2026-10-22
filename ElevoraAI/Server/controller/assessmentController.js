@@ -1213,6 +1213,11 @@ export const submitAssessment = async (req, res) => {
       if (!response) {
         return {
           questionId: question._id,
+          prompt: question.prompt,
+          options: question.options,
+          correctAnswer: question.correctAnswer,
+          explanation: question.explanation,
+          category: question.category,
           userAnswer: "",
           isCorrect: false,
           feedback: "No answer provided.",
@@ -1238,6 +1243,11 @@ export const submitAssessment = async (req, res) => {
 
       return {
         questionId: question._id,
+        prompt: question.prompt,
+        options: question.options,
+        correctAnswer: question.correctAnswer,
+        explanation: question.explanation,
+        category: question.category,
         userAnswer,
         isCorrect,
         feedback: isCorrect
@@ -1343,9 +1353,13 @@ export const submitAssessment = async (req, res) => {
         correctCount,
         responses: evaluatedResponses.map((r) => ({
           questionId: r.questionId,
+          prompt: r.prompt,
+          options: r.options,
           userAnswer: r.userAnswer,
+          correctAnswer: r.correctAnswer,
           isCorrect: r.isCorrect,
           feedback: r.feedback,
+          explanation: r.explanation,
         })),
         recommendedResources,
         roadmapRecommendations,

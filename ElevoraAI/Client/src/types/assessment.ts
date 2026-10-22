@@ -52,9 +52,13 @@ export interface SubmittedAssessment {
   correctCount: number;
   responses: Array<{
     questionId: string;
+    prompt: string;
+    options?: string[];
     userAnswer: string;
+    correctAnswer: string;
     isCorrect: boolean;
     feedback: string;
+    explanation?: string;
   }>;
   recommendedResources: Array<{
     title: string;
