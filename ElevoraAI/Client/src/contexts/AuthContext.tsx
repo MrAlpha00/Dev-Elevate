@@ -596,6 +596,11 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({
     dispatch({ type: "LOGOUT" });
     globalDispatch({ type: "SET_USER", payload: null as any });
     localStorage.removeItem("elevoraAiAuth");
+
+    // Clear the session cookie on the backend too. The request has to carry
+    // the cookie, so "credentials: include" is required - without it the
+    // server cannot clear it and the stale cookie keeps being sent.
+    fetch(`${baseUrl}/api/v1/logout`, { credentials: "include" }).catch(() => {});
   };
 
   const updateProfile = async (data: Partial<User>) => {

@@ -15,6 +15,22 @@ dotenv.config();
 import { createNotification } from "./notificationController.js";
 import generateResetPasswordEmail from "../utils/resetPasswordTemplate.js";
 import crypto from "crypto";
+
+// Session cookie options.
+// These MUST stay identical for every res.cookie() call AND for the
+// res.clearCookie() call in logout(): a browser only removes a cookie when
+// the clearing Set-Cookie matches the path/domain/sameSite/secure of the
+// cookie that was set.
+const SESSION_COOKIE_OPTIONS = {
+  httpOnly: true,      // not readable from JavaScript
+  secure: true,        // REQUIRED for HTTPS (Render is HTTPS)
+  sameSite: "none",    // REQUIRED for cross-site (Vercel <-> Render)
+  path: "/",
+};
+
+// 3 days - must match the JWT expiry ("3d") used when signing the token
+const SESSION_COOKIE_MAX_AGE = 3 * 24 * 60 * 60 * 1000;
+
 export const registerUser = async (req, res) => {
   try {
     const { name, email, password, role } = req.body;
@@ -127,10 +143,8 @@ export const verifySignupOtp = async (req, res) => {
     const token = jwt.sign(payLode, JWT_SECRET, { expiresIn: JWT_EXPIRES });
 
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
-      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
-      maxAge: 3 * 24 * 60 * 60 * 1000,
+      ...SESSION_COOKIE_OPTIONS,
+      maxAge: SESSION_COOKIE_MAX_AGE,
     });
 
     return res.status(201).json({
@@ -190,10 +204,8 @@ export const loginUser = async (req, res) => {
 
     // Set token in cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
-      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
-      maxAge: 3 * 24 * 60 * 60 * 1000,
+      ...SESSION_COOKIE_OPTIONS,
+      maxAge: SESSION_COOKIE_MAX_AGE,
     });
 
     // Create notification for login success
@@ -346,10 +358,8 @@ export const googleUser = async (req, res) => {
 
     // Set cookie
     res.cookie("token", token, {
-      httpOnly: true,
-      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
-      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
-      maxAge: 3 * 24 * 60 * 60 * 1000, // 3 days
+      ...SESSION_COOKIE_OPTIONS,
+      maxAge: SESSION_COOKIE_MAX_AGE,
     });
 
     // Return user data
@@ -383,17 +393,9 @@ export const googleUser = async (req, res) => {
 
 export const logout = async (req, res) => {
   try {
-    const token = req.cookies.token;
-
-    if (!token) {
-      return res.status(401).json({ message: "User already logout" });
-    }
-
-    res.clearCookie("token", {
-      httpOnly: true,
-      secure: true,       // REQUIRED for HTTPS (Render is HTTPS)
-      sameSite: "none",   // REQUIRED for cross-site (Vercel ↔ Render)
-    });
+    // Always clear the session cookie, using the exact same options that were
+    // used to set it - otherwise the browser keeps the old cookie.
+    res.clearCookie("token", SESSION_COOKIE_OPTIONS);
 
     return res.status(200).json({
       message: "Logout successful",

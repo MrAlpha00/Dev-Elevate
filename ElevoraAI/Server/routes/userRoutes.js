@@ -22,7 +22,10 @@ import { passwordChangeLimiter } from "../utils/passwordChangeLimiter.js";
 router.post("/auth/signup", registerUser);
 router.post("/auth/verify-otp", verifySignupOtp);
 router.post("/auth/login", loginUser);
-router.get("/logout", authenticateToken, logout);
+// Logout must NOT require a valid token: an expired session (the exact case
+// that leaves a stale cookie behind) would otherwise be rejected by the
+// middleware before the handler can clear the cookie.
+router.get("/logout", logout);
 router.put("/update-profile", authenticateToken, updateProfile);
 router.get("/get-profile", authenticateToken, getProfile);
 router.post("/auth/google", googleUser);
