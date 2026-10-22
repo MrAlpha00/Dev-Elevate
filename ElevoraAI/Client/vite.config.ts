@@ -6,7 +6,12 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   define: {
-    "process.env": process.env, 
+    // Only expose the environment variables the client bundle actually reads.
+    // Inlining the whole `process.env` object leaks every environment variable
+    // (secrets included) into the browser bundle.
+    "process.env.REACT_APP_GITHUB_TOKEN": JSON.stringify(
+      process.env.REACT_APP_GITHUB_TOKEN ?? "",
+    ),
   },
   resolve: {
     alias: {

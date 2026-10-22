@@ -173,11 +173,7 @@ _These workflows are designed to make DevElevate a welcoming and well-organized 
 
 # 👋 Hey there, tech fam!
 
-<<<<<<< HEAD
 I'm _Mr Alpha_ 👨‍🎓, currently pursuing my _Bachelor of Technology (B.Tech)_ in _Computer Science_ 💻 _Final Year_ 🎓.
-=======
-I'm _Abhisek Panda_ 👨‍🎓, currently pursuing my _Bachelor of Technology (B.Tech)_ in _Computer Science_ 💻 _Final Year_ 🎓.
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
 
 💡 My tech journey is driven by a _passion_ for mastering the _✨ MERN Stack, along with strong skills in \*\*☕ Java_ and _📊 Data Structures & Algorithms (DSA)_.
 I’m also an _🌍 Open Source Contributor_, always eager to learn, build, and share knowledge with the community.

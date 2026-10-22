@@ -144,11 +144,7 @@ Feel free to reach out:
 
 - 💬 [GitHub Discussions](https://github.com/abhisek2004/Dev-Elevate/discussions)
 - 📧 [officialdevelevate@gmail.com](mailto:officialdevelevate@gmail.com)
-<<<<<<< HEAD
 - 🧑‍💻 Project Maintainer: Mr Alpha
-=======
-- 🧑‍💻 Project Maintainer: Abhisek Panda
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
 
 ---
 

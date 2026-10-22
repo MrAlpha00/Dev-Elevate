@@ -34,11 +34,7 @@ const socials = [
     icon: <FaLinkedin className="w-6 h-6" />,
     url: "https://www.linkedin.com/in/mralpha00/",
     description:
-<<<<<<< HEAD
       "Connect with Mr Alpha professionally and expand your network with Elevora AI",
-=======
-      "Connect with Abhisek Panda professionally and expand your network with Elevora AI",
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
     gradient: "from-blue-700 via-blue-800 to-blue-900",
   },
 ];

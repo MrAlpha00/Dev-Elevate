@@ -215,11 +215,7 @@ const PrivacyPolicy: React.FC = () => {
               className={`${state.darkMode ? "text-gray-300" : "text-gray-700"
                 }`}
             >
-<<<<<<< HEAD
               <strong>Creator:</strong> Mr Alpha
-=======
-              <strong>Creator:</strong> Abhisek Panda
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
             </p>
             <p
               className={`${state.darkMode ? "text-gray-300" : "text-gray-700"

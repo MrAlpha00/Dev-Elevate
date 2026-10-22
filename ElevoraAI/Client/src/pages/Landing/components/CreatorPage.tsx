@@ -93,11 +93,7 @@ const CreatorPage: React.FC = () => {
       <div className="max-w-6xl px-4 py-12 mx-auto sm:px-6 lg:px-8">
         {/* Hero Section */}
 
-<<<<<<< HEAD
         {/* Mr Alpha Section */}
-=======
-        {/* Abhisek Panda Section */}
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
         <div
           className={`${state.darkMode
             ? "bg-gray-800 border-gray-700"
@@ -108,11 +104,7 @@ const CreatorPage: React.FC = () => {
             <div className="relative">
               <img
                 src="https://github.com/MrAlpha00.png"
-<<<<<<< HEAD
                 alt="Mr Alpha"
-=======
-                alt="Abhisek Panda"
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                 className="w-32 h-32 border-4 border-blue-500 rounded-full shadow-lg"
               />
               <div className="absolute flex items-center justify-center w-8 h-8 bg-green-500 border-4 border-white rounded-full -right-2 -bottom-2 dark:border-gray-800">
@@ -125,11 +117,7 @@ const CreatorPage: React.FC = () => {
                 className={`text-4xl font-bold mb-2 ${state.darkMode ? "text-white" : "text-gray-900"
                   }`}
               >
-<<<<<<< HEAD
                 Mr Alpha 👨‍💻
-=======
-                Abhisek Panda 👨‍💻
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
               </h1>
               <p
                 className={`text-xl mb-4 ${state.darkMode ? "text-blue-400" : "text-blue-600"
@@ -494,11 +482,7 @@ const CreatorPage: React.FC = () => {
               >
                 <div>
                   <p className="mb-2">
-<<<<<<< HEAD
                     <strong>👨‍💻 Website Creator:</strong> Mr Alpha
-=======
-                    <strong>👨‍💻 Website Creator:</strong> Abhisek Panda
->>>>>>> 6bb7a38405a5539730eea1d48749b7c3e992c2c5
                   </p>
                   <p className="mb-2">
                     <strong>🌍 Portfolio:</strong>
