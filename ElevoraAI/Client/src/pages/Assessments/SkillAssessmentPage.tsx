@@ -510,7 +510,8 @@ const SkillAssessmentPage: React.FC = () => {
         )}
 
         {submittedAssessment && (
-          <section className="grid gap-6 md:grid-cols-2">
+          <>
+            <section className="grid gap-6 md:grid-cols-2">
             <div
               className={`rounded-2xl border ${
                 state.darkMode
