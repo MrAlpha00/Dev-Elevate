@@ -1,16 +1,9 @@
 import dotenv from "dotenv";
-import OpenAI from "openai";
+import axios from "axios";
 import mongoose from "mongoose";
 import SkillAssessment from "../model/SkillAssessment.js";
 
 dotenv.config();
-
-const MODEL = process.env.OPENAI_ASSESSMENT_MODEL?.trim() || "gpt-4o-mini";
-
-const openaiClient =
-  process.env.OPENAI_API_KEY && process.env.OPENAI_API_KEY !== ""
-    ? new OpenAI({ apiKey: process.env.OPENAI_API_KEY })
-    : null;
 
 const TRACK_CONFIG = {
   dsa: {
@@ -696,15 +689,18 @@ const normalizeTrack = (track) => {
   );
 };
 
-const ensureOpenAIClient = () => {
-  if (!openaiClient) {
+const getGeminiEndpoint = () => {
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  if (!apiKey) {
     const error = new Error(
-      "OpenAI API key is not configured. Set OPENAI_API_KEY in the environment."
+      "Gemini API key is not configured. Set GEMINI_API_KEY in the environment."
     );
     error.statusCode = 500;
+    error.isMissingApiKey = true;
     throw error;
   }
-  return openaiClient;
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-3.5-flash-lite";
+  return `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 };
 
 const determineSkillLevel = (score) => {
@@ -798,8 +794,69 @@ const buildRoadmap = (track, skillLevel, improvementAreas = []) => {
   };
 };
 
-const callOpenAIForQuestions = async (track, questionCount, difficulty) => {
-  const client = ensureOpenAIClient();
+const validateAndFormatQuestions = (rawQuestions, config) => {
+  if (!Array.isArray(rawQuestions) || rawQuestions.length === 0) {
+    throw new Error("AI response did not contain any questions.");
+  }
+
+  const validCategories = config.categories || [];
+  const defaultCategory = validCategories[0] || config.displayName;
+
+  return rawQuestions.map((q, index) => {
+    const prompt =
+      typeof q.prompt === "string" && q.prompt.trim()
+        ? q.prompt.trim()
+        : typeof q.question === "string" && q.question.trim()
+        ? q.question.trim()
+        : `Question ${index + 1}`;
+
+    let options = Array.isArray(q.options)
+      ? q.options.map((opt) => String(opt).trim()).filter(Boolean)
+      : [];
+
+    if (options.length < 2) {
+      throw new Error(`Question ${index + 1} has insufficient options.`);
+    }
+
+    const rawAnswer =
+      typeof q.correctAnswer === "string"
+        ? q.correctAnswer
+        : typeof q.answer === "string"
+        ? q.answer
+        : "";
+    let correctAnswer = sanitizeAnswerAgainstOptions(rawAnswer, options);
+    if (!options.includes(correctAnswer)) {
+      if (
+        typeof q.correctAnswerIndex === "number" &&
+        options[q.correctAnswerIndex]
+      ) {
+        correctAnswer = options[q.correctAnswerIndex];
+      } else {
+        correctAnswer = options[0];
+      }
+    }
+
+    const explanation =
+      typeof q.explanation === "string" ? q.explanation.trim() : "";
+
+    let category =
+      typeof q.category === "string" ? q.category.trim() : defaultCategory;
+    const matchedCategory = validCategories.find(
+      (c) => c.toLowerCase() === category.toLowerCase()
+    );
+    category = matchedCategory || defaultCategory;
+
+    return {
+      prompt,
+      options,
+      correctAnswer,
+      explanation,
+      category,
+    };
+  });
+};
+
+const callGeminiForQuestions = async (track, questionCount, difficulty) => {
   const config = TRACK_CONFIG[track];
   if (!config) {
     const error = new Error("Unsupported track requested for assessment.");
@@ -807,8 +864,9 @@ const callOpenAIForQuestions = async (track, questionCount, difficulty) => {
     throw error;
   }
 
-  const prompt = `
-Create ${questionCount} multiple choice questions for the ${
+  const endpoint = getGeminiEndpoint();
+
+  const prompt = `Create ${questionCount} multiple choice questions for the ${
     config.displayName
   } track.
 
@@ -826,7 +884,7 @@ Requirements:
     ", "
   )}.
 
-Output JSON schema:
+IMPORTANT: Return ONLY a valid JSON object with this exact structure (no markdown, no code blocks, no extra text):
 {
   "questions": [
     {
@@ -837,43 +895,91 @@ Output JSON schema:
       "category": "One category from the provided list"
     }
   ]
-}
+}`;
 
-Return ONLY valid JSON.`;
-
-  const response = await client.chat.completions.create({
-    model: MODEL,
-    messages: [
+  let response;
+  try {
+    response = await axios.post(
+      endpoint,
       {
-        role: "system",
-        content:
-          "You are an experienced technical interviewer. Always return clean JSON following the requested schema.",
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: prompt }],
+          },
+        ],
       },
       {
-        role: "user",
-        content: prompt,
-      },
-    ],
-    response_format: { type: "json_object" },
-  });
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+  } catch (apiError) {
+    const status = apiError.response?.status;
+    const rawErrorMsg =
+      apiError.response?.data?.error?.message || apiError.message;
+    const safeErrorMsg = String(rawErrorMsg).replace(
+      /key=[^&\s]+/gi,
+      "key=[REDACTED]"
+    );
+    console.error("Gemini assessment questions generation failed:", safeErrorMsg);
 
-  if (
-    !response.choices ||
-    !response.choices[0] ||
-    !response.choices[0].message
-  ) {
-    throw new Error("OpenAI did not return any content for the assessment.");
+    if (status === 429) {
+      const error = new Error(
+        "AI service rate limit exceeded. Please try again later."
+      );
+      error.statusCode = 429;
+      throw error;
+    }
+
+    const error = new Error(
+      "AI service is currently unavailable. Please try again later."
+    );
+    error.statusCode = status && status >= 400 && status < 600 ? status : 502;
+    throw error;
   }
 
-  const parsed = JSON.parse(response.choices[0].message.content);
+  const aiText = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+  if (!aiText) {
+    const error = new Error("AI did not return any content for the assessment.");
+    error.statusCode = 502;
+    throw error;
+  }
+
+  let parsed;
+  try {
+    let cleanedText = aiText.trim();
+    cleanedText = cleanedText
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/\s*```$/, "")
+      .trim();
+
+    const jsonMatch = cleanedText.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      cleanedText = jsonMatch[0];
+    }
+
+    parsed = JSON.parse(cleanedText);
+  } catch (parseError) {
+    console.error("Failed to parse Gemini assessment questions response JSON.");
+    const error = new Error(
+      "Failed to parse AI-generated questions. Please try again."
+    );
+    error.statusCode = 502;
+    throw error;
+  }
+
   if (!parsed?.questions || !Array.isArray(parsed.questions)) {
-    throw new Error("OpenAI response missing questions array.");
+    const error = new Error("AI response missing questions array.");
+    error.statusCode = 502;
+    throw error;
   }
 
-  return parsed.questions;
+  return validateAndFormatQuestions(parsed.questions, config);
 };
 
-const callOpenAIForFeedback = async ({
+const callGeminiForFeedback = async ({
   track,
   score,
   skillLevel,
@@ -881,13 +987,16 @@ const callOpenAIForFeedback = async ({
   correctCount,
   incorrectDetails,
 }) => {
-  if (!openaiClient) return null;
+  const apiKey = process.env.GEMINI_API_KEY?.trim();
+  if (!apiKey) return null;
 
   const config = TRACK_CONFIG[track];
   if (!config) return null;
 
-  const prompt = `
-Analyze the following skill assessment results and produce concise improvement guidance.
+  const model = process.env.GEMINI_MODEL?.trim() || "gemini-3.5-flash-lite";
+  const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+
+  const prompt = `Analyze the following skill assessment results and produce concise improvement guidance.
 
 Track: ${config.displayName}
 Score: ${score}%
@@ -903,7 +1012,7 @@ Incorrect Question Topics: ${incorrectDetails
     )
     .join(",\n")}
 
-Return JSON with this structure:
+IMPORTANT: Return ONLY a valid JSON object with this exact structure (no markdown, no code blocks, no extra text):
 {
   "summary": "1-2 sentence learner-friendly summary",
   "improvementAreas": ["Category A", "Category B"],
@@ -913,34 +1022,44 @@ Return JSON with this structure:
 If there are no incorrect questions, provide an empty array for improvementAreas.`;
 
   try {
-    const response = await openaiClient.chat.completions.create({
-      model: MODEL,
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are a friendly career mentor who gives constructive, specific feedback. Always return valid JSON.",
+    const response = await axios.post(
+      endpoint,
+      {
+        contents: [
+          {
+            role: "user",
+            parts: [{ text: prompt }],
+          },
+        ],
+      },
+      {
+        headers: {
+          "Content-Type": "application/json",
         },
-        {
-          role: "user",
-          content: prompt,
-        },
-      ],
-      response_format: { type: "json_object" },
-    });
+      }
+    );
 
-    if (
-      !response.choices ||
-      !response.choices[0] ||
-      !response.choices[0].message
-    )
-      return null;
-    const parsed = JSON.parse(response.choices[0].message.content);
+    const aiText = response.data?.candidates?.[0]?.content?.parts?.[0]?.text;
+    if (!aiText) return null;
 
-    if (!parsed.summary || !parsed.improvementAreas) return null;
+    let cleanedText = aiText.trim();
+    cleanedText = cleanedText
+      .replace(/^```(?:json)?\s*/i, "")
+      .replace(/\s*```$/, "")
+      .trim();
+
+    const jsonMatch = cleanedText.match(/\{[\s\S]*\}/);
+    if (jsonMatch) {
+      cleanedText = jsonMatch[0];
+    }
+
+    const parsed = JSON.parse(cleanedText);
+    if (!parsed.summary || !Array.isArray(parsed.improvementAreas)) return null;
     return parsed;
   } catch (error) {
-    console.error("OpenAI feedback generation failed:", error.message);
+    const errorMsg = error.response?.data?.error?.message || error.message;
+    const safeMsg = String(errorMsg).replace(/key=[^&\s]+/gi, "key=[REDACTED]");
+    console.error("Gemini feedback generation failed:", safeMsg);
     return null;
   }
 };
@@ -978,7 +1097,7 @@ export const generateAssessment = async (req, res) => {
       ? difficulty
       : "Intermediate";
 
-    const questions = await callOpenAIForQuestions(
+    const questions = await callGeminiForQuestions(
       normalizedTrack,
       questionCount,
       cappedDifficulty
@@ -1020,14 +1139,20 @@ export const generateAssessment = async (req, res) => {
       },
     });
   } catch (error) {
-    console.error("Error generating assessment:", error);
+    const safeErrorMsg = String(error.message || error).replace(
+      /key=[^&\s]+/gi,
+      "key=[REDACTED]"
+    );
+    console.error("Error generating assessment:", safeErrorMsg);
     const statusCode = error.statusCode || 500;
+    const safeMessage =
+      error.isMissingApiKey || statusCode === 400 || statusCode === 429 || statusCode === 502
+        ? error.message
+        : "Failed to generate assessment. Please try again later.";
+
     return res.status(statusCode).json({
       success: false,
-      message:
-        statusCode === 500
-          ? "Failed to generate assessment. Please try again later."
-          : error.message,
+      message: safeMessage,
       error: process.env.NODE_ENV === "development" ? error.message : undefined,
     });
   }
@@ -1151,7 +1276,7 @@ export const submitAssessment = async (req, res) => {
       .filter((value, index, arr) => value && arr.indexOf(value) === index)
       .slice(0, 4);
 
-    const feedback = (await callOpenAIForFeedback({
+    const feedback = (await callGeminiForFeedback({
       track: assessment.track,
       score,
       skillLevel,
