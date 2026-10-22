@@ -13,7 +13,7 @@ const instance = axios.create({
 instance.interceptors.request.use(
   (config) => {
     // Get token from localStorage
-    const stored = localStorage.getItem("ElevoraAIAuth");
+    const stored = localStorage.getItem("elevoraAiAuth");
     
     if (stored) {
       try {
@@ -45,7 +45,7 @@ instance.interceptors.response.use(
   (error) => {
     // Handle 401 Unauthorized - redirect to login
     if (error.response?.status === 401) {
-      localStorage.removeItem("ElevoraAIAuth");
+      localStorage.removeItem("elevoraAiAuth");
       // Optionally redirect to login page
       // window.location.href = "/login";
     }
