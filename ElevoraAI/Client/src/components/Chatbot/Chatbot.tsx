@@ -89,7 +89,7 @@ const Chatbot: React.FC = () => {
     let aiReply = "";
     for (let attempt = 1; attempt <= 2; attempt++) {
       try {
-        const res = await axiosInstance.post("/api/v1/gemini", {
+        const res = await axiosInstance.post("/api/v1/ai/gemini", {
           message,
           category: selectedCategory,
         });
