@@ -3,20 +3,29 @@ import User from "../model/UserModel.js";
 
 export const authenticateToken = async (req, res, next) => {
   try {
-    // Get token from cookies or Authorization header
-    const cookieToken = req.cookies?.token;
+    // Get token from the Authorization header or the session cookie.
+    // The header is preferred: it carries the token issued by the most recent
+    // login, while the browser cookie can still hold an older (expired)
+    // session that would otherwise mask a valid token.
     const headerToken = req.headers.authorization?.split(" ")[1];
-    const token = cookieToken || headerToken;
+    const cookieToken = req.cookies?.token;
 
-    if (!token) {
+    if (!headerToken && !cookieToken) {
       return res.status(401).json({
         success: false,
         message: "Authentication required - No token provided",
       });
     }
 
-    // Verify token
-    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    // Verify token - fall back to the other credential if the first one fails
+    let decoded;
+    try {
+      decoded = jwt.verify(headerToken || cookieToken, process.env.JWT_SECRET);
+    } catch (error) {
+      const fallbackToken = headerToken ? cookieToken : headerToken;
+      if (!fallbackToken) throw error;
+      decoded = jwt.verify(fallbackToken, process.env.JWT_SECRET);
+    }
 
     // ✅ Extract user ID from ANY possible field in token
     const userId = decoded.userId || decoded.id || decoded._id;
