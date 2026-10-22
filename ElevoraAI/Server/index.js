@@ -57,12 +57,65 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
+
+// ---------------------------------------------------------------------------
+// CORS configuration
+// The production frontend (https://elevoraai.vercel.app) and this API
+// (https://dev-elevate-krg6.onrender.com) are served from different origins,
+// so the exact frontend origin has to be allow-listed. Credentials are enabled
+// because the session lives in an httpOnly cookie, which means a wildcard
+// origin is not allowed by the browsers.
+// ---------------------------------------------------------------------------
+const PRODUCTION_ORIGIN = "https://elevoraai.vercel.app";
+
+// Local development origins that have to keep working.
+const LOCAL_DEV_ORIGINS = [
+  "http://localhost:5173",
+  "http://localhost:3000",
+  "http://127.0.0.1:5173",
+  "http://127.0.0.1:3000",
+];
+
+// An origin never contains a trailing slash, so strip it before comparing.
+const normalizeOrigin = (origin) =>
+  String(origin || "")
+    .trim()
+    .replace(/\/+$/, "")
+    .toLowerCase();
+
+const ALLOWED_ORIGINS = Array.from(
+  new Set(
+    [PRODUCTION_ORIGIN, ...LOCAL_DEV_ORIGINS]
+      .concat(
+        String(process.env.FRONTEND_URL || "")
+          .split(",")
+          .map(normalizeOrigin)
+          .filter(Boolean)
+      )
+      .map(normalizeOrigin)
+      .filter(Boolean)
+  )
+);
+
 // Middleware
+// NOTE: this has to stay the FIRST middleware so that every route, every
+// authentication middleware and the error handler below all answer with the
+// CORS headers - otherwise the browser cannot read the response at all.
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    // Passing an array makes the cors package reflect the request origin when
+    // it is allow-listed and omit the header completely when it is not.
+    origin: ALLOWED_ORIGINS,
     credentials: true,
-    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allowedHeaders: [
+      "Content-Type",
+      "Authorization",
+      "x-secret-key",
+      "Accept",
+    ],
+    exposedHeaders: ["Content-Disposition"],
+    optionsSuccessStatus: 204,
   })
 );
 app.use(express.json());
