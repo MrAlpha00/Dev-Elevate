@@ -1,123 +1,37 @@
+import axiosInstance from '../api/axiosinstance';
 import type { ProjectRecommendation, UserPreferences } from '../components/ProjectRecommender/ProjectRecommender';
 
-const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
-const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-
-interface GroqResponse {
-  choices: {
-    message: {
-      content: string;
-    };
-  }[];
-}
-
 export const generateProjectRecommendations = async (
-  preferences: UserPreferences
+  preferences: UserPreferences,
+  excludeTitles: string[] = []
 ): Promise<ProjectRecommendation[]> => {
-  const prompt = `You are an AI project advisor for developers. Generate 3-5 personalized project recommendations based on the user's preferences.
-
-User Preferences:
-- Known Tech Stack: ${preferences.techStack.join(', ')}
-- Career Focus: ${preferences.careerFocus}
-- Skill Level: ${preferences.skillLevel}
-- Interest Areas: ${Array.isArray(preferences.interestArea) ? preferences.interestArea.join(', ') : preferences.interestArea}
-
-Please respond with a JSON array of project recommendations. Each project should have:
-- id: unique identifier
-- title: catchy project name
-- description: detailed project description (2-3 sentences)
-- features: array of 4-6 key features
-- difficulty: "Beginner", "Intermediate", or "Advanced" (matching user's skill level or slightly above)
-- techStack: array of recommended technologies (include user's known technologies when relevant)
-- tags: array of relevant hashtags (e.g., #fullstack, #productivity, etc.)
-- estimatedTime: realistic time estimate (e.g., "2-3 weeks")
-- starterTutorials: array of tutorial topics (optional)
-- githubBoilerplates: array of example GitHub repo URLs (use placeholder URLs)
-
-Make sure projects are:
-1. Relevant to the user's career focus and interest area
-2. Appropriate for their skill level
-3. Use technologies they know or want to learn
-4. Solve real problems in their area of interest
-5. Portfolio-worthy and impressive to employers
-
-Return only valid JSON without any markdown formatting or explanation.`;
-
   try {
-    const response = await fetch(GROQ_API_URL, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${GROQ_API_KEY}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        model: 'llama3-8b-8192',
-        messages: [
-          {
-            role: 'system',
-            content: 'You are a helpful AI assistant that generates project recommendations for developers. Always respond with valid JSON only.'
-          },
-          {
-            role: 'user',
-            content: prompt
-          }
-        ],
-        temperature: 0.7,
-        max_tokens: 2048,
-      }),
+    const response = await axiosInstance.post<{
+      success: boolean;
+      projects: ProjectRecommendation[];
+      message?: string;
+    }>('/api/v1/ai/generate-projects', {
+      preferences,
+      excludeTitles,
     });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error('Groq API Error Details:', {
-        status: response.status,
-        statusText: response.statusText,
-        errorBody: errorText
-      });
-      throw new Error(`Groq API error: ${response.status} ${response.statusText} - ${errorText}`);
+    if (response.data && response.data.success && Array.isArray(response.data.projects)) {
+      return response.data.projects;
     }
 
-    const data: GroqResponse = await response.json();
-    const content = data.choices[0]?.message?.content;
-
-    if (!content) {
-      throw new Error('No content received from Groq API');
-    }
-
-    // Clean up the response to ensure it's valid JSON
-    const cleanedContent = content.trim().replace(/```json\n?|\n?```/g, '');
-    
-    try {
-      const projects = JSON.parse(cleanedContent);
-      
-      // Validate and sanitize the projects
-      if (Array.isArray(projects)) {
-        return projects.map((project, index) => ({
-          id: project.id || `groq-${Date.now()}-${index}`,
-          title: project.title || 'Untitled Project',
-          description: project.description || 'No description provided',
-          features: Array.isArray(project.features) ? project.features : [],
-          difficulty: ['Beginner', 'Intermediate', 'Advanced'].includes(project.difficulty) 
-            ? project.difficulty 
-            : preferences.skillLevel,
-          techStack: Array.isArray(project.techStack) ? project.techStack : preferences.techStack,
-          tags: Array.isArray(project.tags) ? project.tags : [],
-          estimatedTime: project.estimatedTime || '2-3 weeks',
-          starterTutorials: Array.isArray(project.starterTutorials) ? project.starterTutorials : [],
-          githubBoilerplates: Array.isArray(project.githubBoilerplates) ? project.githubBoilerplates : []
-        }));
-      } else {
-        throw new Error('Response is not an array');
-      }
-    } catch (parseError) {
-      console.error('Failed to parse Groq response as JSON:', parseError);
-      throw new Error('Invalid JSON response from AI');
-    }
-  } catch (error) {
-    console.error('Error calling Groq API:', error);
-    throw error;
+    throw new Error(response.data?.message || 'Invalid response from AI project service');
+  } catch (error: any) {
+    const backendMessage =
+      error?.response?.data?.message ||
+      error?.message ||
+      'Failed to generate AI project recommendations';
+    const status = error?.response?.status;
+    const customError = new Error(backendMessage);
+    (customError as any).status = status;
+    throw customError;
   }
 };
+
 
 // Fallback function for when API fails
 export const generateFallbackRecommendations = (preferences: UserPreferences): ProjectRecommendation[] => {

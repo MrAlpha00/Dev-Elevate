@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Lightbulb, Sparkles, RefreshCw, BookOpen, Github, Tag, Clock, Save, Play, Users } from 'lucide-react';
+import { Lightbulb, Sparkles, RefreshCw, BookOpen, Github, Tag, Clock, Save, Play, Users, AlertCircle, AlertTriangle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import PreferenceForm from './PreferenceForm';
 import ProjectCard from './ProjectCard';
@@ -40,6 +40,9 @@ const ProjectRecommender: React.FC = () => {
   const [preferences, setPreferences] = useState<UserPreferences | null>(null);
   const [recommendations, setRecommendations] = useState<ProjectRecommendation[]>([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
+  const [errorStatus, setErrorStatus] = useState<number | null>(null);
+  const [isFallbackMode, setIsFallbackMode] = useState<boolean>(false);
   const [savedProjects, setSavedProjects] = useState<SavedProject[]>([]);
   const [activeTab, setActiveTab] = useState<'form' | 'recommendations' | 'saved' | 'community'>('form');
 
@@ -51,15 +54,22 @@ const ProjectRecommender: React.FC = () => {
   const handlePreferencesSubmit = async (prefs: UserPreferences) => {
     setPreferences(prefs);
     setIsLoading(true);
+    setErrorMessage(null);
+    setErrorStatus(null);
+    setIsFallbackMode(false);
     setActiveTab('recommendations');
 
+    const savedTitles = savedProjects.map((p) => p.title);
+
     try {
-      const projects = await generateProjectRecommendations(prefs);
+      const projects = await generateProjectRecommendations(prefs, savedTitles);
       setRecommendations(projects);
-    } catch (error) {
+      setIsFallbackMode(false);
+    } catch (error: any) {
       console.error('Error generating recommendations:', error);
-      // Fallback to example recommendations if API fails
-      setRecommendations(generateFallbackRecommendations(prefs));
+      const msg = error?.message || 'Failed to generate AI recommendations.';
+      setErrorMessage(msg);
+      setErrorStatus(error?.status || null);
     } finally {
       setIsLoading(false);
     }
@@ -68,17 +78,37 @@ const ProjectRecommender: React.FC = () => {
   const handleRegenerateRecommendations = async () => {
     if (!preferences) return;
     setIsLoading(true);
-    
+    setErrorMessage(null);
+    setErrorStatus(null);
+
+    // Collect titles of currently displayed recommendations and saved projects to avoid duplicates
+    const currentTitles = recommendations.map((p) => p.title);
+    const savedTitles = savedProjects.map((p) => p.title);
+    const excludeTitles = Array.from(new Set([...currentTitles, ...savedTitles]));
+
     try {
-      const projects = await generateProjectRecommendations(preferences);
+      const projects = await generateProjectRecommendations(preferences, excludeTitles);
       setRecommendations(projects);
-    } catch (error) {
+      setIsFallbackMode(false);
+    } catch (error: any) {
       console.error('Error regenerating recommendations:', error);
-      setRecommendations(generateFallbackRecommendations(preferences));
+      const msg = error?.message || 'Failed to regenerate AI recommendations.';
+      setErrorMessage(msg);
+      setErrorStatus(error?.status || null);
     } finally {
       setIsLoading(false);
     }
   };
+
+  const handleLoadCuratedFallback = () => {
+    if (!preferences) return;
+    const fallbackProjects = generateFallbackRecommendations(preferences);
+    setRecommendations(fallbackProjects);
+    setIsFallbackMode(true);
+    setErrorMessage(null);
+    setErrorStatus(null);
+  };
+
 
   const handleSaveProject = (project: ProjectRecommendation) => {
     try {
@@ -236,7 +266,7 @@ const ProjectRecommender: React.FC = () => {
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <PreferenceForm onSubmit={handlePreferencesSubmit} />
+              <PreferenceForm initialPreferences={preferences} onSubmit={handlePreferencesSubmit} />
             </motion.div>
           )}
 
@@ -249,8 +279,63 @@ const ProjectRecommender: React.FC = () => {
               transition={{ duration: 0.3 }}
             >
               <div className="space-y-6">
+                {/* Fallback Mode Honest Banner */}
+                {isFallbackMode && (
+                  <div className="p-4 rounded-2xl border border-amber-300 bg-amber-50 dark:bg-amber-900/20 dark:border-amber-700 flex items-start space-x-3 text-amber-900 dark:text-amber-200">
+                    <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5 text-amber-600 dark:text-amber-400" />
+                    <div className="text-sm">
+                      <p className="font-semibold">Curated Starter Templates (Offline Mode)</p>
+                      <p className="mt-0.5 opacity-90">
+                        The projects displayed below are curated offline starter templates matching your preferences, not freshly generated by AI.
+                      </p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Error Banner */}
+                {errorMessage && (
+                  <div className={`p-5 rounded-2xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 ${
+                    errorStatus === 429
+                      ? 'border-yellow-400 bg-yellow-50 dark:bg-yellow-900/20 dark:border-yellow-700 text-yellow-900 dark:text-yellow-200'
+                      : 'border-red-300 bg-red-50 dark:bg-red-900/20 dark:border-red-700 text-red-900 dark:text-red-200'
+                  }`}>
+                    <div className="flex items-start space-x-3">
+                      <AlertCircle className={`w-6 h-6 flex-shrink-0 mt-0.5 ${
+                        errorStatus === 429 ? 'text-yellow-600 dark:text-yellow-400' : 'text-red-600 dark:text-red-400'
+                      }`} />
+                      <div>
+                        <p className="font-bold text-base">
+                          {errorStatus === 429
+                            ? 'Gemini AI Rate Limit / Quota Reached'
+                            : 'AI Recommendation Service Unavailable'}
+                        </p>
+                        <p className="text-sm mt-1 opacity-90">
+                          {errorMessage}
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="flex items-center space-x-2 self-end sm:self-auto">
+                      <button
+                        onClick={preferences ? handleRegenerateRecommendations : undefined}
+                        disabled={isLoading || !preferences}
+                        className="px-4 py-2 rounded-xl text-xs font-semibold bg-white dark:bg-gray-800 border shadow-sm hover:shadow transition-all disabled:opacity-50"
+                      >
+                        Retry AI
+                      </button>
+                      <button
+                        onClick={handleLoadCuratedFallback}
+                        disabled={!preferences}
+                        className="px-4 py-2 rounded-xl text-xs font-semibold bg-blue-600 text-white hover:bg-blue-700 transition-all disabled:opacity-50"
+                      >
+                        Load Curated Templates
+                      </button>
+                    </div>
+                  </div>
+                )}
+
                 {/* Regenerate Button */}
-                {recommendations.length > 0 && (
+                {recommendations.length > 0 && !isLoading && (
                   <div className="flex justify-center">
                     <button
                       onClick={handleRegenerateRecommendations}
@@ -267,8 +352,11 @@ const ProjectRecommender: React.FC = () => {
                 {isLoading && (
                   <div className="flex flex-col items-center justify-center py-12">
                     <div className="w-16 h-16 border-4 border-blue-200 border-t-blue-500 rounded-full animate-spin mb-4"></div>
-                    <p className={`text-lg ${state.darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
-                      AI is generating personalized recommendations...
+                    <p className={`text-lg font-medium ${state.darkMode ? 'text-gray-300' : 'text-gray-600'}`}>
+                      AI is generating personalized recommendations based on your preferences...
+                    </p>
+                    <p className={`text-sm mt-1 ${state.darkMode ? 'text-gray-500' : 'text-gray-400'}`}>
+                      Connecting to Gemini API via backend
                     </p>
                   </div>
                 )}
@@ -294,7 +382,7 @@ const ProjectRecommender: React.FC = () => {
                 )}
 
                 {/* Empty State */}
-                {!isLoading && recommendations.length === 0 && (
+                {!isLoading && recommendations.length === 0 && !errorMessage && (
                   <div className={`text-center py-16 rounded-2xl border-2 border-dashed ${
                     state.darkMode ? 'border-gray-600 bg-gray-800/50' : 'border-gray-300 bg-white/50'
                   }`}>

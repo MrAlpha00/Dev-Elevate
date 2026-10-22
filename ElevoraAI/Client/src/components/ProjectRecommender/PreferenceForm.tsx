@@ -4,6 +4,12 @@ import { motion } from 'framer-motion';
 import { useGlobalState } from '../../contexts/GlobalContext';
 
 interface PreferenceFormProps {
+  initialPreferences?: {
+    techStack: string[];
+    careerFocus: string;
+    skillLevel: string;
+    interestArea: string[];
+  } | null;
   onSubmit: (preferences: {
     techStack: string[];
     careerFocus: string;
@@ -12,14 +18,31 @@ interface PreferenceFormProps {
   }) => void;
 }
 
-const PreferenceForm: React.FC<PreferenceFormProps> = ({ onSubmit }) => {
+const PreferenceForm: React.FC<PreferenceFormProps> = ({ initialPreferences, onSubmit }) => {
   const { state } = useGlobalState();
-  const [selectedTechStack, setSelectedTechStack] = useState<string[]>([]);
-  const [careerFocus, setCareerFocus] = useState('');
-  const [skillLevel, setSkillLevel] = useState('');
-  const [selectedInterestAreas, setSelectedInterestAreas] = useState<string[]>([]);
+  const [selectedTechStack, setSelectedTechStack] = useState<string[]>(() => {
+    if (initialPreferences?.techStack && initialPreferences.techStack.length > 0) {
+      return initialPreferences.techStack;
+    }
+    if (state.resume?.skills?.technical && state.resume.skills.technical.length > 0) {
+      return state.resume.skills.technical;
+    }
+    return [];
+  });
+  const [careerFocus, setCareerFocus] = useState<string>(() => initialPreferences?.careerFocus || '');
+  const [skillLevel, setSkillLevel] = useState<string>(() => {
+    if (initialPreferences?.skillLevel) return initialPreferences.skillLevel;
+    if (state.user?.level && ['Beginner', 'Intermediate', 'Advanced'].includes(state.user.level)) {
+      return state.user.level;
+    }
+    return '';
+  });
+  const [selectedInterestAreas, setSelectedInterestAreas] = useState<string[]>(
+    () => initialPreferences?.interestArea || []
+  );
   const [showTechDropdown, setShowTechDropdown] = useState(false);
   const [techSearchTerm, setTechSearchTerm] = useState('');
+
 
   const techStackOptions = [
     // Frontend
