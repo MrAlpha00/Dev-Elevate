@@ -41,7 +41,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Mountain View, CA",
       type: "Full-time",
-      deadline: "2025-12-31",
+      deadline: "2026-12-31",
       description:
         "Join our team to build products that help create opportunities for everyone. Work on cutting-edge technologies.",
       requirements: [
@@ -60,7 +60,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Redmond, WA",
       type: "Full-time",
-      deadline: "2025-11-30",
+      deadline: "2026-11-30",
       description:
         "Build and maintain software solutions for Microsoft products. Work on Azure, Office, and other platforms.",
       requirements: [
@@ -79,7 +79,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Development Engineer",
       location: "Seattle, WA",
       type: "Full-time",
-      deadline: "2025-10-31",
+      deadline: "2026-10-31",
       description:
         "Design and build scalable software solutions for Amazon services. Work on AWS, e-commerce, and logistics.",
       requirements: [
@@ -98,7 +98,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Menlo Park, CA",
       type: "Full-time",
-      deadline: "2025-09-30",
+      deadline: "2026-09-30",
       description:
         "Build products that connect billions of people. Work on Facebook, Instagram, WhatsApp, and VR platforms.",
       requirements: [
@@ -116,7 +116,7 @@ const PlacementPrep: React.FC = () => {
       position: "Senior Software Engineer",
       location: "Los Gatos, CA",
       type: "Full-time",
-      deadline: "2025-08-31",
+      deadline: "2026-08-31",
       description:
         "Build the future of entertainment. Work on streaming platform, recommendation systems, and content delivery.",
       requirements: [
@@ -134,7 +134,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Cupertino, CA",
       type: "Full-time",
-      deadline: "2025-11-15",
+      deadline: "2026-11-15",
       description:
         "Create innovative software for iPhone, iPad, Mac, and Apple Watch. Work on iOS, macOS, and developer tools.",
       requirements: [
@@ -152,7 +152,7 @@ const PlacementPrep: React.FC = () => {
       position: "Research Engineer (Applied)",
       location: "San Francisco, CA",
       type: "Full-time",
-      deadline: "2025-12-31",
+      deadline: "2026-12-31",
       description:
         "Build and deploy state-of-the-art AI systems and tooling for real-world use cases.",
       requirements: [
@@ -170,7 +170,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Developer",
       location: "Bangalore, India",
       type: "Full-time",
-      deadline: "2025-10-15",
+      deadline: "2026-10-15",
       description:
         "Join our digital transformation initiatives across various industries. Work on enterprise solutions and consulting.",
       requirements: [
@@ -188,7 +188,7 @@ const PlacementPrep: React.FC = () => {
       position: "Systems Engineer",
       location: "Bangalore, India",
       type: "Full-time",
-      deadline: "2025-10-31",
+      deadline: "2026-10-31",
       description:
         "Work on digital transformation projects for global clients. Develop and maintain software solutions.",
       requirements: [
@@ -206,7 +206,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "San Jose, CA",
       type: "Full-time",
-      deadline: "2025-07-31",
+      deadline: "2026-07-31",
       description:
         "Create innovative software solutions for creative professionals. Work on Photoshop, Illustrator, and Creative Cloud.",
       requirements: [
@@ -225,7 +225,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "San Francisco, CA",
       type: "Full-time",
-      deadline: "2025-09-30",
+      deadline: "2026-09-30",
       description:
         "Build the future of CRM and cloud computing. Work on Salesforce platform and enterprise solutions.",
       requirements: [
@@ -244,7 +244,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Austin, TX",
       type: "Full-time",
-      deadline: "2025-10-15",
+      deadline: "2026-10-15",
       description:
         "Develop enterprise software solutions and cloud infrastructure. Work on Oracle Cloud and database technologies.",
       requirements: [
@@ -263,7 +263,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Santa Clara, CA",
       type: "Full-time",
-      deadline: "2025-08-31",
+      deadline: "2026-08-31",
       description:
         "Develop software for Intel processors and hardware. Work on drivers, firmware, and system software.",
       requirements: [
@@ -282,7 +282,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Developer",
       location: "Armonk, NY",
       type: "Full-time",
-      deadline: "2025-12-31",
+      deadline: "2026-12-31",
       description:
         "Build enterprise solutions and AI-powered software. Work on IBM Cloud, Watson, and enterprise tools.",
       requirements: [
@@ -300,7 +300,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "San Jose, CA",
       type: "Full-time",
-      deadline: "2025-09-15",
+      deadline: "2026-09-15",
       description:
         "Develop networking software and security solutions. Work on routers, switches, and network infrastructure.",
       requirements: [
@@ -319,7 +319,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer",
       location: "Bangalore, India",
       type: "Full-time",
-      deadline: "2025-10-31",
+      deadline: "2026-10-31",
       description:
         "Work on digital transformation projects and consulting services. Develop enterprise solutions for global clients.",
       requirements: [
@@ -337,7 +337,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineering Intern",
       location: "Bangalore, India",
       type: "Internship",
-      deadline: "2025-10-01",
+      deadline: "2026-10-01",
       description:
         "Work with Google engineers on real products. 10-12 week internship program.",
       requirements: [
@@ -354,7 +354,7 @@ const PlacementPrep: React.FC = () => {
       position: "Software Engineer Intern",
       location: "Hyderabad, India",
       type: "Internship",
-      deadline: "2025-09-30",
+      deadline: "2026-09-30",
       description:
         "Join Microsoft for a summer internship and ship production-quality features with a mentor.",
       requirements: [
